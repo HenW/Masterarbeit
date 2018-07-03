@@ -1,0 +1,34 @@
+Der CoreMark® von \ac{eembc} ist ein Benchmark, der die Leistung von \ac{mcu} und \ac{cpu} misst, die in eingebetteten Systemen verwendet werden.
+ Coremark enthält Implementierungen der folgenden Algorithmen: Listenverarbeitung (Suchen und Sortieren),
+  Matrixmanipulation (gemeinsame Matrixoperationen), Zustandsmaschine (prüft, ob ein Eingabestream gültige Zahlen enthält) und \ac{crc} (zyklische Redundanzprüfung) .
+  Es kann auf Geräten von 8-Bit-Mikrocontrollern bis zu 64-Bit-Mikroprozessoren ausgeführt werden.
+
+Der \ac{crc}-Algorithmus erfüllt eine Doppelfunktion; Es bietet eine Arbeitslast, die häufig in eingebetteten Anwendungen zu finden ist
+und gewährleistet den korrekten Betrieb der CoreMark-Benchmarks, die im Wesentlichen einen Mechanismus zur Selbstüberprüfung bereitstellt.
+ Insbesondere wird zur Überprüfung der korrekten Operation ein 16-Bit-\ac[crc] anhand der Daten ausgeführt, die in Elementen der verknüpften Liste enthalten sind.
+
+Um sicherzustellen, dass der Compiler die Ergebnisse zur Kompilierungszeit nicht vorberechnen kann, leitet jede Operation im Benchmark einen Wert ab,
+der zur Kompilierungszeit nicht verfügbar ist. Darüber hinaus ist jeder Code, der innerhalb des zeitgesteuerten Teils der Benchmarks verwendet wird,
+Teil des Benchmarks selbst (keine Bibliotheksaufrufe).
+
+Die CoreMark-Benchmark überprüft Pipeline-Operationen, Speicher(inklusive Cache, falls vorhanden), sowie den Zugriff und das Handling von Integer-Operationen.
+
+Ergebnis
+Wenn die Coremark auf einer \ac{mcu} oder \ac{cpu} ausgeführt wird, ergibt sich ein so genannter Score, welcher einen schnellen Vergleich zwischen verschiedenen Prozessoren ermöglicht.
+
+
+Grundlegende Eigenschaften
+ITEMIZE
+-Geschrieben in kleinem und leicht verständlichen C-Code
+-Bietet eine realistische Mischung aus Lese- und Schreiboperationen, sowie Ganzzahl- und Steueroperationen
+-Besteht aus mehreren Algorithmen, die häufig verwendet werden
+-funktioniert auch für Multicore-Systeme, in dem mehrere Instanzen des CoreMark gebildet werden
+-Die Ergebnisse der bereits getesteten Systeme werden auf der Seite des Herstellers veröffentlicht.
+
+
+
+eembc= Embedded Microprocessor Benchmark Consortium
+mcu = Mikrokontroller
+crc = cyclic redundancy check
+
+QUELLE: https://www.eembc.org/coremark//index.php
