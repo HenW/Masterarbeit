@@ -1,0 +1,21 @@
+﻿Eine der größten Herausforderungen im Computerdesign ist es, Speichersysteme zu schaffen, welche den Prozessoren mit Operanden mit einer Geschwindigkeit versorgt, mit der er arbeiten kann.
+Moderne Prozessoren stellen höchste Ansprüche an ein Speichersystem, sowohl hinsichtlich der Latenzzeit, sowie hinsichtlich der Bandbreite. Diese beiden Aspekte stellen einen Konflikt dar. So führen
+Methoden zur Steigerung der Bandbreite unmittelbar zur Erhöhung der Latenzzeit.
+Ebenfalls wird es immer schwieriger ein Speichersystem zu realisieren, welches mit der steigenden Geschwindigkeit des Prozessors agieren kann.\\
+Eine Lösung für dieses Problem sind die Caches. Ein Cache nimmt die zuletzt benutzten Speicherworte in einen kleinen, schnellen Speicher auf, sodass der erneute Zugriff darauf beschleunigt wird.
+Somit verringert sich die effektive Speicherlatenz enorm, wenn sich ein ausreichend großer Anteil der benötigten Speicherworte im Cache befindet.\\
+Ein Einsatz mehrerer Caches ermöglicht es, sowohl die Bandbreite, als auch die Latenzzeit zu verbessern. Für die grundlegende Verbesserung bietet sich der sogenannte Cache-Split an, bei
+welchem der Instruktion und der Datencache getrennt werden. Darauf folgt, dass ein unabhängiges Einleiten von Speicheroperationen in verschiedenen Caches die Bandbreite des
+Speichersystems quasi verdoppelt. In der praktischen Umsetzung besitzt jeder Port seinen eigenen Cache und jeder Cache kann unabhängig von anderen auf den Hauptspeicher zugreifen.\\
+Als weitere Möglichkeit zur Leistungsverbesserung ist es in modernen Systemen üblich, einen Level-2-Cache zu nutzen. Dieser kann zwischen dem Befehls- und Daten-Cache, sowie dem Hauptspeicher
+angesiedelt sein. Je nach Anforderung an das Speichersystem, können weitere Cache-Ebenen hinzugefügt werden. \\
+Die Abbildung ABBILDUNG zeigt ein klassisches System mit drei Cache-Ebenen. Diese Ebenen unterscheiden sich vorwiegend durch ihre Größe. So beinhaltet der \ac{cpu}-Cache einen kleinen Cache
+in der Größenordnung von 16KB bis 64KB. Der Level-2-Cache, welcher neben dem \ac{cpu}-Chip angeordnet und mit einem Hochgeschwindigkeitspfad verbunden ist, besitzt üblicherweise eine Größe von
+ 512 KB bis 1 MB. Hierbei handelt es sich typischerweise um einen sogenannten \emph{unified} (gemeinsamen) Cache, welcher eine Mischung aus Daten und Befehlen beinhaltet. \\
+ Die dritte Cache-Ebene besteht aus einigen Megabyte \ac{sram} und wird auf der Prozessorkarte angeordnet. Dieser \ac{sram} bietet einen enormen Vorteil in der Geschwindigkeit gegenüber dem
+ Hauptspeicher(\ac{dram}). \\
+ Eine Besonderheit der Caches ist, dass diese umfassend sind, das bedeutet, dass der gesamte Inhalt des L1-Caches im L2-Cache und der gesamte L2-Cache Inhalt im L3-Cache  enthalten ist.\\
+Bei dem Prinzip der Adresslokalitäten bedienen sich Caches zwei verschiedenen Arten:
+- örtliche Lokalität (Spartial Locality): Beschreibt die Beobachtung, dass auf Speicherstellen mit 	Adressen, die einer kürzlich angesprochenen Speicherstelle numerisch ähnlich sind, in der 	nächsten Zeit wahrscheinlich zugegriffen wird. Dadurch werden mehr Daten eingelesen als 	angefordert und damit die Annahme getätigt, dass Anforderungen vorausgesagt werden 	können.
+-zeitliche Lokalität (Temporal Locality): Auf Speicherstellen, auf die kürzlich zugegriffen wurde, 	wird erneut zugegriffen.  Als praktisches Beispiel gelten hier Funktionen innerhalb einer 	Schleife. Diese Art der Lokalität wird oft zur Fehlerbehebung genutzt,  wenn es zu Cache-	Zugriffsfehlern kommt.\\
+Grundsätzlich basieren Caches auf dem Prinzip, dass der Hauptspeicher in Blöcke unterteilt wird, welche eine feste Größe besitzen. Dies sind die sogeannten Cache-Zeilen (Cache-Lines) 

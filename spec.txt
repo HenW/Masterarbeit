@@ -1,0 +1,10 @@
+SPEC CPU2000 ist ein Software-Benchmark-Produkt der \ac{spec}, einer Non-Profit-Gruppe, zu der Computerhersteller,
+Systemintegratoren, Universitäten, Forschungsorganisationen, Verlage und Berater aus der ganzen Welt gehören. Es wurde entwickelt,
+um Leistungsmessungen bereitzustellen, mit denen rechenintensive Arbeitslasten auf verschiedenen Computersystemen verglichen werden können.
+
+Die SPEC CPU2000 enthält zwei Benchmarks:
+- CINT2000 zum Messen und Vergleichen der rechenintensiven Integer-Performance
+- CFP2000 zum Messen und Vergleichen der rechenintensiven Gleitkomma-Performance.
+
+
+spec= Standard Performance Evaluation Corp. (SPEC)
