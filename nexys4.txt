@@ -1,0 +1,48 @@
+Das Nexys4 DDR-Board ist eine Entwicklungsplatform, basierend auf dem Artix7(TM)-\ac{fpga}
+von Xilinx. Es bietet die Möglichkeit mit Hilfe des leistungsstarken \ac{fpga}, des großzügigen, externen Speichers und diversen Anschlussmöglichkeiten
+für Peripherie, sämtliche Designs, vom einfachen, kombinatorischen Schaltkreis, bishin zu leistungsstarken eingebetteten Prozessoren, zu realisieren.
+Des Weiteren ist auf dem Board Peripherie verbaut, wie zum Beispiel Sensoren, die weitere Nutzungsmöglichkeiten bieten.\\
+Das Nexys4 DDR besitzt weiterhin folgende Features:
+-15,850 logische Slices mit jeweils vier \ac{lut}, welche sechs Eingänge besitzen, sowie acht Flip-Flops.
+- Es bietet 4,860 Kbit Fast \ac{bram}
+-Sechs Taktmanagementabschnitte mit jeweils einem \ac{pll}
+-240 \ac{dsp}-Slices
+-Interne Taktraten über 450 MHz
+-On-Chip-Analog-Digital-Wandler(XADC)
+-16 Schalter für den Nutzer
+-\ac{usb}-\ac{uart}-Brücke
+-12-Bit \ac{vga}-Ausgang
+-3-Achsen Beschleunigungssensor
+-128M DDR2-\ac{sdram} Speicher
+-Pmod für XADC-Signale
+-16 LEDs für den Nutzer
+-Zwei dreifarbige LEDs
+-PWM-Audioausgang
+-Temperatursensor
+-Digilent USB-JTAG Port für FPGA Programmierung und Kommunikation
+-Zwei 4-stellige 7-Segment-Anzeigen
+-Micro SD-Kartenanschluss
+-PDM-Mikrofon
+-10/100 Ethernet-PHY
+-Vier Pmod-Ports
+-USB HID Host für Mäuse, Tastaturen und Memory Sticks
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+AKV : bram
+      pll :
+      dsp
+      vga
+      sdram

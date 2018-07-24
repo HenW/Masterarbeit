@@ -1,0 +1,13 @@
+Die Xilinx 7-Serie umfasst vier \{fpga}-Familien, welche die gesamte Bandbreite an Systemanforderungen abdecken. Diese reicht von kostengünstigen Anwendungen, bis hin zur Hochleistungsanwendung mit High-End-Konnektivitätsbandbreite und Logikkapazität. \\
+Die FPGAs der 7-Serie, die auf einer hochmodernen Hochleistungs-HPL-Technologie (HKMG-Technologie) mit 28 nm und High-k-Metal-Gate-Technologie basieren,
+ ermöglichen eine beispiellose Steigerung der Systemleistung auf 2,9 Tb/s der Eingabe- und Ausgabe-Bandbreite, 2 Millionen logischer Zellenkapazität und 5,3 TMAC/s DSP,
+ wobei 50% weniger Strom verbraucht wird als bei Geräten der vorherigen Generation, um eine voll programmierbare Alternative zu ASSPs und ASICs zu bieten.\\
+ Die Abbildung (HIER ABBILDUNG) zeigt den Vergleich der vier \ac{fpga}:\\
+
+ HIER ABBILDUNG
+
+Bei dem auf dem Board verbauten \ac{fpga} handelt es sich um den  XC7A100T aus der Artix-7-Familie. Diese Baureihe ist optimiert für Low-Power-Anwendungen, welche einen hohen \ac{dsp}- und Logik-Durchsatz erfordern. Einer der großen Vorteile
+dieses \ac{fpga} sind die niedrigen Kosten für kostensensitive Anwendungen mit hohem Durchsatz.\\
+Die folgende Abbildung zeigt die wichtigsten Daten des verbauten \ac{fpga}:\\
+
+HIER ABBILDUNG 2
