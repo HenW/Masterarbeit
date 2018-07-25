@@ -85,6 +85,75 @@ Somit wird unterschieden zwischen 8-,16- und 32-Bit Systemen.\cite{softcore}\\
      \label{tab:8bitsysteme}
       \end{table}
 
+\section{Nexys-4-DDR}\label{kap:nexys4}
+Das Nexys4 DDR-Board ist eine Entwicklungsplatform, basierend auf dem Artix7(TM)-\ac{fpga}
+von Xilinx. Es bietet die Möglichkeit mit Hilfe des leistungsstarken \ac{fpga}, des großzügigen, externen Speichers und diversen Anschlussmöglichkeiten
+für Peripherie, sämtliche Designs, vom einfachen, kombinatorischen Schaltkreis, bishin zu leistungsstarken eingebetteten Prozessoren, zu realisieren.
+Des Weiteren ist auf dem Board Peripherie verbaut, wie zum Beispiel Sensoren, die weitere Nutzungsmöglichkeiten bieten.\\
+Das Nexys4 DDR besitzt weiterhin folgende Features:~\cite{digilent}\\
+\begin{itemize}
+  \item 15,850 logische Slices mit jeweils vier \ac{lut}, welche sechs Eingänge besitzen, sowie acht Flip-Flops.
+  \item Es bietet 4,860 Kbit Fast \ac{bram}
+  \item Sechs Taktmanagementabschnitte mit jeweils einem \ac{pll}
+  \item 240 \ac{dsp}-Slices
+  \item Interne Taktraten über 450 MHz
+  \item On-Chip-Analog-Digital-Wandler(XADC)
+  \item 16 Schalter für den Nutzer
+  \item \ac{usb}-\ac{uart}-Brücke
+  \item 12-Bit \ac{vga}-Ausgang
+  \item 3-Achsen Beschleunigungssensor
+  \item 128M DDR2-\ac{sdram} Speicher
+  \item Pmod für XADC-Signale
+  \item 16 LEDs für den Nutzer
+  \item Zwei dreifarbige LEDs
+  \item PWM-Audioausgang
+  \item Temperatursensor
+  \item Digilent \ac{usb}-JTAG Port für \ac{fpga} Programmierung und Kommunikation
+  \item Zwei 4-stellige 7-Segment-Anzeigen
+  \item Micro SD-Kartenanschluss
+  \item PDM-Mikrofon
+  \item 10/100 Ethernet-PHY
+  \item Vier Pmod-Ports
+  \item \ac{usb} HID Host für Mäuse, Tastaturen und Memory Sticks
+\end{itemize}
+
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.6\textwidth]{Hauptteil/nexys-4-ddr-2.png}
+\caption{Das Nexys4 DDR-Board von Digilent ~\cite{digilent}}\label{fig:nexys4}
+\end{figure}
+
+
+
+\subsection{\ac{fpga}}\label{kap:fpga}
+Die Xilinx 7-Serie umfasst vier \ac{fpga}-Familien, welche die gesamte Bandbreite an Systemanforderungen abdecken. Diese reicht von kostengünstigen Anwendungen, bis hin zur Hochleistungsanwendung mit High-End-Konnektivitätsbandbreite und Logikkapazität. \\
+Die FPGAs der 7-Serie, die auf einer hochmodernen Hochleistungs-HPL-Technologie (HKMG-Technologie) mit 28 nm und High-k-Metal-Gate-Technologie basieren,
+ ermöglichen eine beispiellose Steigerung der Systemleistung auf 2,9 Tb/s der Eingabe- und Ausgabe-Bandbreite, 2 Millionen logischer Zellenkapazität und 5,3 TMAC/s DSP,
+ wobei 50\% weniger Strom verbraucht wird als bei Geräten der vorherigen Generation, um eine voll programmierbare Alternative zu ASSPs und ASICs zu bieten.\\
+ Die Abbildung ~\ref{fig:7serie} zeigt den Vergleich der vier \ac{fpga}:~\cite{artix7}\\
+
+ \begin{figure}[H]
+ \centering
+ \includegraphics[width=0.8\textwidth]{Hauptteil/7serie.png}
+ \caption{Technische Daten des 7-Serie von Xilinx. Der verwendete Artix7 ist rot markiert.~\cite{artix7}~\cite{artix7}~\cite{artix7}}\label{fig:7serie}
+ \end{figure}
+
+
+Bei dem auf dem Board verbauten \ac{fpga} handelt es sich um den  XC7A100T aus der Artix-7-Familie. Diese Baureihe ist optimiert für Low-Power-Anwendungen, welche einen hohen \ac{dsp}- und Logik-Durchsatz erfordern. Einer der großen Vorteile
+dieses \ac{fpga} sind die niedrigen Kosten für kostensensitive Anwendungen mit hohem Durchsatz.\\
+Die folgende Abbildung zeigt die wichtigsten Daten des verbauten \ac{fpga}:~\cite{artix7}~\cite{artix7}\\
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{Hauptteil/artix7.png}
+\caption{Technische Daten des Artix7. Der verwendete XC7AC100T ist rot markiert.~\cite{artix7}}\label{fig:artix7}
+\end{figure}
+
+
+
 
 
 
@@ -106,6 +175,73 @@ Bereich zugreifen wollen.\cite{itwissen}\\
 \end{figure}
 
 
+\section{Cache}\label{kap:cache}
+Eine der größten Herausforderungen im Computerdesign ist es, Speichersysteme zu schaffen, welche den Prozessoren mit Operanden mit einer Geschwindigkeit versorgt, mit der er arbeiten kann.
+Moderne Prozessoren stellen höchste Ansprüche an ein Speichersystem, sowohl hinsichtlich der Latenzzeit, sowie hinsichtlich der Bandbreite. Diese beiden Aspekte stellen einen Konflikt dar. So führen
+Methoden zur Steigerung der Bandbreite unmittelbar zur Erhöhung der Latenzzeit.
+Ebenfalls wird es immer schwieriger ein Speichersystem zu realisieren, welches mit der steigenden Geschwindigkeit des Prozessors agieren kann.\\
+Eine Lösung für dieses Problem sind die Caches. Ein Cache nimmt die zuletzt benutzten Speicherworte in einen kleinen, schnellen Speicher auf, sodass der erneute Zugriff darauf beschleunigt wird.
+Somit verringert sich die effektive Speicherlatenz enorm, wenn sich ein ausreichend großer Anteil der benötigten Speicherworte im Cache befindet.\\
+Ein Einsatz mehrerer Caches ermöglicht es, sowohl die Bandbreite, als auch die Latenzzeit zu verbessern. Für die grundlegende Verbesserung bietet sich der sogenannte Cache-Split an, bei
+welchem der Instruktion und der Datencache getrennt werden. Darauf folgt, dass ein unabhängiges Einleiten von Speicheroperationen in verschiedenen Caches die Bandbreite des
+Speichersystems quasi verdoppelt. In der praktischen Umsetzung besitzt jeder Port seinen eigenen Cache und jeder Cache kann unabhängig von anderen auf den Hauptspeicher zugreifen.\\
+Als weitere Möglichkeit zur Leistungsverbesserung ist es in modernen Systemen üblich, einen Level-2-Cache zu nutzen. Dieser kann zwischen dem Befehls- und Daten-Cache, sowie dem Hauptspeicher
+angesiedelt sein. Je nach Anforderung an das Speichersystem, können weitere Cache-Ebenen hinzugefügt werden. \\
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=1\textwidth]{Hauptteil/Cache.eps}
+\caption{Ein System mit drei Cache-Ebenen nach~\cite{cache}}\label{fig:cache}
+\end{figure}
+
+
+
+
+
+Die Abbildung \ref{fig:cache} zeigt ein klassisches System mit drei Cache-Ebenen. Diese Ebenen unterscheiden sich vorwiegend durch ihre Größe. So beinhaltet der \ac{cpu}-Cache einen kleinen Cache
+in der Größenordnung von 16KB bis 64KB. Der Level-2-Cache, welcher neben dem \ac{cpu}-Chip angeordnet und mit einem Hochgeschwindigkeitspfad verbunden ist, besitzt üblicherweise eine Größe von
+ 512 KB bis 1 MB. Hierbei handelt es sich typischerweise um einen sogenannten \emph{unified} (gemeinsamen) Cache, welcher eine Mischung aus Daten und Befehlen beinhaltet. \\
+ Die dritte Cache-Ebene besteht aus einigen Megabyte \ac{sram} und wird auf der Prozessorkarte angeordnet. Dieser \ac{sram} bietet einen enormen Vorteil in der Geschwindigkeit gegenüber dem
+ Hauptspeicher(\ac{dram}). \\
+ Eine Besonderheit der Caches ist, dass diese umfassend sind, das bedeutet, dass der gesamte Inhalt des L1-Caches im L2-Cache und der gesamte L2-Cache Inhalt im L3-Cache  enthalten ist.\\
+ \newpage
+Bei dem Prinzip der Adresslokalitäten bedienen sich Caches zwei verschiedenen Arten:\\
+
+\begin{itemize}
+  \item örtliche Lokalität (Spartial Locality): Beschreibt die Beobachtung, dass auf Speicherstellen mit 	Adressen, die einer kürzlich angesprochenen Speicherstelle numerisch ähnlich sind, in der
+   	nächsten Zeit wahrscheinlich zugegriffen wird. Dadurch werden mehr Daten eingelesen als 	angefordert und damit die Annahme getätigt, dass Anforderungen vorausgesagt werden 	können.
+  \item zeitliche Lokalität (Temporal Locality): Auf Speicherstellen, auf die kürzlich zugegriffen wurde, 	wird erneut zugegriffen.  Als praktisches Beispiel gelten hier Funktionen innerhalb
+        einer Schleife. Diese Art der Lokalität wird oft zur Fehlerbehebung genutzt,  wenn es zu Cache-	Zugriffsfehlern kommt.\\
+\end{itemize}
+
+Grundsätzlich basieren Caches auf dem Prinzip, dass der Hauptspeicher in Blöcke unterteilt wird, welche eine feste Größe besitzen. Dies sind die sogenannten Cache-Zeilen (Cache-Lines).
+Diese bestehen aus aufeinander folgenden Bytes in einer Größenordnung von 4 bis 64 Bytes. Bei Speicherzugriffen wird geprüft, ob sich das angeforderte Wort im Cache befindet und direkt
+vom Prozessor verwendet werden kann. Ist dies nicht der Fall, wird ein Zeileneintrag aus dem Cache entfernt und die benötigte Zeile aus dem Hauptspeicher geladen. \\
+Es gibt zwei grundlegende Arten des Caches. Die einfachste Art Cache zu realisieren, ist die Form des direkt abbildenden Caches. Dabei kann jeder Eintrag, beziehungsweise Zeile, genau
+eine Cache-Zeile aus dem Hauptspeicher aufnehmen. Besitzt der Cache eine Zeilengröße von 32 Bytes, nimmt der Cache 64 KB auf. Daraus lässt sich schlussfolgern, dass eine bestimmtes
+Wort an genau einer Stelle im Cache liegen kann. Ist das Wort nicht an dieser Adresse zu finden, ist es auch nicht im Cache enthalten. \\
+
+Diese Adresse lässt sich in vier Komponenten zerlegen:
+\begin{itemize}
+  \item TAG\@: Entspricht den Tag-Bits, welche in einem Cache-Eintrag gespeichert sind
+  \item LINE\@: Beinhaltet die Information, in welchem Cache-Eintrag sich die Daten befinden, falls vorhanden
+  \item WORD\@: Gibt an, welches Wort innerhalb einer Zeile angefordert wurde
+  \item BYTE\@: Wird in Ausnahmefällen genutzt, um einzelne Bytes anzufordern
+\end{itemize}
+
+
+
+
+
+Mit diesen Eigenschaften stellen die direkt abbildenden Caches den am häufigsten verwendeten Cache-Typen dar, weil diese effektiv arbeiten und Kollisionen, bei zum Beispiel identischer LINE,
+selten, beziehungsweise gar nicht vorkommen. \\
+Das Problem der Speicherkollisionen lässt sich wiederum mit der Verwendung von zwei oder mehr Zeilen pro Cache-Eintrag lösen. Dieser Typ mit \emph{n}-möglichen Einträgen für jede Adresse,
+ wird als n-fach mengen-assoziativen Caches (engl. N-way set-associativ Cache) bezeichnet.Im Vergleich zu dem beschriebenden direkt abbildenden Cache ist der mengen-assoziative Cache
+ komplizierter, da sich zwar der korrekte Cache-Ebene aus der Speicheradresse berechnen lässt, hierfür jedoch \emph{n} Einträge geprüft werden müssen. Somit ergibt sich ein Nachteil
+ was Schnelligkeit anbelangt, jedoch zeigt die Erfahrung, dass sich der Mehraufwand lohnt und 2-, sowie 4-fach Caches gute Leistungen erzielen können.~\cite{cache} \\
+
+
  \section{Peripherie}\label{kap:peripherie}
  Ein Peripheriegerät kann einer Hardware hinzugefügt werden, um die Fähigkeiten zu erweitern. Diese Geräte sind optional und dienen zur Ein- und Ausgabe von Daten.
 
@@ -123,7 +259,7 @@ Die Baudrate bezeichnet dabei die Anzahl der Bits, welche pro Sekunde übertrage
 \ac{uart} konvertiert die Bytes in serielle Bits, überträgt diese über eine einzelne Leitung
 und liest die zugehörigen Start- und Stop-Bits aus.\\
 Das sogenannte \emph{Character}(Zeichen) besteht aus einer konfigurierbaren Anzahl an Datenbits (in den meisten
-Fällen 7 oder 8), aus einem \emph{low-level} Start-Bit , einem optionalen Parity-Bit und einem
+Fällen 7 oder 8), aus einem \emph{low-level} Start-Bit, einem optionalen Parity-Bit und einem
 oder mehreren logischen \emph{high-level} Stop-Bits.\\
 Das Start-Bit teilt dem Receiver mit, dass ein neues \emph{Character} empfangen wird.
 Die nächsten Bits, je nachdem wie viele Daten-Bits vorher konfiguriert wurden , stellen
