@@ -1,13 +1,21 @@
 ﻿Benchmarks
 
-Geht es um die Leistungsfeststellung eines Systems täuschen oft Zahlen der Hersteller die potentiellen Käufer. Im Falle der \ac{cpu} ist es neben der Anzahl der Prozessorkerne fast immer die Taktfrequenz, welche angegeben wird. 
-Die Taktfrequenz hat zweifelsohne einen großen Einfluss auf die Geschwindigkeit einer \ac{cpu}, jedoch ist diese Zahl ohne weitere Informationen, wie zum Beispiel die Mächtigkeit des Befehlssatzes, in ihrer Aussagekraft eingeschränkt. Dies gilt selbst, wenn beide Prozessoren die gleiche Instruktionsstruktur aufweisen, da es bei der internen Implementierung zu erheblichen Unterschieden kommen kann. \\
-Um hier einen aussagekräftigen Vergleich zu erzielen, wurden verschiedene Maßzahlen eingeführt, wie beispielsweise \ac{mips}, der \ac{ipc}-Wert oder ac{mflops}. Diese Zahlen bieten zwar eine genaue Auskunft über bestimmte Architekturaspekte, ein Rückschluss auf die wirklich erreichbare Geschwindigkeit beim Ausführen eines Programmes unter realen Bedingungen ist nur bedingt möglich. \\
-So wurde festgelegt, dass die Leistung unter Ausführung fest definierter, als Benchmark bezeichneter Referenzprogramme ermittelt wird. Als Maß gilt entweder die gemessene Laufzeit zwischen Start und Ende des Programms oder die Anzahl der Operationen, die in einer genormten Zeiteinheit ausgeführt werden. Damit diese Ergebnisse aussagekräftig und nicht verfälscht sind, müssen die verschiedenen Benchmark-Programme unter reproduzierbaren Bedingungen ausgeführt werden. Dies wird bei heutigen Betriebssystemen zunehmend schwieriger, da selbst Dienstprozesse die Messung erheblich stören können. 
+Geht es um die Leistungsfeststellung eines Systems täuschen oft Zahlen der Hersteller die potentiellen Käufer. Im Falle der \ac{cpu} ist es neben der Anzahl der Prozessorkerne
+ fast immer die Taktfrequenz, welche angegeben wird.
+Die Taktfrequenz hat zweifelsohne einen großen Einfluss auf die Geschwindigkeit einer \ac{cpu}, jedoch ist diese Zahl ohne weitere Informationen, wie zum Beispiel die
+Mächtigkeit des Befehlssatzes, in ihrer Aussagekraft eingeschränkt. Dies gilt selbst, wenn beide Prozessoren die gleiche Instruktionsstruktur aufweisen, da es bei der
+internen Implementierung zu erheblichen Unterschieden kommen kann. \\
+Um hier einen aussagekräftigen Vergleich zu erzielen, wurden verschiedene Maßzahlen eingeführt, wie beispielsweise \ac{mips}, der \ac{ipc}-Wert oder ac{mflops}. Diese
+ Zahlen bieten zwar eine genaue Auskunft über bestimmte Architekturaspekte, ein Rückschluss auf die wirklich erreichbare Geschwindigkeit beim Ausführen eines Programmes
+ unter realen Bedingungen ist nur bedingt möglich. \\
+So wurde festgelegt, dass die Leistung unter Ausführung fest definierter, als Benchmark bezeichneter Referenzprogramme ermittelt wird. Als Maß gilt entweder die gemessene
+ Laufzeit zwischen Start und Ende des Programms oder die Anzahl der Operationen, die in einer genormten Zeiteinheit ausgeführt werden. Damit diese Ergebnisse aussagekräftig
+ und nicht verfälscht sind, müssen die verschiedenen Benchmark-Programme unter reproduzierbaren Bedingungen ausgeführt werden. Dies wird bei heutigen Betriebssystemen zunehmend
+  schwieriger, da selbst Dienstprozesse die Messung erheblich stören können.
 
 
-Quelle: Grundlagen der Technischen Informatik 
-Dirk W. Hoffmann 
+Quelle: Grundlagen der Technischen Informatik
+Dirk W. Hoffmann
 Carl Hanser Verlag
 2013
 Seiten: 399-404
@@ -17,4 +25,3 @@ Seiten: 399-404
 Mips : Millions of instructions per second
 IPC: instructions per cycle
 mflops: millions of Floating-point Operations per second
-

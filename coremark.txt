@@ -27,8 +27,5 @@ ITEMIZE
 
 
 
-eembc= Embedded Microprocessor Benchmark Consortium
-mcu = Mikrokontroller
-crc = cyclic redundancy check
 
-QUELLE: https://www.eembc.org/coremark//index.php
+QUELLE: https://www.eembc.org/coremark/index.php

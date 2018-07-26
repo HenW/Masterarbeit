@@ -199,7 +199,7 @@ angesiedelt sein. Je nach Anforderung an das Speichersystem, können weitere Cac
 
 
 
-Die Abbildung \ref{fig:cache} zeigt ein klassisches System mit drei Cache-Ebenen. Diese Ebenen unterscheiden sich vorwiegend durch ihre Größe. So beinhaltet der \ac{cpu}-Cache einen kleinen Cache
+Die Abbildung~\ref{fig:cache} zeigt ein klassisches System mit drei Cache-Ebenen. Diese Ebenen unterscheiden sich vorwiegend durch ihre Größe. So beinhaltet der \ac{cpu}-Cache einen kleinen Cache
 in der Größenordnung von 16KB bis 64KB. Der Level-2-Cache, welcher neben dem \ac{cpu}-Chip angeordnet und mit einem Hochgeschwindigkeitspfad verbunden ist, besitzt üblicherweise eine Größe von
  512 KB bis 1 MB. Hierbei handelt es sich typischerweise um einen sogenannten \emph{unified} (gemeinsamen) Cache, welcher eine Mischung aus Daten und Befehlen beinhaltet. \\
  Die dritte Cache-Ebene besteht aus einigen Megabyte \ac{sram} und wird auf der Prozessorkarte angeordnet. Dieser \ac{sram} bietet einen enormen Vorteil in der Geschwindigkeit gegenüber dem
@@ -262,7 +262,7 @@ Das sogenannte \emph{Character}(Zeichen) besteht aus einer konfigurierbaren Anza
 Fällen 7 oder 8), aus einem \emph{low-level} Start-Bit, einem optionalen Parity-Bit und einem
 oder mehreren logischen \emph{high-level} Stop-Bits.\\
 Das Start-Bit teilt dem Receiver mit, dass ein neues \emph{Character} empfangen wird.
-Die nächsten Bits, je nachdem wie viele Daten-Bits vorher konfiguriert wurden , stellen
+Die nächsten Bits, je nachdem wie viele Daten-Bits vorher konfiguriert wurden, stellen
 dann den Inhalt des \emph{Character} dar. Darauf folgt das optionale Parity-Bit,
 welches anzeigt, ob die Anzahl der mit '\emph{1}' belegten Daten-Bits gerade oder
 ungerade ist. Am Ende der Folge stehen dann entweder ein oder zwei  \emph{high-level } Stop-Bits,
@@ -417,38 +417,62 @@ Grafisch lässt sich der Aufbau wie folgt darstellen:\\
 Um nun mit den verschiedenen Geräten über eine Vielzahl von Schnittstellen kommunizieren
 zu können, benötigt jedes Gerät einen eigenen Treiber. Dieser Treiber ist im Betriebssystem
 als \emph{„Wissen“} hinterlegt und beinhaltet Information über das Gerät und dessen
-Zugriffsmöglichkeiten und wird im folgenden Unterkapitel näher erklärt. \cite{treiber}\\
-Der Anwender hat nun die Möglichkeit über die Treiber auf die Schnittstellen zuzugreifen, in dem diese vom
-Treiber gesteuert werden.
+Zugriffsmöglichkeiten.~\cite{treiber}\\
 
-\subsection{Treiber}\label{kap:treiber}
 
-Der Treiber gilt als \emph{„Lexikon“} der jeweiligen Geräte für das Betriebssystem.
-Diese Aufgabe ist enorm wichtig für ein funktionierendes System, sodass der Stellenwert
-eines Treibers sehr hoch ist. Einfach erklärt, besteht ein Treiber aus einer Reihe von
-Funktionen, die den Zugriff auf das Gerät steuern und so eine Kommunikation ermöglichen.
-So muss für jedes Gerät ein eigener Treiber implementiert werden, der die offene
-Schnittstelle im Betriebssystemkern füllt. \\
-Dabei sind zwei Begrifflichkeiten wichtig, in die der Speicherbereich aufgeteilt wird:
+\section{Benchmark}\label{kap:benchmark}
+Geht es um die Leistungsfeststellung eines Systems täuschen oft Zahlen der Hersteller die potentiellen Käufer. Im Falle der \ac{cpu} ist es neben der Anzahl der Prozessorkerne
+ fast immer die Taktfrequenz, welche angegeben wird.
+Die Taktfrequenz hat zweifelsohne einen großen Einfluss auf die Geschwindigkeit einer \ac{cpu}, jedoch ist diese Zahl ohne weitere Informationen, wie zum Beispiel die
+Mächtigkeit des Befehlssatzes, in ihrer Aussagekraft eingeschränkt. Dies gilt selbst, wenn beide Prozessoren die gleiche Instruktionsstruktur aufweisen, da es bei der
+internen Implementierung zu erheblichen Unterschieden kommen kann. \\
+Um hier einen aussagekräftigen Vergleich zu erzielen, wurden verschiedene Maßzahlen eingeführt, wie beispielsweise \ac{mips}, der \ac{ipc}-Wert oder ac{mflops}. Diese
+ Zahlen bieten zwar eine genaue Auskunft über bestimmte Architekturaspekte, ein Rückschluss auf die wirklich erreichbare Geschwindigkeit beim Ausführen eines Programmes
+ unter realen Bedingungen ist nur bedingt möglich. \\
+So wurde festgelegt, dass die Leistung unter Ausführung fest definierter, als Benchmark bezeichneter Referenzprogramme ermittelt wird. Als Maß gilt entweder die gemessene
+ Laufzeit zwischen Start und Ende des Programms oder die Anzahl der Operationen, die in einer genormten Zeiteinheit ausgeführt werden. Damit diese Ergebnisse aussagekräftig
+ und nicht verfälscht sind, müssen die verschiedenen Benchmark-Programme unter reproduzierbaren Bedingungen ausgeführt werden. Dies wird bei heutigen Betriebssystemen zunehmend
+  schwieriger, da selbst Dienstprozesse die Messung erheblich stören können.~\cite{benchmark}
+
+\subsection{Dhrystone}\label{kap:dhrystone}
+Der Dhrystone-Benchmark wurde 1984 von Reinhold P. Weicker entwickelt. Die Besonderheit dieses Benchmark ist, dass sie vollständig
+ohne Gleitkommaoperationen auskommt, was im Fall dieser Arbeit enorm wichtig war, weil nicht bei allen Systemen eine \ac{fpu} vorhanden ist.
+Die ursprüngliche Version basierte noch auf dem Ada-Code, heutzutage wird die Leistungsmessung fast ausschließlich durch C-Implementierungen
+ realisiert. Der Benchmark beinhaltet eine Mischung aus Befehlen, welche typischerweise von Compilern erzeugt werden. Insgesamt handelt es sich
+ um rund 100 Befehle, die aus einfachen Zuweisungen und Fallunterscheidungen, sowie Schleifen, Sprüngen und Funktionsaufrufen bestehen.
+  Diese Dhrystone-Befehle werden durchgängig in Form einer Schleife ausgeführt, wobei die Anzahl der Durchgänge vor der Ausführung vom
+  Nutzer festgelegt werden kann. Im Endeffekt entspricht die Leistung des Prozessors der Anzahl der in einer Sekunde durchgeführten Schleifendurchläufe.~\cite{benchmark}
+
+  \subsection{Coremark}\label{kap:coremark}
+  Der CoreMark® von \ac{eembc} ist ein Benchmark, der die Leistung von \ac{mcu} und \ac{cpu} misst, die in eingebetteten Systemen verwendet werden.
+   Coremark enthält Implementierungen der folgenden Algorithmen: Listenverarbeitung (Suchen und Sortieren),
+    Matrixmanipulation (gemeinsame Matrixoperationen), Zustandsmaschine (prüft, ob ein Eingabestream gültige Zahlen enthält) und \ac{crc} (zyklische Redundanzprüfung) .
+    Es kann auf Geräten von 8-Bit-Mikrocontrollern bis zu 64-Bit-Mikroprozessoren ausgeführt werden.
+
+  Der \ac{crc}-Algorithmus erfüllt eine Doppelfunktion; Es bietet eine Arbeitslast, die häufig in eingebetteten Anwendungen zu finden ist
+  und gewährleistet den korrekten Betrieb der CoreMark-Benchmarks, die im Wesentlichen einen Mechanismus zur Selbstüberprüfung bereitstellt.
+   Insbesondere wird zur Überprüfung der korrekten Operation ein 16-Bit-\ac{crc} anhand der Daten ausgeführt, die in Elementen der verknüpften Liste enthalten sind.
+
+  Um sicherzustellen, dass der Compiler die Ergebnisse zur Kompilierungszeit nicht vorberechnen kann, leitet jede Operation im Benchmark einen Wert ab,
+  der zur Kompilierungszeit nicht verfügbar ist. Darüber hinaus ist jeder Code, der innerhalb des zeitgesteuerten Teils der Benchmarks verwendet wird,
+  Teil des Benchmarks selbst (keine Bibliotheksaufrufe).
+
+  Die CoreMark-Benchmark überprüft Pipeline-Operationen, Speicher(inklusive Cache, falls vorhanden), sowie den Zugriff und das Handling von Integer-Operationen.
+
+  Ergebnis
+  Wenn die Coremark auf einer \ac{mcu} oder \ac{cpu} ausgeführt wird, ergibt sich ein so genannter Score, welcher einen schnellen Vergleich zwischen verschiedenen Prozessoren ermöglicht.
+
+
+  Grundlegende Eigenschaften:
 \begin{itemize}
-\item \textbf{Kernelspace} : Diese Bereich wird ausschließlich vom Kernel benutzt
-\item \textbf{Userspace} : Dieser Speicher wird von Applikationen genutzt und kann nicht,
-                          oder in Ausnahmfällen, nur eingeschränkt vom Kernel genutzt werden
+  \item Geschrieben in kleinem und leicht verständlichen C-Code
+  \item Bietet eine realistische Mischung aus Lese- und Schreiboperationen, sowie Ganzzahl- und Steueroperationen
+  \item Besteht aus mehreren Algorithmen, die häufig verwendet werden
+  \item funktioniert auch für Multicore-Systeme, in dem mehrere Instanzen des CoreMark gebildet werden
+  \item Die Ergebnisse der bereits getesteten Systeme werden auf der Seite des Herstellers veröffentlicht.
 \end{itemize}
 
-Die Treiber werden grundsätzlich mit in den Kernel kompiliert oder sind als Modul dynamisch
-angelegt, um zum Kernel, während der Laufzeit, hinzugefügt zu werden. \cite{treiberbib}\\
 
-Bei der Implementierung von Gerätetreibern wird zwischen drei Gerätetypen unterschieden (\cite{treiberbib}):\\
-\begin{enumerate}
-\item \textbf{Character-Devices} Auf diese Geräte kann wie auf einen Stream von Bytes zugegriffen werden, indem
-      \ac{posix}-Funktionen genutzt werden, wie beispielsweise \emph{open()},\emph{write()},\emph{read()} oder \emph{close()}.
-      Für die Nutzung wird für jedes Gerät eine \emph{Gerätedatei} (vgl. \emph{device nodes}) angelegt.
-\item \textbf{Block Devices} Im Gegensatz zu den \emph{Character-Devices}, wird auf die \emph{Block-Devices} immer per Random Access zugegriffen.
-      Die Daten werden blockweise gelesen. Diese \emph{Block-Devices} können ein Dateisystem aufnehmen und gemountet werden.
-\item \textbf{Netzwerkschnittstellen} Netzwerkgeräte erhalten keine Gerätedatei, sondern sind in einer globalen Liste hinterlegt.
-      Der Datenaustausch findet immer asynchron statt, sodass die Netzwerkkarte jederzeit bereit sein muss Daten zu empfangen.
-\end{enumerate}
 
 %
 % \subsection{Device Tree}\label{kap:devicetree}
