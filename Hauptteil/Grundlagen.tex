@@ -1,4 +1,73 @@
 \chapter{Grundlagen}\label{kap:grundlagen}
+
+
+\section{Nexys-4-DDR}\label{kap:nexys4}
+Das Nexys4 DDR-Board ist eine Entwicklungsplatform, basierend auf dem Artix7(TM)-\ac{fpga}
+von Xilinx. Es bietet die Möglichkeit mit Hilfe des leistungsstarken \ac{fpga}, des großzügigen, externen Speichers und diversen Anschlussmöglichkeiten
+für Peripherie, sämtliche Designs, vom einfachen, kombinatorischen Schaltkreis, bishin zu leistungsstarken eingebetteten Prozessoren, zu realisieren.
+Des Weiteren ist auf dem Board Peripherie verbaut, wie zum Beispiel Sensoren, die weitere Nutzungsmöglichkeiten bieten.\\
+Das Nexys4 DDR besitzt weiterhin folgende Features:~\cite{digilent}\\
+\begin{itemize}
+  \item 15,850 logische Slices mit jeweils vier \ac{lut}, welche sechs Eingänge besitzen, sowie acht Flip-Flops.
+  \item Es bietet 4,860 Kbit Fast \ac{bram}
+  \item Sechs Taktmanagementabschnitte mit jeweils einem \ac{pll}
+  \item 240 \ac{dsp}-Slices
+  \item Interne Taktraten über 450 MHz
+  \item On-Chip-Analog-Digital-Wandler(XADC)
+  \item 16 Schalter für den Nutzer
+  \item \ac{usb}-\ac{uart}-Brücke
+  \item 12-Bit \ac{vga}-Ausgang
+  \item 3-Achsen Beschleunigungssensor
+  \item 128M DDR2-\ac{sdram} Speicher
+  \item Pmod für XADC-Signale
+  \item 16 LEDs für den Nutzer
+  \item Zwei dreifarbige LEDs
+  \item PWM-Audioausgang
+  \item Temperatursensor
+  \item Digilent \ac{usb}-JTAG Port für \ac{fpga} Programmierung und Kommunikation
+  \item Zwei 4-stellige 7-Segment-Anzeigen
+  \item Micro SD-Kartenanschluss
+  \item PDM-Mikrofon
+  \item 10/100 Ethernet-PHY
+  \item Vier Pmod-Ports
+  \item \ac{usb} HID Host für Mäuse, Tastaturen und Memory Sticks
+\end{itemize}
+
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.6\textwidth]{Hauptteil/nexys-4-ddr-2.png}
+\caption{Das Nexys4 DDR-Board von Digilent ~\cite{digilent}}\label{fig:nexys4}
+\end{figure}
+
+
+
+\subsection{\ac{fpga}}\label{kap:fpga}
+Die Xilinx 7-Serie umfasst vier \ac{fpga}-Familien, welche die gesamte Bandbreite an Systemanforderungen abdecken. Diese reicht von kostengünstigen Anwendungen, bis hin zur Hochleistungsanwendung mit High-End-Konnektivitätsbandbreite und Logikkapazität. \\
+Die FPGAs der 7-Serie, die auf einer hochmodernen Hochleistungs-HPL-Technologie (HKMG-Technologie) mit 28 nm und High-k-Metal-Gate-Technologie basieren,
+ ermöglichen eine beispiellose Steigerung der Systemleistung auf 2,9 Tb/s der Eingabe- und Ausgabe-Bandbreite, 2 Millionen logischer Zellenkapazität und 5,3 TMAC/s DSP,
+ wobei 50\% weniger Strom verbraucht wird als bei Geräten der vorherigen Generation, um eine voll programmierbare Alternative zu ASSPs und ASICs zu bieten.\\
+ Die Abbildung ~\ref{fig:7serie} zeigt den Vergleich der vier \ac{fpga}:~\cite{artix7}\\
+
+ \begin{figure}[H]
+ \centering
+ \includegraphics[width=0.8\textwidth]{Hauptteil/7serie.png}
+ \caption{Technische Daten des 7-Serie von Xilinx. Der verwendete Artix7 ist rot markiert.~\cite{artix7}~\cite{artix7}~\cite{artix7}}\label{fig:7serie}
+ \end{figure}
+
+
+Bei dem auf dem Board verbauten \ac{fpga} handelt es sich um den  XC7A100T aus der Artix-7-Familie. Diese Baureihe ist optimiert für Low-Power-Anwendungen, welche einen hohen \ac{dsp}- und Logik-Durchsatz erfordern. Einer der großen Vorteile
+dieses \ac{fpga} sind die niedrigen Kosten für kostensensitive Anwendungen mit hohem Durchsatz.\\
+Die folgende Abbildung zeigt die wichtigsten Daten des verbauten \ac{fpga}:~\cite{artix7}~\cite{artix7}\\
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{Hauptteil/artix7.png}
+\caption{Technische Daten des Artix7. Der verwendete XC7AC100T ist rot markiert.~\cite{artix7}}\label{fig:artix7}
+\end{figure}
+
 \section{Softcore-Prozessoren}\label{kap:softcoreprozessoren}
 
 Ein SoftCore (engl. „Software-Kern“) ist ein Prozessor, Mikrocontroller oder ein Signalprozessor, welcher als virtuelle Einheit in einem \ac{fpga} oder \ac{asic} integriert wird.
@@ -84,73 +153,6 @@ Somit wird unterschieden zwischen 8-,16- und 32-Bit Systemen.\cite{softcore}\\
       \caption{8-Bit SoftCores nach ~\cite{softcore}}
      \label{tab:8bitsysteme}
       \end{table}
-
-\section{Nexys-4-DDR}\label{kap:nexys4}
-Das Nexys4 DDR-Board ist eine Entwicklungsplatform, basierend auf dem Artix7(TM)-\ac{fpga}
-von Xilinx. Es bietet die Möglichkeit mit Hilfe des leistungsstarken \ac{fpga}, des großzügigen, externen Speichers und diversen Anschlussmöglichkeiten
-für Peripherie, sämtliche Designs, vom einfachen, kombinatorischen Schaltkreis, bishin zu leistungsstarken eingebetteten Prozessoren, zu realisieren.
-Des Weiteren ist auf dem Board Peripherie verbaut, wie zum Beispiel Sensoren, die weitere Nutzungsmöglichkeiten bieten.\\
-Das Nexys4 DDR besitzt weiterhin folgende Features:~\cite{digilent}\\
-\begin{itemize}
-  \item 15,850 logische Slices mit jeweils vier \ac{lut}, welche sechs Eingänge besitzen, sowie acht Flip-Flops.
-  \item Es bietet 4,860 Kbit Fast \ac{bram}
-  \item Sechs Taktmanagementabschnitte mit jeweils einem \ac{pll}
-  \item 240 \ac{dsp}-Slices
-  \item Interne Taktraten über 450 MHz
-  \item On-Chip-Analog-Digital-Wandler(XADC)
-  \item 16 Schalter für den Nutzer
-  \item \ac{usb}-\ac{uart}-Brücke
-  \item 12-Bit \ac{vga}-Ausgang
-  \item 3-Achsen Beschleunigungssensor
-  \item 128M DDR2-\ac{sdram} Speicher
-  \item Pmod für XADC-Signale
-  \item 16 LEDs für den Nutzer
-  \item Zwei dreifarbige LEDs
-  \item PWM-Audioausgang
-  \item Temperatursensor
-  \item Digilent \ac{usb}-JTAG Port für \ac{fpga} Programmierung und Kommunikation
-  \item Zwei 4-stellige 7-Segment-Anzeigen
-  \item Micro SD-Kartenanschluss
-  \item PDM-Mikrofon
-  \item 10/100 Ethernet-PHY
-  \item Vier Pmod-Ports
-  \item \ac{usb} HID Host für Mäuse, Tastaturen und Memory Sticks
-\end{itemize}
-
-
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.6\textwidth]{Hauptteil/nexys-4-ddr-2.png}
-\caption{Das Nexys4 DDR-Board von Digilent ~\cite{digilent}}\label{fig:nexys4}
-\end{figure}
-
-
-
-\subsection{\ac{fpga}}\label{kap:fpga}
-Die Xilinx 7-Serie umfasst vier \ac{fpga}-Familien, welche die gesamte Bandbreite an Systemanforderungen abdecken. Diese reicht von kostengünstigen Anwendungen, bis hin zur Hochleistungsanwendung mit High-End-Konnektivitätsbandbreite und Logikkapazität. \\
-Die FPGAs der 7-Serie, die auf einer hochmodernen Hochleistungs-HPL-Technologie (HKMG-Technologie) mit 28 nm und High-k-Metal-Gate-Technologie basieren,
- ermöglichen eine beispiellose Steigerung der Systemleistung auf 2,9 Tb/s der Eingabe- und Ausgabe-Bandbreite, 2 Millionen logischer Zellenkapazität und 5,3 TMAC/s DSP,
- wobei 50\% weniger Strom verbraucht wird als bei Geräten der vorherigen Generation, um eine voll programmierbare Alternative zu ASSPs und ASICs zu bieten.\\
- Die Abbildung ~\ref{fig:7serie} zeigt den Vergleich der vier \ac{fpga}:~\cite{artix7}\\
-
- \begin{figure}[H]
- \centering
- \includegraphics[width=0.8\textwidth]{Hauptteil/7serie.png}
- \caption{Technische Daten des 7-Serie von Xilinx. Der verwendete Artix7 ist rot markiert.~\cite{artix7}~\cite{artix7}~\cite{artix7}}\label{fig:7serie}
- \end{figure}
-
-
-Bei dem auf dem Board verbauten \ac{fpga} handelt es sich um den  XC7A100T aus der Artix-7-Familie. Diese Baureihe ist optimiert für Low-Power-Anwendungen, welche einen hohen \ac{dsp}- und Logik-Durchsatz erfordern. Einer der großen Vorteile
-dieses \ac{fpga} sind die niedrigen Kosten für kostensensitive Anwendungen mit hohem Durchsatz.\\
-Die folgende Abbildung zeigt die wichtigsten Daten des verbauten \ac{fpga}:~\cite{artix7}~\cite{artix7}\\
-
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.8\textwidth]{Hauptteil/artix7.png}
-\caption{Technische Daten des Artix7. Der verwendete XC7AC100T ist rot markiert.~\cite{artix7}}\label{fig:artix7}
-\end{figure}
 
 
 
@@ -549,7 +551,13 @@ Die ursprüngliche Version basierte noch auf dem Ada-Code, heutzutage wird die L
 % Dies erleichtert die schnelle Anpassung der eingebetteten Systeme.\cite{busybox}\\
 %
 
-\chapter{Soft Cores}\label{kap:softcores}
+\chapter{Praktische Implementierung}\label{kap:implementierung}
+Die Bewertung der Leistungsfähigkeit bestehender Soft-Cores stellt eine große Herausforderung für den Entwicklar dar, um den effizientesten und geeignetsten Soft-Core
+für eine bestimmte Anwendung auszuwählen. Im Kapitel~\ref{kap:grundlagen} wurden bereits Soft-Cores, das Board, sowie die einzelnen Benchmarks näher erkläutert. Im folgenden Kapitel
+soll nun ein Überblick über Soft-Core-Prozessoren gegeben werden, welche in eingebetteten System verwendet werden. \\
+In dieser Arbeit wurden verschiedene Open-Source-, kommerzielle, sowie das unveröffentlichte System der Professur für Technische Informatik an der Helmut-Schmidt-Universität verglichen.
+Dabei werden die verschiedenen Soft-Cores vorher nahezu identischen konfiguriert, um eine bessere Vergleichbarkeit herzustellen. Evaluiert wird bei den verwendeten Soft-Cores
+die Auswirkung auf die gesamte Ausführungszeit und den \ac{fpga}-Flächenverbrauch.
 \section{MicroBlaze basierte Systeme}\label{kap:microblaze}
 Microblaze
 
