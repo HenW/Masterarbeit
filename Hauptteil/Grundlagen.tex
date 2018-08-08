@@ -558,6 +558,45 @@ soll nun ein Überblick über Soft-Core-Prozessoren gegeben werden, welche in ei
 In dieser Arbeit wurden verschiedene Open-Source-, kommerzielle, sowie das unveröffentlichte System der Professur für Technische Informatik an der Helmut-Schmidt-Universität verglichen.
 Dabei werden die verschiedenen Soft-Cores vorher nahezu identischen konfiguriert, um eine bessere Vergleichbarkeit herzustellen. Evaluiert wird bei den verwendeten Soft-Cores
 die Auswirkung auf die gesamte Ausführungszeit und den \ac{fpga}-Flächenverbrauch.
+
+\section{Verfügbare Soft-Core Prozessoren im Überblick}\label{kap:überblick}
+Soft-Core Prozessoren werden häufig zur Ausführung eingebetteter Anwendungen eingesetzt, da sie wesentliche Vorteile im Hinblick auf Kosteneffizienz und Portabilität für verschiedene Systeme
+beiten. So kann es bei der Auswahl durchaus schwierig sein den optimalen Prozessor auszuwählen. Einen Vergleich bietet die Tablle~\ref{tab:features}, in welcher sämtliche Eigenschaften
+der Prozessoren aufgeführt sind.\\
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|c|c|c|c|}
+  \hline
+  \textbf{Kategorie} & \textbf{MicroBlaze} & \textbf{LEON3}& \textbf{PRHS}& \textbf{lowRISC}\\
+  \hline
+  \textbf{Maximale Frequenz} &250 & 183 & 75 & 185\\
+  \hline
+  \textbf{Pipeline} & 7-Stages & 7-Stages & ? & 5-Stages\\
+  \hline
+  \textbf{Architektur} & Microblaze & Sparc V8  & ARM &  Risc\\
+  \hline
+  \textbf{Sprache} & VHDL & VHDL & VHDL & VHDL\\
+    \hline
+  \textbf{Address/Daten-Bus} & 32-Bit & 32-Bit & 32-Bit & 32-Bit\\
+      \hline
+\end{tabular}
+  \caption{Eingeschaften der Soft-Core Prozessoren ~\cite{comparison}}
+ \label{tab:features}
+  \end{table}
+
+Des Weiteren wurde bei der Konfiguration darauf geachtet, dass alle Systeme folgende Bestandteile besitzen:\\
+\begin{itemize}
+  \item \ac{mmu}
+  \item 4KB Instruktions- und Datencache
+  \item Debug Modul
+  \item Interrupt Controller
+  \item \ac{spi} Flash Interface
+  \item Timer
+  \item \ac{uart}-Interface
+  \item
+\end{itemize}
+
 \section{MicroBlaze basierte Systeme}\label{kap:microblaze}
 Microblaze
 
