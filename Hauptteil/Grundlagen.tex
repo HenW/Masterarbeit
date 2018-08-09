@@ -578,7 +578,7 @@ der Prozessoren aufgeführt sind.\\
   \hline
   \textbf{Sprache} & VHDL & VHDL & VHDL & VHDL\\
     \hline
-  \textbf{Address/Daten-Bus} & 32-Bit & 32-Bit & 32-Bit & 32-Bit\\
+  \textbf{Address/Daten-Bus} & 32-Bit & 32-Bit & 32-Bit & 64-Bit\\
       \hline
 \end{tabular}
   \caption{Eingeschaften der Soft-Core Prozessoren ~\cite{comparison}}
@@ -594,8 +594,9 @@ Des Weiteren wurde bei der Konfiguration darauf geachtet, dass alle Systeme folg
   \item \ac{spi} Flash Interface
   \item Timer
   \item \ac{uart}-Interface
-  \item
 \end{itemize}
+
+Der LEON3 und der MicroBlaze wurden jeweils mit einer \ac{fpu} konfiguriert.
 
 \section{MicroBlaze basierte Systeme}\label{kap:microblaze}
 Microblaze
