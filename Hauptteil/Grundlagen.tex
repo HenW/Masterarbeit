@@ -443,7 +443,10 @@ Die ursprüngliche Version basierte noch auf dem Ada-Code, heutzutage wird die L
  realisiert. Der Benchmark beinhaltet eine Mischung aus Befehlen, welche typischerweise von Compilern erzeugt werden. Insgesamt handelt es sich
  um rund 100 Befehle, die aus einfachen Zuweisungen und Fallunterscheidungen, sowie Schleifen, Sprüngen und Funktionsaufrufen bestehen.
   Diese Dhrystone-Befehle werden durchgängig in Form einer Schleife ausgeführt, wobei die Anzahl der Durchgänge vor der Ausführung vom
-  Nutzer festgelegt werden kann. Im Endeffekt entspricht die Leistung des Prozessors der Anzahl der in einer Sekunde durchgeführten Schleifendurchläufe.~\cite{benchmark}
+  Nutzer festgelegt werden kann. Im Endeffekt entspricht die Leistung des Prozessors der Anzahl der in einer Sekunde durchgeführten Schleifendurchläufe.
+  Das Ergebnis der Benchmark wird als \emph{Dhrystones per Second} angegeben. Um diesen Wert nun in die Einheit \ac{dmips} umzurechnen wird der Faktor 1757 benötigt. Dieser Skalierungsfaktor
+  stammt von einer VAX 11/780, auf welcher die Dhrystone-Benchmark ausgeführt wurde und ein Wert von 1757 erreichte und somit als 1-\ac{mips}-Maschine angesehen wurde. Also ergibt sich der
+  \ac{dmips}-Wert aus der Division des \emph{Dhrystones per Second} und dem Skalierungsfaktor.~\cite{benchmark}
 
   \subsection{Coremark}\label{kap:coremark}
   Der CoreMark® von \ac{eembc} ist ein Benchmark, der die Leistung von \ac{mcu} und \ac{cpu} misst, die in eingebetteten Systemen verwendet werden.
@@ -475,6 +478,60 @@ Die ursprüngliche Version basierte noch auf dem Ada-Code, heutzutage wird die L
 \end{itemize}
 
 
+\subsection{SPEC CPU2017}\label{kap:spec}
+SPEC CPU2017 ist ein Software-Benchmark-Produkt der \ac{spec}, einer Non-Profit-Gruppe, zu der Computerhersteller,
+Systemintegratoren, Universitäten, Forschungsorganisationen, Verlage und Berater aus der ganzen Welt gehören. Es wurde entwickelt
+um Leistungsmessungen bereitzustellen, mit denen rechenintensive Arbeitslasten auf verschiedenen Computersystemen verglichen werden können.\\
+
+Im neuen SPEC CPU 2017 sind vier Suiten enhalten:\\
+\begin{itemize}
+\item SPECspeed 2017 Integer
+\item SPECrate 2017 Integer
+\item SPECspeed 2017 Floating Point
+\item SPECrate 2017 Floating Point
+\end{itemize}
+
+Wie der Name schon andeutet, messen die beiden \emph{Speed}-Varianten die Zeit bei Gleitkomma- und Integer-Berechnungen. Die \emph{Rate}-Messungen hingegen, ermitteln den Durchsatz. Da die vier Suiten
+noch einmal in verschiedenen Tests unterteilt sind, besteht das Paket am Ende aus 43 einzelnen Testmöglichkeiten. Beispiele für Variationen die der Integer-Bereich mitbringt sind: \\
+\begin{itemize}
+\item \ac{gnu}-Compiler
+\item Perl-Interpreter
+\item Video-Kompression
+\item diversie AI-Berechnungen
+\end{itemize}
+
+
+Im Bereich der Gleitkomma-Benchmarks sind Anwedungen zu finden, wie: \\
+\begin{itemize}
+\item 3D-Rendering
+\item Fluid- und Moleküldynamik
+\item optische Tomografie
+\item Ray-Tracing
+\end{itemize}
+Mit dieser großen Anzahl an Benchmarks möchte SPEC einen Test anbieten, der aktuelle, sowie zukünftige \ac{cpu} aussagekräftig und vergleichbar misst.~\cite{spec}
+
+\subsection{Ramspeed}\label{kap:ramspeed}
+RAMspeed ist ein kostenloses Open-Source-Dienstprogramm, welches zu Messung der Cache- und Speicherleistung von Computersystemen genutzt wird. Dabei bietet die Software bis zu 18 verschiedene
+Benchmarks für verschiedene Maschinen wie zum Beispiel \emph{i386} oder \emph{amd64}. Um dabei ein hohes Maß an Portabilität zu bieten, wurde diese Benchmark vollständig in der Programmiersprache
+C geschrieben. Das Softwarepaket besteht aus zwei Hauptkomponenten:~\cite{ramspeed}\\
+\begin{itemize}
+  \item INTmark und FLOATmark: Diese messen die maximal mögliche Leistung des Caches und des Speichers beim Lesen beziehungsweise Schreiben bestimmter Datenblöcke. Dies geschieht in der Größenordnung ab 1 Kb und
+                               verdoppelt sich jeweils in den nachfolgenden Messungen. Um die beste Performance zu erriechen sind alle Datenströme linear. Somit ermöglicht diese Benchmark die
+                               tatsächliche Bandbreite eines Systems zu bestimmen.
+  \item INTmem und FLOATmem: Hierbei handelt es sich um synthetische Simulationen, welche aus vier Untertests bestehen (Kopieren, Skalieren, Addieren, Triade). Diese verschiedenen Tests werden
+                             genutzt um unterschiedliche Aspekte der Speicherleistung zu messen. Diese Benchmarks sind sehr empfindlich gegenüber Speicher-Latenzzeiten jeglicher Art.
+\end{itemize}
+
+Die vier Untertests lassen sich wie folgt näher beschreiben:\\
+\begin{itemize}
+  \item Kopieren: Die einfachste Methode, welche Daten von einem Speicherort zu einem anderen kopiert. (A = B)
+  \item Skalieren: Dieser Test modifiziert die Daten vor dem Schreiben mit einem konstanten Wert. (A = m * B)
+  \item Addieren: Hierbei werden Daten von zwei verschiedenen Speicherorten gelesen, miteinander addiert und letztendlich an einen dritten Speicherort geschrieben. (A = B + C)
+  \item Triade: Bei dieser Operation handelt es sich um eine Zusammenführung der Addition und der Skalierung. Daten werden von einem Speicherort gelesen, skaliert und mit Daten eines zweiten Speicherortes
+                addiert. Dieser Wert wird nun an einen weiteren Speicherort geschrieben. (A = m * B + C)
+\end{itemize}
+
+Die Anzahl von Gigabyte pro Durchlauf wurden in dieser Arbeit auf dem Wert \emph{1} gesetzt.
 
 %
 % \subsection{Device Tree}\label{kap:devicetree}
@@ -596,47 +653,30 @@ Des Weiteren wurde bei der Konfiguration darauf geachtet, dass alle Systeme folg
   \item \ac{uart}-Interface
 \end{itemize}
 
-Der LEON3 und der MicroBlaze wurden jeweils mit einer \ac{fpu} konfiguriert.
+Der LEON3 und der MicroBlaze wurden für die Benchmarks jeweils mit, sowie ohne \ac{fpu} konfiguriert.
 
 \section{MicroBlaze basierte Systeme}\label{kap:microblaze}
 Microblaze
 
 Der MicroBlaze SoftCore von Xilinx ist eine 32-Bit RISC Harvard Architektur mit einem umfangreichen Befehlssatz und ist optimiert für eingebettete Anwendungen.
-Neben dieser Flexibilität besitzt er drei unterschiedliche Voreinstellungen:
-
-\begin{enumerate}
-  \item Microcontroller: Geeignet für Baremetall-Code
+Konfiguriert wurde das System mit folgender Voreinstellung:
         \begin{itemize}
-          \item 32-Bit Prozessorkern (in der Regel ohne \ac{mmu})
           \item Externer Speichercontroller
           \item \ac{spi} Controller
           \item I2C-Controller
           \item \ac{uart}
           \item Interrupt-Controller
           \item  Timer
-        \end{itemize}
-  \item Echtzeitprozessor: Deterministische Echtzeitverarbeitung auf einem \ac{rtos}
-    \begin{itemize}
-      \item Alle Mikrocontroller Blöcke
-      \item Instruktioncache
-      \item \ac{mpu}
-      \item Datencache
-      \item DDR-Controller
-      \end{itemize}
-  \item Anwendungsprozessor: Embedded Linux-fähig
-        \begin{itemize}
-          \item Alle Echtzeit-Prozessor-Blöcke
+          \item Instruktioncache
+          \item \ac{mpu}
+          \item Datencache
+          \item DDR-Controller
           \item 32-Bit-Prozessorkern
           \item \ac{mmu}
           \item Ethernet-Controller
         \end{itemize}
-\end{enumerate}
 
-Ausgehend von diesen Presets lässt sich das Design mit Hilfe von spezifischen Prozessoroptionen anpassen.
- Diese Vielanzahl an Anpassungen sind per Drag \& Drop sehr einfach hinzuzufügen. Dazu zählen unter anderem \ac{uart}-,\ac{pwm}- und \ac{dma}-Bausteine, sowie serielle Schnittstellen.
- Dadurch wird sichergestellt, dass die spezifischen Anforderungen der Anwendung erfüllt werden.
-
-Zusammengefasst besitzt der Microblaze folgende Schlüsselfähigkeiten:
+Durch diese Konfiguration lassen sich folgende Schlüsselfähigkeiten des Systems ableiten:\\
 \begin{itemize}
   \item 32 mal 32-Bit-\emph{General-Purpose}-Register
   \item 32-Bit-Befehlswort mit drei Operanden und zwei Adressierungsmodi
@@ -645,12 +685,80 @@ Zusammengefasst besitzt der Microblaze folgende Schlüsselfähigkeiten:
   \item \ac{axi}4-Interface
   \item Verschiedene Zustandsmodi (Sleep, Hibernate, Suspend Mode/Instrctions)
   \item Unterstützt entweder \ac{plb}- oder \ac{axi}-Schnittstellen
-  \item Big-Endian / Little-endian Unterstützung
+  \item Big-Endian / Little-Endian Unterstützung
   \item Optionale \ac{mmu}, sowie separate, konfigurierbare Daten- und Instruktionscaches
 \end{itemize}
 
+\textbf{Ressourcen-Nutzung}
+Wie in Kapitel~\ref{kap:fpga} beschrieben, bietet der \ac{fpga}-Baustein einen begrenzte Anzahl an Ressourcen.
+Das Diagramm~\ref{fig:ressourcenmb1} zeigt die Anzahl der genutzten \ac{lut}, \ac{lutram} und der \ac{ff} im Verhältnis zu der verfügbaren Gesamtzahl (\emph{blau}). Dabei wird unterschieden,
+ob das System mit (\emph{rot}) oder ohne (\emph{gelb}) \ac{fpu} konfiguriert wurde.\\
 
-\newpage
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{Hauptteil/ressourcenmb1.png}
+\caption{Ressourcen-Nutzung des Microblaze}
+\label{fig:ressourcenmb1}
+\end{figure}
+
+Die selbe Darstellungsweise wurde genutzt um die weiteren, messbaren Parameter grafisch darzustellen.\\
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{Hauptteil/ressourcenmb2.png}
+\caption{Ressourcen-Nutzung des Microblaze}
+\label{fig:ressourcenmb2}
+\end{figure}
+
+\textbf{CoreMark}
+
+Bei der Ausführung der CoreMark-Benchmark wurde ebenfalls unterschieden, ob das System mit einer \ac{fpu} ausgestattet ist oder nicht.
+Um die Darstellung übersichtlicher zu machen sind die Werte der \emph{Total ticks} an der primären Y-Achsen und die Werte der übrigen Balken an der sekundäre Y-Achsen abzulesen.\\
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{Hauptteil/coremarkmb.png}
+\caption{Ergebnis der CoreMark-Benchmark des Microblaze}
+\label{fig:coremarkmb}
+\end{figure}
+
+\textbf{Dhrystone}
+
+Nachdem in Kapitel~\ref{kap:dhrystone} die Funktionsweise der Dhrystone-Benchmark erklärt worden ist, zeigen die Abbildungen~\ref{fig:dhrystonembohnefpu} und~\ref{fig:dhrystonembmitfpu} die Ergebnisse dieser Benchmark.
+Hierbei wurde das Ergebnis direkt in \ac{dmips} angegeben.\\
+Die Abbildung~\ref{fig:dhrystonembohnefpu} zeigt die gemessenen Werte für eine Hardware, welche ohne \ac{fpu} konfiguriert wurde.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{Hauptteil/dhrystonembohnefpu.png}
+\caption{Ergebnis der Dhrystone-Benchmark des Microblaze (ohne \ac{fpu})}
+\label{fig:dhrystonembohnefpu}
+\end{figure}
+
+Die gleiche Messung wurde bei einem System durchgeführt, welches eine \ac{fpu} beinhaltet. Dabei ergaben sich folgende Ergebnisse:\\
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{Hauptteil/dhrystonembmitfpu.png}
+\caption{Ergebnis der Dhrystone-Benchmark des Microblaze (mit \ac{fpu})}
+\label{fig:dhrystonembmitfpu}
+\end{figure}
+
+\textbf{RAMspeed}
+
+Der letzte Benchmark-Test für das Microblaze-System ist der RAMspeed-Test, welcher in Kapitel~\ref{kap:ramspeed} näher beschrieben ist. Diese Grafik zeigt neben der
+erreichten Geschwindigkeit, in \emph{MB/s}, auch eindeutig die Größe des Caches, da die Leistung nach dem 4 Kb Block stark absinkt.\\
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{Hauptteil/ramspeedmb.png}
+\caption{Ergebnis der RAMspeed-Benchmark des Microblaze}
+\label{fig:ramspeedmb}
+\end{figure}
+
+
+
 \section{lowRISC basierte Systeme}\label{kap:lowrisc}
 
 
@@ -680,3 +788,72 @@ Der LEON3-Prozessor verfügt über folgende Eigenschaften:\cite{leon}\\
 \item Große Auswahl an Software-Tools: Compiler, Kernel, Simulatoren und Debug-Monitore
 \item Hohe Leistung: 1,4 DMIPS / MHz, 1,8 CoreMark / MHz (gcc -4.1.2)
 \end{itemize}
+
+
+\textbf{Ressourcen-Nutzung}
+Wie in Kapitel~\ref{kap:fpga} beschrieben, bietet der \ac{fpga}-Baustein einen begrenzte Anzahl an Ressourcen.
+Das Diagramm~\ref{fig:ressourcenmb1} zeigt die Anzahl der genutzten \ac{lut}, \ac{lutram} und der \ac{ff} im Verhältnis zu der verfügbaren Gesamtzahl (\emph{blau}). Dabei wird unterschieden,
+ob das System mit (\emph{rot}) oder ohne (\emph{gelb}) \ac{fpu} konfiguriert wurde.\\
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{Hauptteil/ressourcenmb1.png}
+\caption{Ressourcen-Nutzung des Microblaze}
+\label{fig:ressourcenmb1}
+\end{figure}
+
+Die selbe Darstellungsweise wurde genutzt um die weiteren, messbaren Parameter grafisch darzustellen.\\
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{Hauptteil/ressourcenmb2.png}
+\caption{Ressourcen-Nutzung des Microblaze}
+\label{fig:ressourcenmb2}
+\end{figure}
+
+\textbf{CoreMark}
+
+Bei der Ausführung der CoreMark-Benchmark wurde ebenfalls unterschieden, ob das System mit einer \ac{fpu} ausgestattet ist oder nicht.
+Um die Darstellung übersichtlicher zu machen sind die Werte der \emph{Total ticks} an der primären Y-Achsen und die Werte der übrigen Balken an der sekundäre Y-Achsen abzulesen.\\
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{Hauptteil/coremarkmb.png}
+\caption{Ergebnis der CoreMark-Benchmark des Microblaze}
+\label{fig:coremarkmb}
+\end{figure}
+
+\textbf{Dhrystone}
+
+Nachdem in Kapitel~\ref{kap:dhrystone} die Funktionsweise der Dhrystone-Benchmark erklärt worden ist, zeigen die Abbildungen~\ref{fig:dhrystonembohnefpu} und~\ref{fig:dhrystonembmitfpu} die Ergebnisse dieser Benchmark.
+Hierbei wurde das Ergebnis direkt in \ac{dmips} angegeben.\\
+Die Abbildung~\ref{fig:dhrystonembohnefpu} zeigt die gemessenen Werte für eine Hardware, welche ohne \ac{fpu} konfiguriert wurde.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{Hauptteil/dhrystonembohnefpu.png}
+\caption{Ergebnis der Dhrystone-Benchmark des Microblaze (ohne \ac{fpu})}
+\label{fig:dhrystonembohnefpu}
+\end{figure}
+
+Die gleiche Messung wurde bei einem System durchgeführt, welches eine \ac{fpu} beinhaltet. Dabei ergaben sich folgende Ergebnisse:\\
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{Hauptteil/dhrystonembmitfpu.png}
+\caption{Ergebnis der Dhrystone-Benchmark des Microblaze (mit \ac{fpu})}
+\label{fig:dhrystonembmitfpu}
+\end{figure}
+
+\textbf{RAMspeed}
+
+Der letzte Benchmark-Test für das Microblaze-System ist der RAMspeed-Test, welcher in Kapitel~\ref{kap:ramspeed} näher beschrieben ist. Diese Grafik zeigt neben der
+erreichten Geschwindigkeit, in \emph{MB/s}, auch eindeutig die Größe des Caches, da die Leistung nach dem 4 Kb Block stark absinkt.\\
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{Hauptteil/ramspeedmb.png}
+\caption{Ergebnis der RAMspeed-Benchmark des Microblaze}
+\label{fig:ramspeedmb}
+\end{figure}

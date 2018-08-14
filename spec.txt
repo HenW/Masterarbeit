@@ -1,10 +1,36 @@
-SPEC CPU2000 ist ein Software-Benchmark-Produkt der \ac{spec}, einer Non-Profit-Gruppe, zu der Computerhersteller,
-Systemintegratoren, Universitäten, Forschungsorganisationen, Verlage und Berater aus der ganzen Welt gehören. Es wurde entwickelt,
-um Leistungsmessungen bereitzustellen, mit denen rechenintensive Arbeitslasten auf verschiedenen Computersystemen verglichen werden können.
 
-Die SPEC CPU2000 enthält zwei Benchmarks:
-- CINT2000 zum Messen und Vergleichen der rechenintensiven Integer-Performance
-- CFP2000 zum Messen und Vergleichen der rechenintensiven Gleitkomma-Performance.
+
+
+
+
+
+SPEC CPU2017 ist ein Software-Benchmark-Produkt der \ac{spec}, einer Non-Profit-Gruppe, zu der Computerhersteller,
+Systemintegratoren, Universitäten, Forschungsorganisationen, Verlage und Berater aus der ganzen Welt gehören. Es wurde entwickelt
+um Leistungsmessungen bereitzustellen, mit denen rechenintensive Arbeitslasten auf verschiedenen Computersystemen verglichen werden können.\\
+
+Im neuen SPEC CPU 2017 sind vier Suiten enhalten:\\
+\itemize
+\item SPECspeed 2017 Integer
+\item SPECrate 2017 Integer
+\item SPECspeed 2017 Floating Point
+\item SPECrate 2017 Floating Point
+
+Wie der Name schon andeutet, messen die beiden \emph{Speed}-Varianten die Zeit bei Gleitkomma- und Integer-Berechnungen. Die \emph{Rate}-Messungen hingegen, ermitteln den Durchsatz. Da die vier Suiten
+noch einmal in verschiedenen Tests unterteilt sind, besteht das Paket am Ende aus 43 einzelnen Testmöglichkeiten. Beispiele für Variationen die der Integer-Bereich mitbringt sind: \\
+\itemize
+\item \ac{gnu}-Compiler
+\item Perl-Interpreter
+\item Video-Kompression
+\item diversie AI-Berechnungen
+
+Im Bereich der Gleitkomma-Benchmarks sind Anwedungen zu finden, wie: \\
+\itemize
+\item 3D-Rendering
+\item Fluid- und Moleküldynamik
+\item optische Tomografie
+\item Ray-Tracing
+
+Mit dieser großen Anzahl an Benchmarks möchte SPEC einen Test anbieten, der aktuelle, sowie zukünftige \ac{cpu} aussagekräftig und vergleichbar misst.
 
 
 spec= Standard Performance Evaluation Corp. (SPEC)
