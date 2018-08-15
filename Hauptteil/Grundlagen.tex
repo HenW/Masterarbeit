@@ -614,12 +614,123 @@ für eine bestimmte Anwendung auszuwählen. Im Kapitel~\ref{kap:grundlagen} wurd
 soll nun ein Überblick über Soft-Core-Prozessoren gegeben werden, welche in eingebetteten System verwendet werden. \\
 In dieser Arbeit wurden verschiedene Open-Source-, kommerzielle, sowie das unveröffentlichte System der Professur für Technische Informatik an der Helmut-Schmidt-Universität verglichen.
 Dabei werden die verschiedenen Soft-Cores vorher nahezu identischen konfiguriert, um eine bessere Vergleichbarkeit herzustellen. Evaluiert wird bei den verwendeten Soft-Cores
-die Auswirkung auf die gesamte Ausführungszeit und den \ac{fpga}-Flächenverbrauch.
+die Auswirkung auf die gesamte Ausführungszeit und den \ac{fpga}-Flächenverbrauch. Um einen möglich aussagekräftigen Vergleich zu erzielen, ist es nötig die System nahezu identisch zu
+konfigurieren. Dazu zählt vor allem die Entscheidung, alle Prozessoren als Single-Core zu konfigurieren, da das erstellen der Multi-Core-Prozessoren nicht bei allen Systemen ohne Weiteres
+realisierbar war. Die übrigen Anforderungen an die Systeme sind in einem der nachfolgenden Kapitel angegeben.\\
 
 \section{Verfügbare Soft-Core Prozessoren im Überblick}\label{kap:überblick}
 Soft-Core Prozessoren werden häufig zur Ausführung eingebetteter Anwendungen eingesetzt, da sie wesentliche Vorteile im Hinblick auf Kosteneffizienz und Portabilität für verschiedene Systeme
 beiten. So kann es bei der Auswahl durchaus schwierig sein den optimalen Prozessor auszuwählen. Einen Vergleich bietet die Tablle~\ref{tab:features}, in welcher sämtliche Eigenschaften
 der Prozessoren aufgeführt sind.\\
+
+\subsection{Microblaze}\label{kap:microblaze}
+
+
+Der MicroBlaze SoftCore von Xilinx ist eine 32-Bit RISC Harvard Architektur mit einem umfangreichen Befehlssatz. Aufgrund dieser RISC-Architektur
+ wurde der Microblaze vor allem für einfache und zuverlässige eingebettete Systeme entwickelt und in diesen als zentraler Knoten beziehungsweise Hauptsteuereinheit
+genutzt, da er über eine hohe Leistungsfähigkeit verfügt.
+
+Konfiguriert wurde das System mit folgender Voreinstellung:~\cite{microblaze}\\
+        \begin{itemize}
+          \item Externer Speichercontroller
+          \item \ac{spi} Controller
+          \item I2C-Controller
+          \item \ac{uart}
+          \item Interrupt-Controller
+          \item  Timer
+          \item Instruktioncache
+          \item \ac{mpu}
+          \item Datencache
+          \item DDR-Controller
+          \item 32-Bit-Prozessorkern
+          \item \ac{mmu}
+          \item Ethernet-Controller
+        \end{itemize}
+
+Durch diese Konfiguration lassen sich folgende Schlüsselfähigkeiten des Systems ableiten:\\
+\begin{itemize}
+  \item 32 mal 32-Bit-\emph{General-Purpose}-Register
+  \item 32-Bit-Befehlswort mit drei Operanden und zwei Adressierungsmodi
+  \item 32-Bit-Adressbus, erweiterbar auf 64-Bit
+  \item Optionale \ac{fpu}
+  \item \ac{axi}4-Interface
+  \item Verschiedene Zustandsmodi (Sleep, Hibernate, Suspend Mode/Instrctions)
+  \item Unterstützt entweder \ac{plb}- oder \ac{axi}-Schnittstellen
+  \item Big-Endian / Little-Endian Unterstützung
+  \item Optionale \ac{mmu}, sowie separate, konfigurierbare Daten- und Instruktionscaches
+\end{itemize}
+
+Die Abbildung~\ref{fig:microblaze} zeigt eine Single-Core Microblaze-Architektur.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{Hauptteil/microblaze.eps}
+\caption{\ac{soc}-Design des Microblaze nach~\cite{comparison}}
+\label{fig:microblaze}
+\end{figure}
+
+Hierbei lässt sich erkennen, dass der Prozessor über den \ac{lmb} auf den On-Chip-Speicher zugreifen kann. Ist ein Zugriff auf externen Speicher erforderlich,
+geschieht das über den \ac{plb}, an welchen weitere Peripheriegeräte angebunden sind. An diesen \ac{plb} ist ebenfalls der Timer angeschlossen, welcher das System mit einem Takt von
+100 MHz taktet. Die Leistung des Microblaze kann gesteigert werden, indem das System um weitere Komponenten wie zum Beispiel \ac{fpu} oder \ac{bs} ergänzt wird.\\
+Die Leistung des Microblaze, basierend auf der Vivado-Version 2017.4, ist wie folgt angegeben:~\cite{microblaze}\\
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{Hauptteil/microblazeleistung.png}
+\caption{MicroBlaze Performance Metrics: Basierend auf Vivado 2017.4 nach~\cite{microblaze}}
+\label{fig:microblazeleistung}
+\end{figure}
+
+In der Abbildung~\ref{fig:microblazeleistung} sind die, für diese Arbeit, relevanten Werte rot markiert.\\
+
+\subsection{LEON3}\label{kap:leon3}
+
+
+Der LEON3 ist das \ac{vhdl}-Modell eines 32-Bit-Prozessors, welcher auf der SPARC V8-Architektur basiert. Das Modell ist in großem Umfang konfigurierbar und besonders für \ac{soc}-Designs geeignet.
+Ursprünglich wurde dieses System von der \ac{esa} entworfen, wird heutzutage jedoch von \emph{Aeroflex Gaisler} weiterentwickelt und vertrieben.\\
+Der LEON3-Prozessor verfügt über folgende Eigenschaften:\cite{leon}\\
+
+\begin{itemize}
+  \item SPARC V8 Befehlssatz mit V8e Erweiterungen
+\item Fortgeschrittene 7-stufige Pipeline
+\item Hardware multiplizieren, teilen und \ac{mac}-Einheiten
+\item Hochperformante IEEE-754-\ac{fpu} mit vollem Pipelinespektrum
+\item Getrennter Befehls- und Datencache (Harvard-Architektur) mit Snooping
+\item Konfigurierbare Caches: 1 - 4 Wege, 1 - 256 kbytes / Weg. Random,LRR oder \ac{lru} Ersatz
+\item Lokaler Befehls- und Daten-Scratchpad-RAM, 1 - 512 KByte
+\item \ac{srmmu} mit konfigurierbarem \ac{tlb}
+\item \ac{amba}-2.0 \ac{ahb}-Busschnittstelle
+\item Erweiterte On-Chip-Debug-Unterstützung mit Befehls- und Daten-Trace-Puffer
+\item Symmetrische Multiprozessorunterstützung (\ac{smp})
+\item Power-Down-Modus und Clock-Gating
+\item Robustes und vollsynchrones Single-Edge-Clock-Design
+\item Bis zu 125 MHz in FPGA und 400 MHz in 0,13 um \ac{asic}-Technologien
+\item Fehlertolerante und SEU-geschützte Version für Raumfahrtanwendungen
+\item umfangreich konfigurierbar
+\item Große Auswahl an Software-Tools: Compiler, Kernel, Simulatoren und Debug-Monitore
+\item Hohe Leistung: 1,4 DMIPS / MHz, 1,8 CoreMark / MHz (gcc -4.1.2)
+\end{itemize}
+
+Das Hauptziel dieser Architektur ist es, ein Design zur Verfügung zu stellen, welches offen und herstellerunabhängig ist und gleichzeitig die Anforderungen an Leistung, Softwarekompatibilität,
+in Verbindungen mit niedrigen Systemkosten erfüllen kann. Wie auch schon der Microblaze, bietet der LEON3 eine hohe Anpassungsmöglichkeit und lässt sich um weitere, optionale Funktionen erweitern,
+Hierzu zählen exemplarisch die \ac{dsu},die  \ac{fpu} und der Interrupt-Controller.\\
+Die Abbildung~\ref{fig:leon} zeigt das \ac{soc}-Design des LEON3, welches in dieser Arbeit verwendet wurde. Es handelt sich um einen LEON3-Single-Core-Prozessor mit einer Frequenz von
+70 MHz. Der LEON3 kann einfach über grafische Schnittstellen(\emph{xconfig}) konfiguriert werden. Als On-Chip-Bus wird in diesem System der \ac{amba}-Bus verwendet.
+Für die schnelle Kommunikation in diesem System wurde als \emph{Haupt-Bus} der \ac{ahb}-Bus genutzt, wohingegen die Kommunikation mit den Peripheriegeräten über den \ac{apb}-Bus realisiert wurde.\\
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{Hauptteil/leon3.eps}
+\caption{\ac{soc}-Design des LEON3 nach~\cite{comparison}}
+\label{fig:leon}
+\end{figure}
+
+\subsection{\ac{prhs}}\label{kap:prhs}
+
+
+
+
 
 \begin{table}[H]
 \centering
@@ -653,41 +764,12 @@ Des Weiteren wurde bei der Konfiguration darauf geachtet, dass alle Systeme folg
   \item \ac{uart}-Interface
 \end{itemize}
 
+
 Der LEON3 und der MicroBlaze wurden für die Benchmarks jeweils mit, sowie ohne \ac{fpu} konfiguriert.
 
 \section{MicroBlaze basierte Systeme}\label{kap:microblaze}
-Microblaze
 
-Der MicroBlaze SoftCore von Xilinx ist eine 32-Bit RISC Harvard Architektur mit einem umfangreichen Befehlssatz und ist optimiert für eingebettete Anwendungen.
-Konfiguriert wurde das System mit folgender Voreinstellung:
-        \begin{itemize}
-          \item Externer Speichercontroller
-          \item \ac{spi} Controller
-          \item I2C-Controller
-          \item \ac{uart}
-          \item Interrupt-Controller
-          \item  Timer
-          \item Instruktioncache
-          \item \ac{mpu}
-          \item Datencache
-          \item DDR-Controller
-          \item 32-Bit-Prozessorkern
-          \item \ac{mmu}
-          \item Ethernet-Controller
-        \end{itemize}
 
-Durch diese Konfiguration lassen sich folgende Schlüsselfähigkeiten des Systems ableiten:\\
-\begin{itemize}
-  \item 32 mal 32-Bit-\emph{General-Purpose}-Register
-  \item 32-Bit-Befehlswort mit drei Operanden und zwei Adressierungsmodi
-  \item 32-Bit-Adressbus, erweiterbar auf 64-Bit
-  \item Optionale \ac{fpu}
-  \item \ac{axi}4-Interface
-  \item Verschiedene Zustandsmodi (Sleep, Hibernate, Suspend Mode/Instrctions)
-  \item Unterstützt entweder \ac{plb}- oder \ac{axi}-Schnittstellen
-  \item Big-Endian / Little-Endian Unterstützung
-  \item Optionale \ac{mmu}, sowie separate, konfigurierbare Daten- und Instruktionscaches
-\end{itemize}
 
 \textbf{Ressourcen-Nutzung}
 Wie in Kapitel~\ref{kap:fpga} beschrieben, bietet der \ac{fpga}-Baustein einen begrenzte Anzahl an Ressourcen.
