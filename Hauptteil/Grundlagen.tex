@@ -440,7 +440,7 @@ So wurde festgelegt, dass die Leistung unter Ausführung fest definierter, als B
 Der Dhrystone-Benchmark wurde 1984 von Reinhold P. Weicker entwickelt. Die Besonderheit dieses Benchmark ist, dass sie vollständig
 ohne Gleitkommaoperationen auskommt, was im Fall dieser Arbeit enorm wichtig war, weil nicht bei allen Systemen eine \ac{fpu} vorhanden ist.
 Die ursprüngliche Version basierte noch auf dem Ada-Code, heutzutage wird die Leistungsmessung fast ausschließlich durch C-Implementierungen
- realisiert. Der Benchmark beinhaltet eine Mischung aus Befehlen, welche typischerweise von Compilern erzeugt werden. Insgesamt handelt es sich
+ realisiert. Die Benchmark beinhaltet eine Mischung aus Befehlen, welche typischerweise von Compilern erzeugt werden. Insgesamt handelt es sich
  um rund 100 Befehle, die aus einfachen Zuweisungen und Fallunterscheidungen, sowie Schleifen, Sprüngen und Funktionsaufrufen bestehen.
   Diese Dhrystone-Befehle werden durchgängig in Form einer Schleife ausgeführt, wobei die Anzahl der Durchgänge vor der Ausführung vom
   Nutzer festgelegt werden kann. Im Endeffekt entspricht die Leistung des Prozessors der Anzahl der in einer Sekunde durchgeführten Schleifendurchläufe.
@@ -632,13 +632,12 @@ genutzt, da er über eine hohe Leistungsfähigkeit verfügt.
 
 Konfiguriert wurde das System mit folgender Voreinstellung:~\cite{microblaze}\\
         \begin{itemize}
-          \item Externer Speichercontroller
           \item \ac{spi} Controller
           \item I2C-Controller
           \item \ac{uart}
           \item Interrupt-Controller
           \item  Timer
-          \item Instruktioncache
+          \item Instruktionscache
           \item \ac{mpu}
           \item Datencache
           \item DDR-Controller
@@ -728,6 +727,32 @@ Für die schnelle Kommunikation in diesem System wurde als \emph{Haupt-Bus} der 
 
 \subsection{\ac{prhs}}\label{kap:prhs}
 
+Das System der Helmut-Schmidt-Universität, Universität der Bundeswehr Hamburg, ist Befehlssatzkompatibel zu einer \ac{arm}-Architektur. Es bietet die nahezu identischen Bestandteile, wie die
+anderen Systeme:\\
+\begin{itemize}
+  \item \ac{spi} Controller
+  \item \ac{uart}
+  \item Interrupt-Controller
+  \item Instruktionscache
+  \item  Timer
+  \item Datencache
+  \item DDR-Controller
+  \item 32-Bit-Prozessorkern
+  \item \ac{mmu}
+  \item I2C-Controller
+  \item Ethernet-Controller
+\end{itemize}
+
+Der Prozessor lässt sich durch folgende Eigenschaften näher erläutern:\\
+\begin{itemize}
+\item \ac{arm}-Architektur typische 16 mal 32-Bit-\emph{General-Purpose}-Register
+\item 32-Bit-Befehlswort mit drei Operanden und verschiedenen \ac{arm}-Adressierungsmodi
+\item 32-Bit-Adressbus
+\item \ac{fpu} in der Entwicklung
+\item ein eigenes \ac{prhs}-Bus-System
+\item Little-Endian Unterstützung
+\item Optionale \ac{mmu}, sowie separate, konfigurierbare Daten- und Instruktionscaches
+\end{itemize}
 
 
 
@@ -740,7 +765,7 @@ Für die schnelle Kommunikation in diesem System wurde als \emph{Haupt-Bus} der 
   \hline
   \textbf{Maximale Frequenz} &250 & 183 & 75 & 185\\
   \hline
-  \textbf{Pipeline} & 7-Stages & 7-Stages & ? & 5-Stages\\
+  \textbf{Pipeline} & 7-Stages & 7-Stages & 5-Stages & 5-Stages\\
   \hline
   \textbf{Architektur} & Microblaze & Sparc V8  & ARM &  Risc\\
   \hline
