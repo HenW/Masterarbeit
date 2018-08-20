@@ -608,7 +608,7 @@ Die Anzahl von Gigabyte pro Durchlauf wurden in dieser Arbeit auf dem Wert \emph
 % Dies erleichtert die schnelle Anpassung der eingebetteten Systeme.\cite{busybox}\\
 %
 
-\chapter{Praktische Implementierung}\label{kap:implementierung}
+\chapter{Experimentelle Ergebnisse}\label{kap:ergebnisse}
 Die Bewertung der Leistungsfähigkeit bestehender Soft-Cores stellt eine große Herausforderung für den Entwicklar dar, um den effizientesten und geeignetsten Soft-Core
 für eine bestimmte Anwendung auszuwählen. Im Kapitel~\ref{kap:grundlagen} wurden bereits Soft-Cores, das Board, sowie die einzelnen Benchmarks näher erkläutert. Im folgenden Kapitel
 soll nun ein Überblick über Soft-Core-Prozessoren gegeben werden, welche in eingebetteten System verwendet werden. \\
@@ -789,17 +789,27 @@ Des Weiteren wurde bei der Konfiguration darauf geachtet, dass alle Systeme folg
   \item \ac{uart}-Interface
 \end{itemize}
 
+Eine komplett identische Konfiguration aller Systeme war nicht in allen Beobachtungspunkte möglich. So konnte der LEON3 nicht ohne \ac{fpu} konfiguriert werden, da die Benchmarks ohne diese
+keine Ergebnisse errechnen konnten. Zum besseren Vergleich wurde dieses System sowohl als Single-, als auch als Dual-Core synthetisiert und getestet. Ein Quad-Core-System war nicht möglich,
+da dass Design mehr Ressourcen benötigt, als der \ac{fpga} zur Verfügung stellt. Ebenfalls stellt die Konfiguration
+des Caches ein Problem dar, da ein 4 KB-Direct-Mapped-Cache nicht realisierbar ist. Das Konfigurationstool lässt lediglich einen 2-Wege-Assoziativ-Cache zu, welcher die Größe von jeweils 4 KB
+zur Verfügung stellt.\\
+Das \ac{prhs}-System bietet zum jetztigen Zeitpunkt keine \ac{fpu} an, ist jedoch im Vergleich zu den anderen Systemen in der Lage, ein Single-, Dual- und Quad-Core-System zu realisieren,
+ welcher erfolgreich geprüft werden konnte.\\
+ Der Microblaze ist nicht ohne Weiteres als Multi-Core-System zu konfigurieren, sodass sich alle Benchmarks auf ein Single-Core-System beziehen. Bei diesem System war es jedoch möglich,
+ die Tests mit, sowie ohne \ac{fpu} durchzuführen.\\
 
-Der LEON3 und der MicroBlaze wurden für die Benchmarks jeweils mit, sowie ohne \ac{fpu} konfiguriert.
-
-\section{MicroBlaze basierte Systeme}\label{kap:microblaze}
 
 
+\section{Synthese-Ergebnisse}\label{kap:synthese}
+Wie in Kapitel~\ref{kap:fpga} beschrieben, bietet der \ac{fpga}-Baustein einen begrenzte Anzahl an Ressourcen. So stellt der Flächenverbrauch eine der wichtigen Messgrößen zur Auswahl des
+optimalen Systems dar. In diesem Kapitel wird der Flächenverbrauch der verschiedenen Konfigurationen gemessen und dargestellt. Hierbei gibt es je nach System verschiedene Ergebnisse, je nachdem
+ob eine \ac{fpu} konfiguriert wurde oder nicht.\\
 
-\textbf{Ressourcen-Nutzung}
-Wie in Kapitel~\ref{kap:fpga} beschrieben, bietet der \ac{fpga}-Baustein einen begrenzte Anzahl an Ressourcen.
-Das Diagramm~\ref{fig:ressourcenmb1} zeigt die Anzahl der genutzten \ac{lut}, \ac{lutram} und der \ac{ff} im Verhältnis zu der verfügbaren Gesamtzahl (\emph{blau}). Dabei wird unterschieden,
-ob das System mit (\emph{rot}) oder ohne (\emph{gelb}) \ac{fpu} konfiguriert wurde.\\
+\textbf{Microblaze}\\
+
+In diesem Abschnitt wird der Ressourcen-Vebrauch des Microblaze-Systems gemessen. Das System wurde, wie bereits beschrieben sowohl mit, als auch ohne \ac{fpu} konfiguriert.
+Die Abbildung~\ref{fig:ressourcenmb1} zeigt die Hauptkriterien der Bereichsnutzung. Dabei wurden die \ac{lut}, \ac{lutram} und \ac{ff} des \ac{fpga} betrachet.\\
 
 \begin{figure}[H]
 \centering
@@ -808,7 +818,13 @@ ob das System mit (\emph{rot}) oder ohne (\emph{gelb}) \ac{fpu} konfiguriert wur
 \label{fig:ressourcenmb1}
 \end{figure}
 
-Die selbe Darstellungsweise wurde genutzt um die weiteren, messbaren Parameter grafisch darzustellen.\\
+Wie in~\ref{fig:ressourcenmb1} dargestellt verbrauchen die Konfigurationen 23\%/22\% der \ac{lut}, jeweils 8,6\% der verfügbaren \ac{lutram} und 11,5\%, beziehungsweise 11,2\% der \ac{ff}
+innerhalb des \ac{fpga}.\\
+Bei diesen Ergebnissen zeigt sich meiner Meinung nach eindeutig, dass es sich um ein kommerzielles System handelt, da der Ressourcen-Verbrauch des Systems mit konfigurierter \ac{fpu}
+marginal größer ist. Der Unterschied liegt, bei den Hauptkritieren, bei maximal 1\%(\ac{lut}) erhöhtem Verbrauch an Ressourcen, was darauf schließen lässt, das die \ac{fpu} optimal auf das System
+abgestimmt ist.\\
+
+Weitere Ergebnisse sind in~\ref{fig:ressourcenmb2} dargestellt.\\
 
 \begin{figure}[H]
 \centering
@@ -816,6 +832,121 @@ Die selbe Darstellungsweise wurde genutzt um die weiteren, messbaren Parameter g
 \caption{Ressourcen-Nutzung des Microblaze}
 \label{fig:ressourcenmb2}
 \end{figure}
+
+Daraus resultiert folgende prozentuale Nutzung:\\
+\begin{itemize}
+  \item \ac{bram}: Jeweils 9,6\%
+  \item \ac{dsp}: 2,5\%/1,6\%
+  \item \ac{io}-Blöcke: Jeweils 23,8\%
+  \item \ac{bufg}: Jeweils 15,6\%
+  \item \ac{mmcm} Jeweils 33,3\%
+  \item \ac{pll} Jeweils 16,7\%
+\end{itemize}
+
+\textbf{LEON3}\\
+
+Auch der Ressourcen-Verbrauch des LEON3 wurde nach der Synthese aufgenommen und in Abbildung~\ref{fig:ressourcenleon31} und~\ref{fig:ressourcenleon32} dargestellt.\\
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{Hauptteil/ressourcennutzungleon31.png}
+\caption{Ressourcen-Nutzung des LEON3}
+\label{fig:ressourcenleon31}
+\end{figure}
+
+Danach ergibt sich eine Nutzung von 40\%/18,7\% der \ac{lut}, 1,1\%/0,6\% der \ac{lutram} und 8,2\% beziehungsweise 5,4\% der \ac{ff}.
+Speziell im Bereich der \ac{lut} und der \ac{ff} ist ein deutlicher Anstieg des Vebrauchs zu beobachten, in dem sich die Zahl der Verbrauchten Ressourcen mehr als verdoppeln(\ac{lut}).
+Dieser Unterschied ist dadurch zu erklären, dass es sich um eine IEEE-754-konforme \ac{fpu} handelt, welche die Operanden mmit einfacher und doppelter Genauigkeit unterstüzt. Die Entwickler
+beschrieben die \ac{fpu} als ein fortschrittliches Design mit hohem Durchsatz und geringer Latenz und bietet ein umfangreiches Paket an Operationen. Diese Leistungsfähigkeit und der Umfang
+führen zu dem starken Unterschied in der Ressourcen-Nutzung.\\
+
+Die weiteren Parameter, welche in Abbilduung~\ref{fig:ressourcenleon32} dargestellt sind, unterscheiden sich hingegen nicht voneinander.\\
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{Hauptteil/ressourcenleon32.png}
+\caption{Ressourcen-Nutzung des LEON3}
+\label{fig:ressourcenleon32}
+\end{figure}
+
+Diese ergeben eine prozentuale Nutzung von:\\
+\begin{itemize}
+  \item \ac{bram}: Jeweils 12,6\%
+  \item \ac{dsp}: Jeweils 0,4\%
+  \item \ac{io}-Blöcke: Jeweils 38,6\%
+  \item \ac{bufg}: Jeweils 34,4\%
+  \item \ac{pll} Jeweils 83,3\%
+\end{itemize}
+
+
+\textbf{\acl{prhs}}\\
+
+Da für das \ac{prhs}-System noch keine \ac{fpu} zur Verfügung steht, wurde es ausschließlich ohne \ac{fpu} konfiguriert und getestet.
+Um dennoch einen Vergleich zu ermöglichen, wurde das System neben dem Single-Core auch als Dual-Core konfiguriert und getestet.
+Die Ergebnisse der Hauptkriterien sind in Abbildung~\ref{fig:ressourcenprhs1} dargestellt.\\
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{Hauptteil/ressourcenprhs1.png}
+\caption{Ressourcen-Nutzung des \ac{prhs}}
+\label{fig:ressourcenprhs1}
+\end{figure}
+
+Demnach werden rund 48,4\% der verfügbaren \ac{lut} genutzt. Weiterhin werden 10,3\% des \ac{lutram}, sowie 12,8\% der \ac{ff} für die Konfiguration benötigt. Das Dual-Core-System benötigt
+dementsprechend mehr \ac{lut} (52,9\%) und \ac{ff} (13,1\%). Auf die in Abbildung~\ref{fig:ressourcenprhs2} dargestellten Parameter hat diese Variation, wie erwartet, keinerlei Einfluss.\\
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{Hauptteil/ressourcenprhs2.png}
+\caption{Ressourcen-Nutzung des \ac{prhs}}
+\label{fig:ressourcenprhs2}
+\end{figure}
+
+Diese ergeben eine prozentuale Nutzung von:\\
+\begin{itemize}
+  \item \ac{bram}: 32,6\%
+  \item \ac{dsp}:  0,3\%
+  \item \ac{io}-Blöcke: 43,8\%
+  \item \ac{bufg}: 15,6\%
+  \item \ac{mmcm} 33,3\%
+  \item \ac{pll} 16,7\%
+\end{itemize}
+
+
+\textbf{Vergleich}
+
+Die Abbildung~\ref{fig:ressourcenresult} stellt den direkten Vergleich der Hauptkritieren grafisch dar.\\
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{Hauptteil/ressourcenresult.png}
+\caption{Ressourcen-Nutzung der drei Systeme im direkten Vergleich}
+\label{fig:ressourcenresult}
+\end{figure}
+
+Es ist zu sehen, dass das die kommerziellen Systeme in allen getesteten Bereichen zum Teil deutlich weniger Ressourcen benötigen.
+Dies ist damit zu erklären, dass hinter diesen Systemen deutlich mehr finanzielle Unterstützung herrscht und dadurch auch mehrere
+erfahrene Mitarbeiter an diesen Projekten beschäftigt sind.\\
+Dabei fällt besonders der LEON3 auf, der, zumindest in den Hauptkriterien gegenüber der Konkurrenz, deutlich weniger Ressourcen
+benötigt, um die Konfiguration, welche für diesen Vergleich vorgegeben war, zu erfüllen. Der Microblaze kommt dem LEON3, bis auf
+die Anzahl des benötigten \ac{lutram}, sehr nahe und bietet genug Reserven, um das System zu erweitern.\\
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{Hauptteil/ressourcenresult1.png}
+\caption{Ressourcen-Nutzung der drei Systeme im direkten Vergleich}
+\label{fig:ressourcenresult1}
+\end{figure}
+
+Betrachtet man nun in Abbildung~\ref{fig:ressourcenresult1} die restlichen Parameter, bestätigt sich der Eindruck aus der Abbildung
+\ref{fig:ressourcenresult}. Auch hier benötigt das universitätsinterne System mehr Ressourcen als der Microblaze und der LEON3.
+Da der LEON3 lediglich mit einem 2-Wege-Assoziativ-Cache konfiguriert werden konnte, erklärt die größere Anzahl an
+benötigten \ac{bram}, da in diesem Bereich der Cache realisiert wird.\\
+Aufällig ist weiterhin der enorme Verbrauch von \ac{pll}, welcher nach Herstellerangaben zur Generierung der \emph{Main Clock}
+benötigt wird.\\
+
+\section{CoreMark}\label{kap:coremark}
+
 
 \textbf{CoreMark}
 
@@ -859,9 +990,9 @@ erreichten Geschwindigkeit, in \emph{MB/s}, auch eindeutig die Größe des Cache
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.7\textwidth]{Hauptteil/ramspeedmb.png}
+\includegraphics[width=0.7\textwidth]{Hauptteil/ramspeedmicroblaze.png}
 \caption{Ergebnis der RAMspeed-Benchmark des Microblaze}
-\label{fig:ramspeedmb}
+\label{fig:ramspeedmicroblaze}
 \end{figure}
 
 
@@ -895,72 +1026,3 @@ Der LEON3-Prozessor verfügt über folgende Eigenschaften:\cite{leon}\\
 \item Große Auswahl an Software-Tools: Compiler, Kernel, Simulatoren und Debug-Monitore
 \item Hohe Leistung: 1,4 DMIPS / MHz, 1,8 CoreMark / MHz (gcc -4.1.2)
 \end{itemize}
-
-
-\textbf{Ressourcen-Nutzung}
-Wie in Kapitel~\ref{kap:fpga} beschrieben, bietet der \ac{fpga}-Baustein einen begrenzte Anzahl an Ressourcen.
-Das Diagramm~\ref{fig:ressourcenmb1} zeigt die Anzahl der genutzten \ac{lut}, \ac{lutram} und der \ac{ff} im Verhältnis zu der verfügbaren Gesamtzahl (\emph{blau}). Dabei wird unterschieden,
-ob das System mit (\emph{rot}) oder ohne (\emph{gelb}) \ac{fpu} konfiguriert wurde.\\
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.7\textwidth]{Hauptteil/ressourcenmb1.png}
-\caption{Ressourcen-Nutzung des Microblaze}
-\label{fig:ressourcenmb1}
-\end{figure}
-
-Die selbe Darstellungsweise wurde genutzt um die weiteren, messbaren Parameter grafisch darzustellen.\\
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.7\textwidth]{Hauptteil/ressourcenmb2.png}
-\caption{Ressourcen-Nutzung des Microblaze}
-\label{fig:ressourcenmb2}
-\end{figure}
-
-\textbf{CoreMark}
-
-Bei der Ausführung der CoreMark-Benchmark wurde ebenfalls unterschieden, ob das System mit einer \ac{fpu} ausgestattet ist oder nicht.
-Um die Darstellung übersichtlicher zu machen sind die Werte der \emph{Total ticks} an der primären Y-Achsen und die Werte der übrigen Balken an der sekundäre Y-Achsen abzulesen.\\
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.7\textwidth]{Hauptteil/coremarkmb.png}
-\caption{Ergebnis der CoreMark-Benchmark des Microblaze}
-\label{fig:coremarkmb}
-\end{figure}
-
-\textbf{Dhrystone}
-
-Nachdem in Kapitel~\ref{kap:dhrystone} die Funktionsweise der Dhrystone-Benchmark erklärt worden ist, zeigen die Abbildungen~\ref{fig:dhrystonembohnefpu} und~\ref{fig:dhrystonembmitfpu} die Ergebnisse dieser Benchmark.
-Hierbei wurde das Ergebnis direkt in \ac{dmips} angegeben.\\
-Die Abbildung~\ref{fig:dhrystonembohnefpu} zeigt die gemessenen Werte für eine Hardware, welche ohne \ac{fpu} konfiguriert wurde.
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.7\textwidth]{Hauptteil/dhrystonembohnefpu.png}
-\caption{Ergebnis der Dhrystone-Benchmark des Microblaze (ohne \ac{fpu})}
-\label{fig:dhrystonembohnefpu}
-\end{figure}
-
-Die gleiche Messung wurde bei einem System durchgeführt, welches eine \ac{fpu} beinhaltet. Dabei ergaben sich folgende Ergebnisse:\\
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.7\textwidth]{Hauptteil/dhrystonembmitfpu.png}
-\caption{Ergebnis der Dhrystone-Benchmark des Microblaze (mit \ac{fpu})}
-\label{fig:dhrystonembmitfpu}
-\end{figure}
-
-\textbf{RAMspeed}
-
-Der letzte Benchmark-Test für das Microblaze-System ist der RAMspeed-Test, welcher in Kapitel~\ref{kap:ramspeed} näher beschrieben ist. Diese Grafik zeigt neben der
-erreichten Geschwindigkeit, in \emph{MB/s}, auch eindeutig die Größe des Caches, da die Leistung nach dem 4 Kb Block stark absinkt.\\
-
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.7\textwidth]{Hauptteil/ramspeedmb.png}
-\caption{Ergebnis der RAMspeed-Benchmark des Microblaze}
-\label{fig:ramspeedmb}
-\end{figure}
