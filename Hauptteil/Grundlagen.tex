@@ -13,7 +13,7 @@ Das Nexys4 DDR besitzt weiterhin folgende Features:~\cite{digilent}\\
   \item Sechs Taktmanagementabschnitte mit jeweils einem \ac{pll}
   \item 240 \ac{dsp}-Slices
   \item Interne Taktraten über 450 MHz
-  \item On-Chip-Analog-Digital-Wandler(XADC)
+  \item On-Chip-Analog-Digital-Wandler (XADC)
   \item 16 Schalter für den Nutzer
   \item \ac{usb}-\ac{uart}-Brücke
   \item 12-Bit \ac{vga}-Ausgang
@@ -38,7 +38,7 @@ Das Nexys4 DDR besitzt weiterhin folgende Features:~\cite{digilent}\\
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.6\textwidth]{Hauptteil/nexys-4-ddr-2.png}
-\caption{Das Nexys4 DDR-Board von Digilent ~\cite{digilent}}\label{fig:nexys4}
+\caption{Das Nexys4 DDR-Board von Digilent~\cite{digilent}}\label{fig:nexys4}
 \end{figure}
 
 
@@ -48,7 +48,7 @@ Die Xilinx 7-Serie umfasst vier \ac{fpga}-Familien, welche die gesamte Bandbreit
 Die FPGAs der 7-Serie, die auf einer hochmodernen Hochleistungs-HPL-Technologie (HKMG-Technologie) mit 28 nm und High-k-Metal-Gate-Technologie basieren,
  ermöglichen eine beispiellose Steigerung der Systemleistung auf 2,9 Tb/s der Eingabe- und Ausgabe-Bandbreite, 2 Millionen logischer Zellenkapazität und 5,3 TMAC/s DSP,
  wobei 50\% weniger Strom verbraucht wird als bei Geräten der vorherigen Generation, um eine voll programmierbare Alternative zu ASSPs und ASICs zu bieten.\\
- Die Abbildung ~\ref{fig:7serie} zeigt den Vergleich der vier \ac{fpga}:~\cite{artix7}\\
+ Die Abbildung~\ref{fig:7serie} zeigt den Vergleich der vier \ac{fpga}:~\cite{artix7}\\
 
  \begin{figure}[H]
  \centering
@@ -131,7 +131,7 @@ Somit wird unterschieden zwischen 8-,16- und 32-Bit Systemen.\cite{softcore}\\
     \hline
   \end{tabular}
     \caption{16-Bit SoftCores nach ~\cite{softcore}}
-   \label{tab:16bitsysteme}
+\label{tab:16bitsysteme}
     \end{table}
 
     \textbf{32-Bit SoftCores}\\
@@ -150,7 +150,7 @@ Somit wird unterschieden zwischen 8-,16- und 32-Bit Systemen.\cite{softcore}\\
       NIOS II & Nein & Altera\\
       \hline
     \end{tabular}
-      \caption{8-Bit SoftCores nach ~\cite{softcore}}
+      \caption{8-Bit SoftCores nach~\cite{softcore}}
      \label{tab:8bitsysteme}
       \end{table}
 
@@ -205,7 +205,7 @@ Die Abbildung~\ref{fig:cache} zeigt ein klassisches System mit drei Cache-Ebenen
 in der Größenordnung von 16KB bis 64KB. Der Level-2-Cache, welcher neben dem \ac{cpu}-Chip angeordnet und mit einem Hochgeschwindigkeitspfad verbunden ist, besitzt üblicherweise eine Größe von
  512 KB bis 1 MB. Hierbei handelt es sich typischerweise um einen sogenannten \emph{unified} (gemeinsamen) Cache, welcher eine Mischung aus Daten und Befehlen beinhaltet. \\
  Die dritte Cache-Ebene besteht aus einigen Megabyte \ac{sram} und wird auf der Prozessorkarte angeordnet. Dieser \ac{sram} bietet einen enormen Vorteil in der Geschwindigkeit gegenüber dem
- Hauptspeicher(\ac{dram}). \\
+ Hauptspeicher (\ac{dram}). \\
  Eine Besonderheit der Caches ist, dass diese umfassend sind, das bedeutet, dass der gesamte Inhalt des L1-Caches im L2-Cache und der gesamte L2-Cache Inhalt im L3-Cache  enthalten ist.\\
  \newpage
 Bei dem Prinzip der Adresslokalitäten bedienen sich Caches zwei verschiedenen Arten:\\
@@ -256,7 +256,7 @@ Dabei spielen die TxD und die RxD-Datenleitungen
 eine wichtige Rolle, da der Datenaustausch über diese Leitungen realisiert wird.\\
 Im Gegensatz, zum Beispiel, zu einer \ac{spi}-Schnittstelle, wird kein Clock-Signal
 übertragen um Daten zu validieren. Des Weiteren wird die Verbindung mit einer definierten
-Geschwindigkeit realisiert, der sogenannten \emph{Baudrate}. \cite{uartpdf} \\
+Geschwindigkeit realisiert, der sogenannten \emph{Baudrate}.~\cite{uartpdf} \\
 Die Baudrate bezeichnet dabei die Anzahl der Bits, welche pro Sekunde übertragen werden.
 \ac{uart} konvertiert die Bytes in serielle Bits, überträgt diese über eine einzelne Leitung
 und liest die zugehörigen Start- und Stop-Bits aus.\\
@@ -405,14 +405,14 @@ und errichtet einen Dateibaum und ist somit für die Datenorganisation zuständi
 Die dritte Komponente stellt der \textbf{Befehlsübersetzer} dar (engl. \emph{shell}),
 welcher anhand einer Befehlssprache die Kommunikation ermöglicht und dem Benutzer erlaubt
 mit sämtlichen Peripheriegeräten zu interagieren, ohne dass die im Hintergrund laufenden
-Prozesse berücksichtigt werden müssen. \cite{ubuntu}\\
+Prozesse berücksichtigt werden müssen.~\cite{ubuntu}\\
 
 Grafisch lässt sich der Aufbau wie folgt darstellen:\\
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.55\textwidth]{Hauptteil/csa.eps}
-\caption{Computer System Architektur nach \cite{virtualmachines}}
+\caption{Computer System Architektur nach~\cite{virtualmachines}}
 \label{fig:mbs}
 \end{figure}
 
@@ -451,21 +451,16 @@ Die ursprüngliche Version basierte noch auf dem Ada-Code, heutzutage wird die L
   \subsection{Coremark}\label{kap:coremark}
   Der CoreMark® von \ac{eembc} ist ein Benchmark, der die Leistung von \ac{mcu} und \ac{cpu} misst, die in eingebetteten Systemen verwendet werden.
    Coremark enthält Implementierungen der folgenden Algorithmen: Listenverarbeitung (Suchen und Sortieren),
-    Matrixmanipulation (gemeinsame Matrixoperationen), Zustandsmaschine (prüft, ob ein Eingabestream gültige Zahlen enthält) und \ac{crc} (zyklische Redundanzprüfung) .
+    Matrixmanipulation (gemeinsame Matrixoperationen), Zustandsmaschine (prüft, ob ein Eingabestream gültige Zahlen enthält) und \ac{crc} (zyklische Redundanzprüfung).
     Es kann auf Geräten von 8-Bit-Mikrocontrollern bis zu 64-Bit-Mikroprozessoren ausgeführt werden.
-
   Der \ac{crc}-Algorithmus erfüllt eine Doppelfunktion; Es bietet eine Arbeitslast, die häufig in eingebetteten Anwendungen zu finden ist
   und gewährleistet den korrekten Betrieb der CoreMark-Benchmarks, die im Wesentlichen einen Mechanismus zur Selbstüberprüfung bereitstellt.
    Insbesondere wird zur Überprüfung der korrekten Operation ein 16-Bit-\ac{crc} anhand der Daten ausgeführt, die in Elementen der verknüpften Liste enthalten sind.
-
   Um sicherzustellen, dass der Compiler die Ergebnisse zur Kompilierungszeit nicht vorberechnen kann, leitet jede Operation im Benchmark einen Wert ab,
   der zur Kompilierungszeit nicht verfügbar ist. Darüber hinaus ist jeder Code, der innerhalb des zeitgesteuerten Teils der Benchmarks verwendet wird,
   Teil des Benchmarks selbst (keine Bibliotheksaufrufe).
-
-  Die CoreMark-Benchmark überprüft Pipeline-Operationen, Speicher(inklusive Cache, falls vorhanden), sowie den Zugriff und das Handling von Integer-Operationen.
-
-  Ergebnis
-  Wenn die Coremark auf einer \ac{mcu} oder \ac{cpu} ausgeführt wird, ergibt sich ein so genannter Score, welcher einen schnellen Vergleich zwischen verschiedenen Prozessoren ermöglicht.
+  Die CoreMark-Benchmark überprüft Pipeline-Operationen, Speicher (inklusive Cache, falls vorhanden), sowie den Zugriff und das Handling von Integer-Operationen.
+  Wenn die Coremark auf einer \ac{mcu} oder \ac{cpu} ausgeführt wird, ergibt sich ein so genannter Score, welcher einen schnellen Vergleich zwischen verschiedenen Prozessoren ermöglicht.~\cite{coremark}
 
 
   Grundlegende Eigenschaften:
@@ -477,38 +472,38 @@ Die ursprüngliche Version basierte noch auf dem Ada-Code, heutzutage wird die L
   \item Die Ergebnisse der bereits getesteten Systeme werden auf der Seite des Herstellers veröffentlicht.
 \end{itemize}
 
-
-\subsection{SPEC CPU2017}\label{kap:spec}
-SPEC CPU2017 ist ein Software-Benchmark-Produkt der \ac{spec}, einer Non-Profit-Gruppe, zu der Computerhersteller,
-Systemintegratoren, Universitäten, Forschungsorganisationen, Verlage und Berater aus der ganzen Welt gehören. Es wurde entwickelt
-um Leistungsmessungen bereitzustellen, mit denen rechenintensive Arbeitslasten auf verschiedenen Computersystemen verglichen werden können.\\
-
-Im neuen SPEC CPU 2017 sind vier Suiten enhalten:\\
-\begin{itemize}
-\item SPECspeed 2017 Integer
-\item SPECrate 2017 Integer
-\item SPECspeed 2017 Floating Point
-\item SPECrate 2017 Floating Point
-\end{itemize}
-
-Wie der Name schon andeutet, messen die beiden \emph{Speed}-Varianten die Zeit bei Gleitkomma- und Integer-Berechnungen. Die \emph{Rate}-Messungen hingegen, ermitteln den Durchsatz. Da die vier Suiten
-noch einmal in verschiedenen Tests unterteilt sind, besteht das Paket am Ende aus 43 einzelnen Testmöglichkeiten. Beispiele für Variationen die der Integer-Bereich mitbringt sind: \\
-\begin{itemize}
-\item \ac{gnu}-Compiler
-\item Perl-Interpreter
-\item Video-Kompression
-\item diversie AI-Berechnungen
-\end{itemize}
-
-
-Im Bereich der Gleitkomma-Benchmarks sind Anwedungen zu finden, wie: \\
-\begin{itemize}
-\item 3D-Rendering
-\item Fluid- und Moleküldynamik
-\item optische Tomografie
-\item Ray-Tracing
-\end{itemize}
-Mit dieser großen Anzahl an Benchmarks möchte SPEC einen Test anbieten, der aktuelle, sowie zukünftige \ac{cpu} aussagekräftig und vergleichbar misst.~\cite{spec}
+%
+% \subsection{SPEC CPU2017}\label{kap:spec}
+% SPEC CPU2017 ist ein Software-Benchmark-Produkt der \ac{spec}, einer Non-Profit-Gruppe, zu der Computerhersteller,
+% Systemintegratoren, Universitäten, Forschungsorganisationen, Verlage und Berater aus der ganzen Welt gehören. Es wurde entwickelt
+% um Leistungsmessungen bereitzustellen, mit denen rechenintensive Arbeitslasten auf verschiedenen Computersystemen verglichen werden können.\\
+%
+% Im neuen SPEC CPU 2017 sind vier Suiten enhalten:\\
+% \begin{itemize}
+% \item SPECspeed 2017 Integer
+% \item SPECrate 2017 Integer
+% \item SPECspeed 2017 Floating Point
+% \item SPECrate 2017 Floating Point
+% \end{itemize}
+%
+% Wie der Name schon andeutet, messen die beiden \emph{Speed}-Varianten die Zeit bei Gleitkomma- und Integer-Berechnungen. Die \emph{Rate}-Messungen hingegen, ermitteln den Durchsatz. Da die vier Suiten
+% noch einmal in verschiedenen Tests unterteilt sind, besteht das Paket am Ende aus 43 einzelnen Testmöglichkeiten. Beispiele für Variationen die der Integer-Bereich mitbringt sind: \\
+% \begin{itemize}
+% \item \ac{gnu}-Compiler
+% \item Perl-Interpreter
+% \item Video-Kompression
+% \item diversie AI-Berechnungen
+% \end{itemize}
+%
+%
+% Im Bereich der Gleitkomma-Benchmarks sind Anwedungen zu finden, wie: \\
+% \begin{itemize}
+% \item 3D-Rendering
+% \item Fluid- und Moleküldynamik
+% \item optische Tomografie
+% \item Ray-Tracing
+% \end{itemize}
+% Mit dieser großen Anzahl an Benchmarks möchte SPEC einen Test anbieten, der aktuelle, sowie zukünftige \ac{cpu} aussagekräftig und vergleichbar misst.~\cite{spec}
 
 \subsection{Ramspeed}\label{kap:ramspeed}
 RAMspeed ist ein kostenloses Open-Source-Dienstprogramm, welches zu Messung der Cache- und Speicherleistung von Computersystemen genutzt wird. Dabei bietet die Software bis zu 18 verschiedene
@@ -714,7 +709,7 @@ Das Hauptziel dieser Architektur ist es, ein Design zur Verfügung zu stellen, w
 in Verbindungen mit niedrigen Systemkosten erfüllen kann. Wie auch schon der Microblaze, bietet der LEON3 eine hohe Anpassungsmöglichkeit und lässt sich um weitere, optionale Funktionen erweitern,
 Hierzu zählen exemplarisch die \ac{dsu},die  \ac{fpu} und der Interrupt-Controller.\\
 Die Abbildung~\ref{fig:leon} zeigt das \ac{soc}-Design des LEON3, welches in dieser Arbeit verwendet wurde. Es handelt sich um einen LEON3-Single-Core-Prozessor mit einer Frequenz von
-70 MHz. Der LEON3 kann einfach über grafische Schnittstellen(\emph{xconfig}) konfiguriert werden. Als On-Chip-Bus wird in diesem System der \ac{amba}-Bus verwendet.
+70 MHz. Der LEON3 kann einfach über grafische Schnittstellen (\emph{xconfig}) konfiguriert werden. Als On-Chip-Bus wird in diesem System der \ac{amba}-Bus verwendet.
 Für die schnelle Kommunikation in diesem System wurde als \emph{Haupt-Bus} der \ac{ahb}-Bus genutzt, wohingegen die Kommunikation mit den Peripheriegeräten über den \ac{apb}-Bus realisiert wurde.\\
 
 
@@ -755,6 +750,7 @@ Der Prozessor lässt sich durch folgende Eigenschaften näher erläutern:\\
 \end{itemize}
 
 
+\subsection{Übersicht der getesteten Konfiguration}\label{kap:getestetekonfiguration}
 
 
 \begin{table}[H]
@@ -774,7 +770,7 @@ Der Prozessor lässt sich durch folgende Eigenschaften näher erläutern:\\
   \textbf{Address/Daten-Bus} & 32-Bit & 32-Bit & 32-Bit & 64-Bit\\
       \hline
 \end{tabular}
-  \caption{Eingeschaften der Soft-Core Prozessoren ~\cite{comparison}}
+  \caption{Eingeschaften der Soft-Core Prozessoren~\cite{comparison}}
  \label{tab:features}
   \end{table}
 
@@ -855,7 +851,7 @@ Auch der Ressourcen-Verbrauch des LEON3 wurde nach der Synthese aufgenommen und 
 \end{figure}
 
 Danach ergibt sich eine Nutzung von 40\%/18,7\% der \ac{lut}, 1,1\%/0,6\% der \ac{lutram} und 8,2\% beziehungsweise 5,4\% der \ac{ff}.
-Speziell im Bereich der \ac{lut} und der \ac{ff} ist ein deutlicher Anstieg des Vebrauchs zu beobachten, in dem sich die Zahl der Verbrauchten Ressourcen mehr als verdoppeln(\ac{lut}).
+Speziell im Bereich der \ac{lut} und der \ac{ff} ist ein deutlicher Anstieg des Vebrauchs zu beobachten, in dem sich die Zahl der Verbrauchten Ressourcen mehr als verdoppeln (\ac{lut}).
 Dieser Unterschied ist dadurch zu erklären, dass es sich um eine IEEE-754-konforme \ac{fpu} handelt, welche die Operanden mmit einfacher und doppelter Genauigkeit unterstüzt. Die Entwickler
 beschrieben die \ac{fpu} als ein fortschrittliches Design mit hohem Durchsatz und geringer Latenz und bietet ein umfangreiches Paket an Operationen. Diese Leistungsfähigkeit und der Umfang
 führen zu dem starken Unterschied in der Ressourcen-Nutzung.\\
@@ -925,11 +921,14 @@ Die Abbildung~\ref{fig:ressourcenresult} stellt den direkten Vergleich der Haupt
 \end{figure}
 
 Es ist zu sehen, dass das die kommerziellen Systeme in allen getesteten Bereichen zum Teil deutlich weniger Ressourcen benötigen.
-Dies ist damit zu erklären, dass hinter diesen Systemen deutlich mehr finanzielle Unterstützung herrscht und dadurch auch mehrere
-erfahrene Mitarbeiter an diesen Projekten beschäftigt sind.\\
+Dies ist damit zu erklären, dass für diese Systeme deutlich mehr finanzielle Mittel bereitstehen und dadurch auch mehr
+erfahrenes Personal an der Entwicklung beteiligt sind.\\
 Dabei fällt besonders der LEON3 auf, der, zumindest in den Hauptkriterien gegenüber der Konkurrenz, deutlich weniger Ressourcen
-benötigt, um die Konfiguration, welche für diesen Vergleich vorgegeben war, zu erfüllen. Der Microblaze kommt dem LEON3, bis auf
-die Anzahl des benötigten \ac{lutram}, sehr nahe und bietet genug Reserven, um das System zu erweitern.\\
+benötigt, um die Konfiguration, welche für diesen Vergleich vorgegeben war, zu erfüllen. Jedoch ist im weiteren Verlauf der Tests aufgefallen, dass der LEON3 als Dual-Core deutlich mehr
+ der \ac{lut}-Ressourcen (ca. 21.000 Slice \ac{lut} pro Core) benötigt. Das \ac{prhs}-System hingegen benötigt in der Multi-Core-Konfiguration ungefähr 10.000 Slice \ac{lut} mehr pro Core.
+Dies führt, wie bereits in Kapitel~\ref{kap:getestetekonfiguration} erwähnt, zu der Schlussfolgerung, dass das LEON3-System auf dem, in dieser Arbeit genutzten, \ac{fpga} nicht realisierbar ist,
+auf Grund der begrenzten Ressourcen.\\
+ Der Microblaze kommt dem LEON3, bis auf die Anzahl des benötigten \ac{lutram}, sehr nahe und bietet genug Reserven, um das System zu erweitern.\\
 
 \begin{figure}[H]
 \centering
@@ -939,19 +938,24 @@ die Anzahl des benötigten \ac{lutram}, sehr nahe und bietet genug Reserven, um 
 \end{figure}
 
 Betrachtet man nun in Abbildung~\ref{fig:ressourcenresult1} die restlichen Parameter, bestätigt sich der Eindruck aus der Abbildung
-\ref{fig:ressourcenresult}. Auch hier benötigt das universitätsinterne System mehr Ressourcen als der Microblaze und der LEON3.
+~\ref{fig:ressourcenresult}. Auch hier benötigt das universitätsinterne System mehr Ressourcen als der Microblaze und der LEON3.
 Da der LEON3 lediglich mit einem 2-Wege-Assoziativ-Cache konfiguriert werden konnte, erklärt die größere Anzahl an
 benötigten \ac{bram}, da in diesem Bereich der Cache realisiert wird.\\
 Aufällig ist weiterhin der enorme Verbrauch von \ac{pll}, welcher nach Herstellerangaben zur Generierung der \emph{Main Clock}
 benötigt wird.\\
 
-\section{CoreMark}\label{kap:coremark}
+\section{Ergebnisse der CoreMark-Benchmark}\label{kap:coremarktest}
+Die CoreMark-Benchmark, welche in Kapitel~\ref{kap:coremark} näher beschrieben ist, bietet die Möglichkeit, die Leistung der drei ausgewählten Prozessoren zu messen. Da es, wie beschrieben,
+nicht möglich war den LEON3 ohne eine \ac{fpu} zu testen, wurde hier die Anzahl der Prozessoren variiert, sodass die Benchmark sowohl auf einem Single-, als auch auf einem Dual-Core-System
+ausgeführt wurde.\\
+Das \ac{prhs}-System, welches zur Zeit der Erstellung dieser Arbeit noch nicht über eine funktionieren \ac{fpu} verfügt, wurde ebenfalls als Single- und Dual-Core-System getestet und konnte
+darüber hinaus noch als Quad-Core-System getestet werden.\\
+Um die Darstellung übersichtlicher zu machen sind die Werte der \emph{Total ticks} an der primären Y-Achsen und die Werte der \emph{Total Time}, beziehungsweise \emph{Iterations/Sec}
+an der sekundären Y-Achsen abzulesen.\\
 
-
-\textbf{CoreMark}
-
-Bei der Ausführung der CoreMark-Benchmark wurde ebenfalls unterschieden, ob das System mit einer \ac{fpu} ausgestattet ist oder nicht.
-Um die Darstellung übersichtlicher zu machen sind die Werte der \emph{Total ticks} an der primären Y-Achsen und die Werte der übrigen Balken an der sekundäre Y-Achsen abzulesen.\\
+\textbf{Microblaze}\\
+Da der Microblaze, wie bereits erwähnt, nicht ohne Weiteres als Multi-Core zu konfigurieren ist, wurde hier das System sowohl mit, als auch ohne \ac{fpu} konfiguriert, um einen
+Vergleichswert zu erstellen und um für System an sich darzustellen, inwiefern die \ac{fpu} die Leistung beeinflusst.\\
 
 \begin{figure}[H]
 \centering
@@ -960,7 +964,47 @@ Um die Darstellung übersichtlicher zu machen sind die Werte der \emph{Total tic
 \label{fig:coremarkmb}
 \end{figure}
 
-\textbf{Dhrystone}
+
+\textbf{LEON3}\\
+Die Coremark-Benchmark ist eine Single-Core-Benchmark, dass heißt im Umkehrschluss, dass das Ausführen auf einem Multi-Core-System keinen Einfluss auf das Messergebnis haben sollte.
+Um dennoch einen Vergleich zu haben, da ein Test ohne \ac{fpu} nicht möglich war, wurde das System als Single- und Dual-Core konfiguriert und getestet.\\
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{Hauptteil/coremarkleon3.png}
+\caption{Ergebnis der CoreMark-Benchmark des LEON3}
+\label{fig:coremarkleon3}
+\end{figure}
+
+
+\textbf{PRHS}\\
+Das \ac{prhs}-System bietet zur Zeit der Erstellung dieser Arbeit keine \ac{fpu}, sodass für den Vergleich die hardware neben dem Single-Core, als Dual- und Quad-Core konfiguriert wurde.
+Wie bereits beschrieben, hat die Anzahl der Kerne keinen Einfluss auf die Leistungsergebnisse bei dieser Benchmark, jedoch lassen sich Testergebnisse auf diese Art und Weise bestätigen.\\
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{Hauptteil/coremarkprhs.png}
+\caption{Ergebnis der CoreMark-Benchmark des \ac{prhs}}
+\label{fig:coremarkprhs}
+\end{figure}
+
+\textbf{Vergleich}
+
+Die nachfolgende Abbildung~\ref{fig:coremarkresult} stellt nun den direkten Vergleich aller drei Systeme dar.\\
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{Hauptteil/coremarkresult.png}
+\caption{Coremark-Ergebnis der drei Systeme im direkten Vergleich}
+\label{fig:coremarkresult}
+\end{figure}
+
+An dieser Grafik lässt sich die Leistungsfähigkeit der \ac{cpu} leicht ablesen, da im Gegensatz zu den einzelnen Diagrammen, das Coremark-Ergebnis durch die jeweilige Taktfrequenz der
+einzelnen Systeme dividiert wurde. So ist beispielsweise die Anzahl der Iterationen pro Sekunde beim Prozessor des \ac{prhs} (92,21) geringer als die des Microblaze (123,84), jedoch
+relativiert sich die Zahl dadurch, dass der Prozessor des \ac{prhs} mit 75MHz eine geringere Taktfrequenz besitzt, als der Microblaze (100MHz). \\
+Der LEON3 erreicht mit einem Wert von 121,36 Iterationen pro Sekunde das zweithöchste Ergebnis, schlägt aber auf Grund der niedrigsten Frequenz (70MHz), die anderen Systeme im direkten Vergleich.\\
+
+\subsection{Dhrystone}
 
 Nachdem in Kapitel~\ref{kap:dhrystone} die Funktionsweise der Dhrystone-Benchmark erklärt worden ist, zeigen die Abbildungen~\ref{fig:dhrystonembohnefpu} und~\ref{fig:dhrystonembmitfpu} die Ergebnisse dieser Benchmark.
 Hierbei wurde das Ergebnis direkt in \ac{dmips} angegeben.\\
