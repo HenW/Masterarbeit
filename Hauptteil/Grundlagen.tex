@@ -1004,11 +1004,13 @@ einzelnen Systeme dividiert wurde. So ist beispielsweise die Anzahl der Iteratio
 relativiert sich die Zahl dadurch, dass der Prozessor des \ac{prhs} mit 75MHz eine geringere Taktfrequenz besitzt, als der Microblaze (100MHz). \\
 Der LEON3 erreicht mit einem Wert von 121,36 Iterationen pro Sekunde das zweithöchste Ergebnis, schlägt aber auf Grund der niedrigsten Frequenz (70MHz), die anderen Systeme im direkten Vergleich.\\
 
-\subsection{Dhrystone}
+\subsection{Ergebnisse der Dhrystone-Benchmark}\label{kap:dhrystonetest}
 
-Nachdem in Kapitel~\ref{kap:dhrystone} die Funktionsweise der Dhrystone-Benchmark erklärt worden ist, zeigen die Abbildungen~\ref{fig:dhrystonembohnefpu} und~\ref{fig:dhrystonembmitfpu} die Ergebnisse dieser Benchmark.
-Hierbei wurde das Ergebnis direkt in \ac{dmips} angegeben.\\
-Die Abbildung~\ref{fig:dhrystonembohnefpu} zeigt die gemessenen Werte für eine Hardware, welche ohne \ac{fpu} konfiguriert wurde.
+Nachdem in Kapitel~\ref{kap:dhrystone} die Funktionsweise der Dhrystone-Benchmark erklärt worden ist, zeigen die Abbildungen~\ref{fig:dhrystonembohnefpu},~\ref{fig:dhrystonesingleleon3} und~\ref{fig:dhrystonesingleprhs} die Ergebnisse
+dieser Benchmark. Hierbei wurden in den Grafiken sowohl die \emph{Millisekunden für einen Lauf}, als auch die \emph{\ac{dmips}} dargestellt. Auf der X-Achse der jeweiligen Diagramme ist die Anzahl
+der Läufe aufgetragen, welche zwischen 100.000 und 10.000.000 liegen.\\
+
+\textbf{Microblaze}
 
 \begin{figure}[H]
 \centering
@@ -1017,14 +1019,50 @@ Die Abbildung~\ref{fig:dhrystonembohnefpu} zeigt die gemessenen Werte für eine 
 \label{fig:dhrystonembohnefpu}
 \end{figure}
 
-Die gleiche Messung wurde bei einem System durchgeführt, welches eine \ac{fpu} beinhaltet. Dabei ergaben sich folgende Ergebnisse:\\
+In diesem Diagramm ist zu erkennen, dass die Zeiten für einen Lauf, in Millisekunden gemessen, leichte Schwankungen aufweisen, in Abhängigkeit der Anzahl der Läufe. Dies gilt ebenfalls für
+die \ac{dmips}-Werte. Der maximale Wert beträgt 33,09 \ac{dmips}, was in etwa 58000 \emph{Dhrystones per second} entspricht.
+
+\textbf{LEON3}
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.7\textwidth]{Hauptteil/dhrystonembmitfpu.png}
-\caption{Ergebnis der Dhrystone-Benchmark des Microblaze (mit \ac{fpu})}
-\label{fig:dhrystonembmitfpu}
+\includegraphics[width=0.7\textwidth]{Hauptteil/dhrystonesingleleon3.png}
+\caption{Ergebnis der Dhrystone-Benchmark des LEON3}
+\label{fig:dhrystonesingleleon3}
 \end{figure}
+
+Der LEON3 erreicht im Vergleich mit 44,46 den höchsten \ac{dmips}-Wert und benötigt am wenigstens Zeit für einen Lauf (12,8-12,9 ms). Die einzelnen Werte der durchgeführten Tests weichen mit
+einem Delta von 0,2 \ac{dmips} nur minimal voneinander ab.\\
+
+\textbf{PRHS}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{Hauptteil/dhrystonesingleprhs.png}
+\caption{Ergebnis der Dhrystone-Benchmark des \ac{prhs}}
+\label{fig:dhrystonesingleprhs}
+\end{figure}
+
+Die erreichten Werte des \ac{prhs}-Systems scheinen zwar auf den ersten Blick die niedrigsten zu sein, jedoch relativiert sich die Zahl im abschließenden Vergleich wieder, da die
+Coremark-Ergebnisse nur in Verbindung mit der jeweiligen Taktfrequenz der einzelnen Systeme aussagekräftig sind. Das System erreicht einen maximal Wert von
+18,82 \ac{dmips} und benötigt für einen Lauf zwischen 30,2 und 30,4 ms.\\
+
+\textbf{Vergleich}
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{Hauptteil/dhrystoneresult.png}
+\caption{Dhrystone-Ergebnis der drei Systeme im direkten Vergleich}
+\label{fig:dhrystoneresult}
+\end{figure}
+
+Die Abbildung~\ref{fig:dhrystoneresult} stellt die aussagekräftigsten Werte grafisch dar. Wie bereits erwähnt, gilt für die absoluten \ac{dmips}-Werte zwar je größer, desto besser, jedoch müssen diese
+Ergebnisse immer im Verhältnis zu der Taktfrequenz der jeweiligen Systeme gestellt werden. So liegen zwischen den maximalen Werten des Microblaze und des \ac{prhs} 14,27 \ac{dmips}, andererseits
+verringert sich der Abstand, wenn man \emph{\ac{dmips}/MHz} betrachtet auf 0,08, da der Microblaze mit 100MHz und das \ac{prhs}-System mit 75MHz getaktet sind.\\
+Der LEON3 erzielt konstante Werte, welche mit 0,64 \emph{\ac{dmips}/MHz} zum Teil mehr als doippelt so groß sind, wie die der anderen Systeme. Jedoch gilt es, genauso wie bei dem Microblaze,
+zu erwähnen, dass die Ergebnisse, welche auf den Websiten der Hersteller publiziert wurden, nicht ansatzweise erreicht wurden, da diese Systeme die grundlegenden Komponenten enthalten
+und ohne Optimierung getestet wurden.\\
 
 \textbf{RAMspeed}
 
@@ -1042,31 +1080,3 @@ erreichten Geschwindigkeit, in \emph{MB/s}, auch eindeutig die Größe des Cache
 
 
 \section{lowRISC basierte Systeme}\label{kap:lowrisc}
-
-
-\section{LEON3 basierte Systeme}\label{kap:leon3}
-
-Der LEON3 ist das \ac{vhdl}-Modell eines 32-Bit-Prozessors, welcher auf der SPARC V8-Architektur basiert. Das Modell ist in großem Umfang konfigurierbar und besonders für \ac{soc}-Designs geeignet.
-Ursprünglich wurde dieses System von der \ac{esa} entworfen, wird heutzutage jedoch von \emph{Aeroflex Gaisler} weiterentwickelt und vertrieben.\\
-Der LEON3-Prozessor verfügt über folgende Eigenschaften:\cite{leon}\\
-
-\begin{itemize}
-  \item SPARC V8 Befehlssatz mit V8e Erweiterungen
-\item Fortgeschrittene 7-stufige Pipeline
-\item Hardware multiplizieren, teilen und \ac{mac}-Einheiten
-\item Hochperformante IEEE-754-\ac{fpu} mit vollem Pipelinespektrum
-\item Getrennter Befehls- und Datencache (Harvard-Architektur) mit Snooping
-\item Konfigurierbare Caches: 1 - 4 Wege, 1 - 256 kbytes / Weg. Random,LRR oder \ac{lru} Ersatz
-\item Lokaler Befehls- und Daten-Scratchpad-RAM, 1 - 512 KByte
-\item \ac{srmmu} mit konfigurierbarem \ac{tlb}
-\item \ac{amba}-2.0 \ac{ahb}-Busschnittstelle
-\item Erweiterte On-Chip-Debug-Unterstützung mit Befehls- und Daten-Trace-Puffer
-\item Symmetrische Multiprozessorunterstützung (\ac{smp})
-\item Power-Down-Modus und Clock-Gating
-\item Robustes und vollsynchrones Single-Edge-Clock-Design
-\item Bis zu 125 MHz in FPGA und 400 MHz in 0,13 um \ac{asic}-Technologien
-\item Fehlertolerante und SEU-geschützte Version für Raumfahrtanwendungen
-\item umfangreich konfigurierbar
-\item Große Auswahl an Software-Tools: Compiler, Kernel, Simulatoren und Debug-Monitore
-\item Hohe Leistung: 1,4 DMIPS / MHz, 1,8 CoreMark / MHz (gcc -4.1.2)
-\end{itemize}
