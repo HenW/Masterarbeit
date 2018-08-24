@@ -143,7 +143,7 @@ Somit wird unterschieden zwischen 8-,16- und 32-Bit Systemen.\cite{softcore}\\
       \hline
       LEON & VHDL & Gaisler Research\\
       \hline
-      MicroBlaze & Nein & Xilinx\\
+      Microblaze & Nein & Xilinx\\
       \hline
       OpenRISC & Verilog & OpenCores\\
       \hline
@@ -618,14 +618,14 @@ Soft-Core Prozessoren werden häufig zur Ausführung eingebetteter Anwendungen e
 beiten. So kann es bei der Auswahl durchaus schwierig sein den optimalen Prozessor auszuwählen. Einen Vergleich bietet die Tablle~\ref{tab:features}, in welcher sämtliche Eigenschaften
 der Prozessoren aufgeführt sind.\\
 
-\subsection{Microblaze}\label{kap:microblaze}
+\subsection{Microblaze}\label{kap:Microblaze}
 
 
-Der MicroBlaze SoftCore von Xilinx ist eine 32-Bit RISC Harvard Architektur mit einem umfangreichen Befehlssatz. Aufgrund dieser RISC-Architektur
+Der Microblaze SoftCore von Xilinx ist eine 32-Bit RISC Harvard Architektur mit einem umfangreichen Befehlssatz. Aufgrund dieser RISC-Architektur
  wurde der Microblaze vor allem für einfache und zuverlässige eingebettete Systeme entwickelt und in diesen als zentraler Knoten beziehungsweise Hauptsteuereinheit
 genutzt, da er über eine hohe Leistungsfähigkeit verfügt.
 
-Konfiguriert wurde das System mit folgender Voreinstellung:~\cite{microblaze}\\
+Konfiguriert wurde das System mit folgender Voreinstellung:~\cite{Microblaze}\\
         \begin{itemize}
           \item \ac{spi} Controller
           \item I2C-Controller
@@ -671,7 +671,7 @@ Die Leistung des Microblaze, basierend auf der Vivado-Version 2017.4, ist wie fo
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.7\textwidth]{Hauptteil/microblazeleistung.png}
-\caption{MicroBlaze Performance Metrics: Basierend auf Vivado 2017.4 nach~\cite{microblaze}}
+\caption{Microblaze Performance Metrics: Basierend auf Vivado 2017.4 nach~\cite{microblaze}}
 \label{fig:microblazeleistung}
 \end{figure}
 
@@ -720,7 +720,7 @@ Für die schnelle Kommunikation in diesem System wurde als \emph{Haupt-Bus} der 
 \label{fig:leon}
 \end{figure}
 
-\subsection{\ac{prhs}}\label{kap:prhs}
+\subsection{prhs}\label{kap:prhs}
 
 Das System der Helmut-Schmidt-Universität, Universität der Bundeswehr Hamburg, ist Befehlssatzkompatibel zu einer \ac{arm}-Architektur. Es bietet die nahezu identischen Bestandteile, wie die
 anderen Systeme:\\
@@ -749,15 +749,24 @@ Der Prozessor lässt sich durch folgende Eigenschaften näher erläutern:\\
 \item Optionale \ac{mmu}, sowie separate, konfigurierbare Daten- und Instruktionscaches
 \end{itemize}
 
+\subsection{lowRISC}\label{kap:lowrisc}
+Als viertes System sollte das lowRISC-System die gleichen Benchmarks durchlaufen wie die anderen Systeme. Nachdem die Konfiguration erfolgreich auf das Nexys4-DDR-Board angepasst
+und Linux erfolgreich getestet wurde, musste leider im weiteren Verlauf festgestellt werden, dass das System nicht für einen Vergleich dieser Art vorgesehen ist. Es soll langfristig als vollständig
+und offenes \ac{soc} dienen und als Low-Cost-Entwicklungsboard zur Verfügung gestellt werden, um die Open-Source-Community zu unterstützten.\\
+Hierdurch versprechen sich die Entwickler neue Hardware-Sicherheitsfunktionen erkunden und fördern zu können. Des Weiteren soll es aufstrebenden und soliden Unternehmen die Möglichkeit bieten,
+Entwürfe zu erzeugen und diesen Prozess zu vereinfachen. Dazu zählen die Veröffentlichunug von Skripten, Tools, Quellen und Erfahrungen.\\
+Ein wesentliches Problem dieses Design auf dem, in dieser Arbeit verwendeten, Board zu benchmarken, war es, dass es Timingprobleme zwischen der System- und der Realzeit gab, sodass Tests,
+welche über die Zeit gemessen wurden, nicht korrekt waren. Nachdem versucht wurde diese Probleme durch erneute Rekonfiguration zu lösen und dies auch teilweise gelang, waren die erzielten Ergebnisse
+nicht konkurrenzfähig und zeigte erneut, dass dieses System zur Entwicklung genutzt wird und auf Grund dessen, dass es Open-Source ist, noch einige Optimierungsmöglichkeiten bietet.\\
 
-\subsection{Übersicht der getesteten Konfiguration}\label{kap:getestetekonfiguration}
+\section{Übersicht der getesteten Konfiguration}\label{kap:getestetekonfiguration}
 
 
 \begin{table}[H]
 \centering
 \begin{tabular}{|l|c|c|c|c|}
   \hline
-  \textbf{Kategorie} & \textbf{MicroBlaze} & \textbf{LEON3}& \textbf{PRHS}& \textbf{lowRISC}\\
+  \textbf{Kategorie} & \textbf{Microblaze} & \textbf{LEON3}& \textbf{PRHS}& \textbf{lowRISC}\\
   \hline
   \textbf{Maximale Frequenz} &250 & 183 & 75 & 185\\
   \hline
@@ -1004,7 +1013,7 @@ einzelnen Systeme dividiert wurde. So ist beispielsweise die Anzahl der Iteratio
 relativiert sich die Zahl dadurch, dass der Prozessor des \ac{prhs} mit 75MHz eine geringere Taktfrequenz besitzt, als der Microblaze (100MHz). \\
 Der LEON3 erreicht mit einem Wert von 121,36 Iterationen pro Sekunde das zweithöchste Ergebnis, schlägt aber auf Grund der niedrigsten Frequenz (70MHz), die anderen Systeme im direkten Vergleich.\\
 
-\subsection{Ergebnisse der Dhrystone-Benchmark}\label{kap:dhrystonetest}
+\section{Ergebnisse der Dhrystone-Benchmark}\label{kap:dhrystonetest}
 
 Nachdem in Kapitel~\ref{kap:dhrystone} die Funktionsweise der Dhrystone-Benchmark erklärt worden ist, zeigen die Abbildungen~\ref{fig:dhrystonembohnefpu},~\ref{fig:dhrystonesingleleon3} und~\ref{fig:dhrystonesingleprhs} die Ergebnisse
 dieser Benchmark. Hierbei wurden in den Grafiken sowohl die \emph{Millisekunden für einen Lauf}, als auch die \emph{\ac{dmips}} dargestellt. Auf der X-Achse der jeweiligen Diagramme ist die Anzahl
@@ -1064,11 +1073,13 @@ Der LEON3 erzielt konstante Werte, welche mit 0,64 \emph{\ac{dmips}/MHz} zum Tei
 zu erwähnen, dass die Ergebnisse, welche auf den Websiten der Hersteller publiziert wurden, nicht ansatzweise erreicht wurden, da diese Systeme die grundlegenden Komponenten enthalten
 und ohne Optimierung getestet wurden.\\
 
-\textbf{RAMspeed}
+\section{Ergebnisse der Ramspeed-Benchmark}\label{kap:ramspeedtest}
+Der letzte Benchmark-Test ist der RAMspeed-Test, welcher in Kapitel~\ref{kap:ramspeed} näher beschrieben ist. Diese Grafik zeigt neben der
+erreichten Geschwindigkeit, in \emph{MB/s}, auch eindeutig die Größe des Caches, da die Geschwindigkeit signifikant einbringt, wenn die Größe des getesteten Blockes die tatsächliche Größe
+des Caches überschreitet. Hierbei ist zu beachten, dass eine Konfiguration des LEON3 mit einem \emph{4 Kb-direct mapped}-Cache nicht möglich war, sodass die Leistung in dem Fall erst nach dem
+\emph{8-Kb Block} einbricht.\\
 
-Der letzte Benchmark-Test für das Microblaze-System ist der RAMspeed-Test, welcher in Kapitel~\ref{kap:ramspeed} näher beschrieben ist. Diese Grafik zeigt neben der
-erreichten Geschwindigkeit, in \emph{MB/s}, auch eindeutig die Größe des Caches, da die Leistung nach dem 4 Kb Block stark absinkt.\\
-
+\textbf{Microblaze}
 
 \begin{figure}[H]
 \centering
@@ -1077,6 +1088,48 @@ erreichten Geschwindigkeit, in \emph{MB/s}, auch eindeutig die Größe des Cache
 \label{fig:ramspeedmicroblaze}
 \end{figure}
 
+Der Microblaze wurde, wie in der gewünschten Konfiguration, mit einem \emph{4-Kb-direct mapped}-Cache synthetisiert. Dies klärt den starken Einbruch in der Geschwindigkeit nach dem 4 Kb-Block.
+Die Geschwindigkeit ist nahezu gleichbleibend und erreicht bei einem 2 Kb Block den maxmimalen Wert von 181,26 MB/s.\\
 
+\textbf{LEON3}
 
-\section{lowRISC basierte Systeme}\label{kap:lowrisc}
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{Hauptteil/ramspeedleon3.png}
+\caption{Ergebnis der RAMspeed-Benchmark des LEON3(2\(\times\)4Kb)}
+\label{fig:ramspeedleon3}
+\end{figure}
+
+Die Ausführung der Ramspeed-Benchmark auf dem LEON3-System ergab eine maximale Geschwindigkeit von 237,98 MB/s. Auch hier ist die Größe des Caches gut anhand des Leistungseinbruches zu erkennen,
+wobei dieser auf Grund der insgesamt 8 Kb, erst bei der entsprechenden Größe auftritt.\\
+
+\textbf{PRHS}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{Hauptteil/ramspeedprhs.png}
+\caption{Ergebnis der RAMspeed-Benchmark des \ac{prhs}}
+\label{fig:ramspeedprhs}
+\end{figure}
+
+Der Cache des \ac{prhs}-Systems wurde, wie der Microblaze, mit einem \emph{4-Kb-direct mapped}-Cache synthetisiert, was durch den Geschwindigkeitseinbruch eindeutig zu sehen ist. Der
+Ramspeed-Test ergibt eine maximale Lesegeschwindigkeit von 53,47 MB/s, bei einer Blockgröße von 2 Kb. Die erreichten Ergebnisse befinden sich mit einer Abweichung von maximal 0,98 MB/s
+im Toleranzbereich und zeigen eine kontinuierliche Geschwindigkeit an.\\
+
+\textbf{Vergleich}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{Hauptteil/ramspeedresult.png}
+\caption{Ramspeed-Ergebnis der drei Systeme im direkten Vergleich}
+\label{fig:ramspeedresult}
+\end{figure}
+
+Die Abbildung~\ref{fig:ramspeedresult} zeigt den direkten Vergleich der drei Systeme bezüglich der erzielten Ramspeed-Benchmark Ergebnisse. Der LEON3 sticht mit seinen erzielten Ergebnissen
+heraus, jedoch sind diese gesondert einzuordnen, da dieses System, wie bereits erwähnt, nur als 2-Wege-Assoziativ-Cache, mit einer Gesamtgröße von 8 Kb konfiguriert werden konnte. Nichtsdestotrotz
+sind die vom LEON3 erreichten Ergebnisse sehr gut und setzen die Messlatte entsprechend hoch.\\
+Der Microblaze, sowie der Cache des \ac{prhs}-Systems sind für den Test identisch konifguriert worden, sodass hier ein direkter Vergleich möglich und aussagekräftig ist.
+Der Microblaze erzielt mit 181,3 MB/s, gemessen bei einer Blockgröße von 2 Kb, eine deutlich höhere Geschwindigkeit als der \ac{prhs} (53,5 MB/s) bei gleichbleibender Blockgröße.
+Der starke Leistungsunterschied ist auf den ersten Blick überraschend, da alle drei Systeme den gleichen Memorycontroller nutzen. So ist dieser nur durch die Verwendung unterschiedlicher
+Bus-Systeme zu erklären. Hierbei nutzt der Microblaze für die Kommunikation zum Cache einen \ac{plb}-Bus, wohingegen das \ac{prhs}-System einen eigenen, für das System entwickelten,
+\ac{prhs}-Bus nutzt.\\
