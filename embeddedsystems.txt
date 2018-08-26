@@ -1,0 +1,14 @@
+Eingebettete Systeme:
+
+Computer, welche zur Steuerung genutzt werden, nennt man \emph{eingebettete Systeme} (engl. Embedded Systems). In den späten 1960 Jahren wurden diese Systeme erstmalig zur Steuerung in der Kommunikation verwendet. Auf Grund der Tatsache,
+dass die Industrie sich in den letzten Jahren unter anderem darauf konzentriert hat, die Systeme immer kleiner zu gestalten, kam es dazu, dass eingebettete Systeme weiterentwickelt wurden. Diese bieten mehr Möglichkeiten für extrem kleine Maschinen.
+Durch die steigenden Anforderung an diese Systeme, vor allem im Bezug auf die Netzwerkfähigkeit, wurden diese immer komplexer und benötigen immer mehr Schnittstellen aller Art und einen größeren Speicher als frühere Modelle. Durch diese Anpassungen wurde es
+möglich und nötig Betriebssysteme auf diesen Systemen auszuführen, um die steigenden Ressourcen zu verwalten. Bereits in den 70er Jahren wurden die ersten Betriebssysteme für eingebettete Systeme veröffentlich, sodass es heutezutage einige realisierbare Optionen gibt.\cite{ibm}\\
+
+
+https://www.ibm.com/developerworks/library/l-embl/index.html
+
+IBM
+
+Darrick Addison
+1.8.2001
