@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" height="297mm" width="210mm" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" viewBox="0 0 210 297">
+ <defs>
+  <marker id="Arrow1Send" refY="0.0" refX="0.0" orient="auto" overflow="visible">
+   <path d="m0 0l5-5-17.5 5 17.5 5-5-5z" fill-rule="evenodd" transform="scale(.2) rotate(180) translate(6)" stroke="#000" stroke-width="1pt"/>
+  </marker>
+  <marker id="Arrow1Sstart" refY="0.0" refX="0.0" orient="auto" overflow="visible">
+   <path d="m0 0l5-5-17.5 5 17.5 5-5-5z" fill-rule="evenodd" transform="scale(.2) translate(6)" stroke="#000" stroke-width="1pt"/>
+  </marker>
+  <marker id="Arrow1Sstart-1" refY="0" refX="0" orient="auto" overflow="visible">
+   <path d="m0 0 5-5-17.5 5 17.5 5z" fill-rule="evenodd" transform="matrix(.2 0 0 .2 1.2 0)" stroke="#000" stroke-width="1pt"/>
+  </marker>
+  <marker id="Arrow1Send-8" refY="0" refX="0" orient="auto" overflow="visible">
+   <path d="m0 0 5-5-17.5 5 17.5 5z" fill-rule="evenodd" transform="matrix(-.2 0 0 -.2 -1.2 0)" stroke="#000" stroke-width="1pt"/>
+  </marker>
+ </defs>
+ <metadata>
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title/>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <rect fill-opacity="0" height="10.583" width="34.396" stroke="#000" stroke-linecap="square" y="16.542" x="29.104" stroke-width=".1"/>
+ <text stroke-width=".26458px" style="word-spacing:0px;letter-spacing:0px;text-anchor:middle;text-align:center" xml:space="preserve" font-size="2.1167px" line-height="125%" y="21.299515" x="46.25816" font-family="Sans" fill="#000000"><tspan style="text-anchor:middle;text-align:center" y="21.299515" x="46.25816">prhs-armv6-</tspan><tspan style="text-anchor:middle;text-align:center" y="23.945349" x="46.25816">core</tspan></text>
+ <rect fill-opacity="0" height="7.9375" width="15.875" stroke="#000" stroke-linecap="square" y="27.125" x="29.104" stroke-width=".1"/>
+ <text style="word-spacing:0px;letter-spacing:0px;text-anchor:middle;text-align:center" xml:space="preserve" font-size="2.1167px" line-height="125%" y="31.882851" x="36.994129" font-family="Sans" fill="#000000"><tspan style="text-anchor:middle;text-align:center" y="31.882851" x="36.994129" stroke-width=".26458px">I-Cache</tspan></text>
+ <rect fill-opacity="0" height="7.9375" width="15.875" stroke="#000" stroke-linecap="square" y="27.125" x="44.979" stroke-width=".1"/>
+ <text style="word-spacing:0px;letter-spacing:0px;text-anchor:middle;text-align:center" xml:space="preserve" font-size="2.1167px" line-height="125%" y="31.882851" x="52.869129" font-family="Sans" fill="#000000"><tspan style="text-anchor:middle;text-align:center" y="31.882851" x="52.869129" stroke-width=".26458px">D-Cache</tspan></text>
+ <rect fill-opacity="0" height="7.9375" width="18.521" stroke="#000" stroke-linecap="square" y="27.125" x="60.854" stroke-width=".1"/>
+ <text style="word-spacing:0px;letter-spacing:0px;text-anchor:middle;text-align:center" xml:space="preserve" font-size="2.1167px" line-height="125%" y="31.882851" x="68.744125" font-family="Sans" fill="#000000"><tspan style="text-anchor:middle;text-align:center" y="31.882851" x="68.744125" stroke-width=".26458px">MMU</tspan></text>
+ <rect fill-opacity="0" height="10.583" width="15.875" stroke="#000" stroke-linecap="square" y="16.542" x="63.5" stroke-width=".1"/>
+ <text stroke-width=".26458px" style="word-spacing:0px;letter-spacing:0px;text-anchor:middle;text-align:center" xml:space="preserve" font-size="2.1167px" line-height="125%" y="21.299513" x="71.389961" font-family="Sans" fill="#000000"><tspan style="text-anchor:middle;text-align:center" y="21.299513" x="71.389961">FPU</tspan><tspan style="text-anchor:middle;text-align:center" y="23.945347" x="71.389961">(optional)</tspan></text>
+ <rect fill-opacity="0" height="5.2917" width="50.271" stroke="#000" stroke-linecap="square" y="35.062" x="29.104" stroke-width=".1"/>
+ <text style="word-spacing:0px;letter-spacing:0px;text-anchor:middle;text-align:center" xml:space="preserve" font-size="2.1167px" line-height="125%" y="38.497433" x="54.136745" font-family="Sans" fill="#000000"><tspan style="text-anchor:middle;text-align:center" y="38.497433" x="54.136745" stroke-width=".26458px">Bus-Controller</tspan></text>
+ <rect fill-opacity="0" height="10.583" width="15.875" stroke="#000" stroke-linecap="square" y="16.542" x="84.667" stroke-width=".1"/>
+ <text stroke-width=".26458px" style="word-spacing:0px;letter-spacing:0px;text-anchor:middle;text-align:center" xml:space="preserve" font-size="2.1167px" line-height="125%" y="21.299513" x="92.556625" font-family="Sans" fill="#000000"><tspan style="text-anchor:middle;text-align:center" y="21.299513" x="92.556625">DDR-</tspan><tspan style="text-anchor:middle;text-align:center" y="23.945347" x="92.556625">Controller</tspan></text>
+ <path d="m79.375 37.708h13.229v-10.583" stroke="#000" stroke-width=".26458px" fill="none"/>
+ <text style="word-spacing:0px;letter-spacing:0px;text-anchor:middle;text-align:center" xml:space="preserve" font-size="2.1167px" line-height="125%" y="40.207153" x="90.161263" font-family="Sans" fill="#000000"><tspan style="text-anchor:middle;text-align:center" y="40.207153" x="90.161263" stroke-width=".26458px">Main-Memory Bus</tspan></text>
+ <path d="m31.75 40.354v5.2917h68.792" stroke="#000" stroke-width=".26458px" fill="none"/>
+ <text style="word-spacing:0px;letter-spacing:0px;text-anchor:middle;text-align:center" xml:space="preserve" font-size="2.1167px" line-height="125%" y="44.482117" x="40.035469" font-family="Sans" fill="#000000"><tspan style="text-anchor:middle;text-align:center" y="44.482117" x="40.035469" stroke-width=".26458px">Peripheral Bus</tspan></text>
+ <rect fill-opacity="0" height="5.2917" width="14.552" stroke="#000" stroke-linecap="square" y="50.938" x="29.104" stroke-width=".1"/>
+ <text style="word-spacing:0px;letter-spacing:0px;text-anchor:middle;text-align:center" xml:space="preserve" font-size="2.1167px" line-height="125%" y="54.250996" x="36.375038" font-family="Sans" fill="#000000"><tspan style="text-anchor:middle;text-align:center" y="54.250996" x="36.375038" stroke-width=".26458px">IRQ-Ctrl</tspan></text>
+ <rect fill-opacity="0" height="5.2917" width="14.552" stroke="#000" stroke-linecap="square" y="50.938" x="47.625" stroke-width=".1"/>
+ <text style="word-spacing:0px;letter-spacing:0px;text-anchor:middle;text-align:center" xml:space="preserve" font-size="2.1167px" line-height="125%" y="54.250992" x="54.895878" font-family="Sans" fill="#000000"><tspan style="text-anchor:middle;text-align:center" y="54.250992" x="54.895878" stroke-width=".26458px">Timers</tspan></text>
+ <rect fill-opacity="0" height="5.2917" width="14.552" stroke="#000" stroke-linecap="square" y="50.938" x="66.146" stroke-width=".1"/>
+ <text style="word-spacing:0px;letter-spacing:0px;text-anchor:middle;text-align:center" xml:space="preserve" font-size="2.1167px" line-height="125%" y="54.250992" x="73.41671" font-family="Sans" fill="#000000"><tspan style="text-anchor:middle;text-align:center" y="54.250992" x="73.41671" stroke-width=".26458px">UART</tspan></text>
+ <rect fill-opacity="0" height="5.2917" width="14.552" stroke="#000" stroke-linecap="square" y="50.937" x="85.99" stroke-width=".1"/>
+ <text style="word-spacing:0px;letter-spacing:0px;text-anchor:middle;text-align:center" xml:space="preserve" font-size="2.1167px" line-height="125%" y="54.250988" x="93.260452" font-family="Sans" fill="#000000"><tspan style="text-anchor:middle;text-align:center" y="54.250988" x="93.260452" stroke-width=".26458px">SPI-Ctrl</tspan></text>
+ <g stroke="#000" fill="none">
+  <g stroke-width=".26458px">
+   <path d="m37.042 50.938v-5.292"/>
+   <path d="m55.562 50.938v-5.292"/>
+   <path d="m74.083 50.938v-5.292"/>
+   <path d="m93.927 50.938v-5.292"/>
+  </g>
+  <path d="m30.427 16.542v-1.323h50.271v18.521h-1.3229" stroke-dasharray="0.2,0.4" stroke-width=".1"/>
+  <path d="m31.75 15.219v-1.323h50.271v18.521h-1.323" stroke-dasharray="0.2, 0.4" stroke-width=".1"/>
+ </g>
+ <rect fill-opacity="0" height="5.2917" width="14.552" stroke="#000" stroke-linecap="square" y="50.937" x="105.83" stroke-width=".1"/>
+ <text style="word-spacing:0px;letter-spacing:0px;text-anchor:middle;text-align:center" xml:space="preserve" font-size="2.1167px" line-height="125%" y="54.250988" x="113.13574" font-family="Sans" fill="#000000"><tspan style="text-anchor:middle;text-align:center" y="54.250988" x="113.13574" stroke-width=".26458px">SD-Card</tspan></text>
+ <path marker-end="url(#Arrow1Send)" d="m101.07 53.583h4.2333" marker-start="url(#Arrow1Sstart)" stroke="#000" stroke-width=".26458px" fill="none"/>
+ <rect fill-opacity="0" height="31.75" width="14.552" stroke="#000" stroke-linecap="square" y="16.542" x="105.83" stroke-width=".1"/>
+ <text style="word-spacing:0px;letter-spacing:0px;text-anchor:middle;text-align:center" xml:space="preserve" font-size="2.1167px" line-height="125%" y="21.299513" x="113.07114" font-family="Sans" fill="#000000"><tspan style="text-anchor:middle;text-align:center" y="21.299513" x="113.07114" stroke-width=".26458px">SD-Memory</tspan></text>
+ <path marker-end="url(#Arrow1Send-8)" d="m101.07 21.833h4.2333" marker-start="url(#Arrow1Sstart-1)" stroke="#000" stroke-width=".26458px" fill="none"/>
+</svg>
