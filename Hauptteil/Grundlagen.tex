@@ -101,7 +101,7 @@ So ist das herkömmliche Linux, welches auf einem PC ausgeführt wird, so konfig
  oder parallel zur Laufzeit als ladbare Module dem Kernel hinzugefügt werden. Daraus folgt, dass ein hochmodulares System entsteht, welches auf ein eingebettetes System angepasst ist.\\
  Um die Ressourcen bestmöglich zu nutzen, erfordert ein Embedded-System, dass auf herkömmliche Programme und Treiber aufgebaut ist, mit denen zum Beispiel gängige Peripheriegeräte und Anwendungen genutzt werden können.\\
  Linux unterstützt Multi-Core-Systeme, welche es besonders für Nutzer interessant macht, welche Anwendungen parallel ausführen wollen und so die Verarbeitungsleistung erhöht wird. Als Beispiel dafür dient die parallele Ausführung eines Linux-System auf einem Prozessor,
-  während auf dem anderen Prozessor eine \ac{gui} ausgeführt wird.\\
+  während auf dem anderen Prozessor eine \ac{gui} ausgeführt wird.\cite{ibm}\\
 
 \textbf{Nachteile}\\
 Ein wichiger Nachteil beim Ausführen von Linux auf einem eingebetteten System ist es, dass die Linux-Architektur eine Möglichkeit bietet, dass Softwaremodul in
@@ -109,7 +109,7 @@ Echtzeit in den Kernel-Space hinzugefügt werden können, welcher für das Zeitm
 für das Ausführen von Programmen zuständig ist. Kommt es in dem Kernel-Space zu einem Fehler innerhalb des Codes, kann dieser zu einem Absturz des gesamten
 Betriebssystem führen und stellt somit eine ernste Sicherheitslücke für Echtzeitanwendungen dar.\\
 Um diese Sicherheitslücke zu schließen, gibt es Standart-\ac{rtos}, welche grundsätzlich für einen Echtzeit-Einsatz konfiguriert sind und eine höhere Zuverlässigkeit bietet. Prozesse erhalten bei Bedarf eine höhere Priorität,
- wenn sie vom Benutzer auf Systemebene gestartet werden. Prozesse erhalten eine ID, damit das Betriebssystem die ausgeführten Programme verfolgen kann. Durch dieses Verfahren erhöht sich die Zuverlässigkeit.\\
+ wenn sie vom Benutzer auf Systemebene gestartet werden. Prozesse erhalten eine ID, damit das Betriebssystem die ausgeführten Programme verfolgen kann. Durch dieses Verfahren erhöht sich die Zuverlässigkeit.\cite{ibm}\\
 
 
 
