@@ -232,13 +232,6 @@
        height="7.937501"
        x="15.875003"
        y="103.85416" />
-    <rect
-       style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.71399999;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       id="rect4491-7"
-       width="58.208328"
-       height="7.9375119"
-       x="44.979168"
-       y="103.85416" />
     <flowRoot
        xml:space="preserve"
        id="flowRoot4520"
@@ -349,9 +342,9 @@
            y="392.51968" /></flowRegion><flowPara
          id="flowPara4637" /><flowPara
          id="flowPara4639"
-         style="font-size:12.00000015px" /><flowPara
+         style="font-size:12px" /><flowPara
          id="flowPara4641"
-         style="font-size:12.00000015px">PLB-Bus</flowPara></flowRoot>    <g
+         style="font-size:12px" /></flowRoot>    <g
        id="g4661">
       <rect
          y="74.75"
@@ -648,5 +641,5 @@
            x="280"
            y="442.51968" /></flowRegion><flowPara
          id="flowPara8165"
-         style="font-size:12.00000015px">PLB BUS</flowPara></flowRoot>  </g>
+         style="font-size:12px">AXI-BUS (Interconnect)</flowPara></flowRoot>  </g>
 </svg>
