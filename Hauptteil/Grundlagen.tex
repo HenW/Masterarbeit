@@ -74,7 +74,7 @@ Die folgende Abbildung zeigt die wichtigsten Daten des verbauten \ac{fpga}:~\cit
 
 \section{Eingebettete Systeme}\label{kap:eingebettetesysteme}
 
-Computer, welche zur Steuerung genutzt werden, nennt man \emph{eingebettete Systeme} (engl. Embedded Systems).~\cite{ibm} In den späten 1960 Jahren wurden diese Systeme erstmalig zur Steuerung in der Kommunikation verwendet. Auf Grund der Tatsache,
+Computer, welche zur Steuerung genutzt werden, nennt man \emph{eingebettete Systeme} (engl. Embedded Systems).~\cite{ibm} In den späten 1960 Jahren wurden diese Systeme erstmalig zur Steuerung in der Kommunikation verwendet. Aufgrund der Tatsache,
 dass die Industrie sich in den letzten Jahren unter anderem darauf konzentriert hat, die Systeme immer kleiner zu gestalten, kam es dazu, dass eingebettete Systeme weiterentwickelt wurden. Diese bieten mehr Möglichkeiten für extrem kleine Maschinen.
 Durch die steigenden Anforderung an diese Systeme, vor allem im Bezug auf die Netzwerkfähigkeit, wurden diese immer komplexer und benötigen immer mehr Schnittstellen aller Art und einen größeren Speicher als frühere Modelle. Durch diese Anpassungen wurde es
 möglich und nötig Betriebssysteme auf diesen Systemen auszuführen, um die steigenden Ressourcen zu verwalten. Bereits in den 70er Jahren wurden die ersten Betriebssysteme für eingebettete Systeme veröffentlicht, sodass es heutezutage einige
@@ -1145,7 +1145,7 @@ Die nachfolgende Abbildung~\ref{fig:coremarkresult} stellt nun den direkten Verg
 An dieser Grafik lässt sich die Leistungsfähigkeit der \ac{cpu} leicht ablesen, da im Gegensatz zu den einzelnen Diagrammen, das Coremark-Ergebnis durch die jeweilige Taktfrequenz der
 einzelnen Systeme dividiert wurde. So ist beispielsweise die Anzahl der Iterationen pro Sekunde beim Prozessor des \ac{prhs} (88,85) geringer als die des Microblaze (123,84), jedoch
 relativiert sich die Zahl dadurch, dass der Prozessor des \ac{prhs} mit 75MHz eine geringere Taktfrequenz besitzt, als der Microblaze (100MHz). \\
-Der LEON3 erreicht mit einem Wert von 121,36 Iterationen pro Sekunde das zweithöchste Ergebnis, schlägt aber auf Grund der niedrigsten Frequenz (70MHz), die anderen Systeme im direkten Vergleich.\\
+Der LEON3 erreicht mit einem Wert von 121,36 Iterationen pro Sekunde das zweithöchste Ergebnis, schlägt aber aufgrund der niedrigsten Frequenz (70MHz), die anderen Systeme im direkten Vergleich.\\
 Zur besseren Einordnung der Ergebnisse, liefert ein Standard-Desktop-System (IntelCore i7) ein Ergebnis von 9,12 Coremark/MHz.\\
 
 \section{Ergebnisse der Dhrystone-Benchmark}\label{kap:dhrystonetest}
@@ -1246,7 +1246,7 @@ Die Geschwindigkeit ist nahezu gleichbleibend und erreicht bei einem 2 Kb Block 
 \end{figure}
 
 Die Ausführung der Ramspeed-Benchmark auf dem LEON3-System ergab eine maximale Geschwindigkeit von 237,98 MB/s. Auch hier ist die Größe des Caches gut anhand des Leistungseinbruches zu erkennen,
-wobei dieser auf Grund der insgesamt 8 Kb, erst bei der entsprechenden Größe auftritt.\\
+wobei dieser aufgrund der insgesamt 8 Kb, erst bei der entsprechenden Größe auftritt.\\
 
 \textbf{PRHS}
 
@@ -1311,16 +1311,16 @@ Konfiguration und Taktfrequenz. Dies würde bei einer Taktfrequenz von 100 MHz e
 Ergebnis unterscheidet. Das \ac{prhs} erreicht einen Wert von 0,26 \ac{dmips}/MHz und bildet damit das schwächste Ergebnis der Benchmark ab, kommt dem Microblaze
 bei einer durchschnittlichen Differenz von 0,05 \ac{dmips}/MHz aber sehr nahe.\\
 Der letzte Vergleich wurde in der Abbildung~\ref{fig:ramspeedresult} grafisch dargestellt. Hierbei sind lediglich der Microblaze und das \ac{prhs} im direkten Vergleich
-zu betrachten, da nur diese beiden System mit einem \emph{4 KB-Direct-Mapped-Cache} konfiguriert wurden, was anhand des Resultats unschwer zu erkennen ist, auf Grund
+zu betrachten, da nur diese beiden System mit einem \emph{4 KB-Direct-Mapped-Cache} konfiguriert wurden, was anhand des Resultats unschwer zu erkennen ist, aufgrund
 des Leistungseinbruches nach dem 4 Kb Block. Der Microblaze erreicht einen Spitzenwert von 181,3 MB/s, welcher mehr als dreimal so groß ist, wie der des \ac{prhs}
 mit 53,5 MB/s. Dieser Leistungsunterschied ist dadurch zu erklären, dass, wie bereits beschrieben die einzelnen Komponenten des Microblaze optimal aufeinander
-abgestimmt sind, dazu zählt vermutlich auch der \ac{axi}-Bus. Das \ac{prhs} hingegen benutzt einen eigenen Bus, des sogenannten \ac{prhs}. Auf Grund dieser Kombination
+abgestimmt sind, dazu zählt vermutlich auch der \ac{axi}-Bus. Das \ac{prhs} hingegen benutzt einen eigenen Bus, des sogenannten \ac{prhs}. Aufgrund dieser Kombination
 kann es zu diesem Leistungsunterschied kommen.
 \newpage
- Der LEON3 fällt, wie bereits erwähnt, auf Grund seines 2-Wege-Assoziativen-Caches aus dem Vergleich raus. Jedoch erzielt
+ Der LEON3 fällt, wie bereits erwähnt, aufgrund seines 2-Wege-Assoziativen-Caches aus dem Vergleich raus. Jedoch erzielt
 er mit einem Ergebnis von 238 MB/s in der Spitze, einen Wert, welcher besser als der des Microblaze und deutlich besser als der des \ac{prhs} ist.\\ Infolge der
 Konfiguration erreicht der LEON3 auf bei einer Blockgröße von 8 Kb nahezu seinen Topwert.\\
-Abschließend lässt sich feststellen, dass der LEON3 auf Grund der erreichten Ergebnisse am besten abschneidet, auch wenn das System nicht in allen Punkten
+Abschließend lässt sich feststellen, dass der LEON3 aufgrund der erreichten Ergebnisse am besten abschneidet, auch wenn das System nicht in allen Punkten
 wie gewünscht konfiguriert werden konnte, wie der Cache und die \ac{fpu} gezeigt haben. Nichtsdestotrotz bietet er für eine Open-Source-System eine hohe Stabilität
 und erlaubt ein großes Maß an Einstellungsmöglichkeiten und Features. Das Microblaze-System, welches als einziges kommerzielles System getestet wurde, konnte die geforderte
 Konfiguration bieten und erreicht gute Ergebnisse im direkten Vergleich. Das System ist in jeglicher Konfiguration sehr stabil und leicht zu konfigurieren, bietet
