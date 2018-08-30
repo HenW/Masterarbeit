@@ -21,7 +21,7 @@ Das Nexys4 DDR besitzt weiterhin folgende Features:~\cite{digilent}\\
   \item \ac{usb}-\ac{uart}-Brücke
   \item 12-Bit \ac{vga}-Ausgang
   \item 3-Achsen Beschleunigungssensor
-  \item 128M DDR2-\ac{sdram} Speicher
+  \item 128MB DDR2-\ac{sdram} Speicher
   \item Pmod für XADC-Signale
   \item 16 LEDs für den Nutzer
   \item Zwei dreifarbige LEDs
@@ -50,13 +50,13 @@ Das Nexys4 DDR besitzt weiterhin folgende Features:~\cite{digilent}\\
 Die Xilinx 7-Serie umfasst derzeit vier \ac{fpga}-Familien, welche die gesamte Bandbreite an Systemanforderungen abdecken. Diese reicht von kostengünstigen Anwendungen (Spartan-7),
  bis hin zur Hochleistungsanwendung mit High-End-Konnektivitätsbandbreite und Logikkapazität (Virtex-7). \\
 Die FPGAs der 7-Serie, die auf einer hochmodernen Hochleistungs-HPL-Technologie (HKMG-Technologie) mit 28 nm und High-k-Metal-Gate-Technologie basieren,
- ermöglichen eine beispiellose Steigerung der Systemleistung auf 2,9 Tb/s der Eingabe- und Ausgabe-Bandbreite, 2 Millionen logischer Zellenkapazität und 5,3 TMAC/s DSP,
- wobei 50\% weniger Strom verbraucht wird als bei Geräten der vorherigen Generation, um eine voll programmierbare Alternative zu ASSPs und ASICs zu bieten.\\
+ ermöglichen eine beispiellose Steigerung der Systemleistung auf 2,9 Tb/s der Eingabe- und Ausgabe-Bandbreite, 2 Millionen logischer Zellenkapazität und 5,3 TMAC/s \ac{dsp},
+ wobei 50\% weniger Strom verbraucht wird als bei Geräten der vorherigen Generation, um eine voll programmierbare Alternative zu \ac{assp} und \ac{asic} zu bieten.\\
  Die Abbildung~\ref{fig:7serie} zeigt den Vergleich der vier \ac{fpga}:~\cite{artix7}\\
 
  \begin{figure}[H]
  \centering
- \includegraphics[width=0.8\textwidth]{Hauptteil/7serie.png}
+ \includegraphics[width=1\textwidth]{Hauptteil/7serie.png}
  \caption{Technische Daten des 7-Serie von Xilinx. Der verwendete Artix7 ist rot markiert.~\cite{artix7}}\label{fig:7serie}
  \end{figure}
 
@@ -77,7 +77,7 @@ Die folgende Abbildung zeigt die wichtigsten Daten des verbauten \ac{fpga}:~\cit
 Computer, welche zur Steuerung genutzt werden, nennt man \emph{eingebettete Systeme} (engl. Embedded Systems).~\cite{ibm} In den späten 1960 Jahren wurden diese Systeme erstmalig zur Steuerung in der Kommunikation verwendet. Auf Grund der Tatsache,
 dass die Industrie sich in den letzten Jahren unter anderem darauf konzentriert hat, die Systeme immer kleiner zu gestalten, kam es dazu, dass eingebettete Systeme weiterentwickelt wurden. Diese bieten mehr Möglichkeiten für extrem kleine Maschinen.
 Durch die steigenden Anforderung an diese Systeme, vor allem im Bezug auf die Netzwerkfähigkeit, wurden diese immer komplexer und benötigen immer mehr Schnittstellen aller Art und einen größeren Speicher als frühere Modelle. Durch diese Anpassungen wurde es
-möglich und nötig Betriebssysteme auf diesen Systemen auszuführen, um die steigenden Ressourcen zu verwalten. Bereits in den 70er Jahren wurden die ersten Betriebssysteme für eingebettete Systeme veröffentlich, sodass es heutezutage einige
+möglich und nötig Betriebssysteme auf diesen Systemen auszuführen, um die steigenden Ressourcen zu verwalten. Bereits in den 70er Jahren wurden die ersten Betriebssysteme für eingebettete Systeme veröffentlicht, sodass es heutezutage einige
 realisierbare Optionen gibt.\cite{ibm}\\
 
 \textbf{Verschiedene Arten des Betriebssytem für eingebettete Systeme}\\
@@ -86,7 +86,7 @@ Es gibt eine Vielzahl unterschiedlicher Betriebssysteme für eingebettetee Syste
   \item ETLinux: eine vollständige Linux-Distribution, die auf kleinen industriellen Computern, insbesondere PC / 104-Modulen, ausgeführt werden kann
   \item LEM: eine kleine (<8 MB) Linux-Version für mehrere Benutzer, welche auf 386-Systemen läuft
   \item \ac{loaf}: Eine \emph{Linux on A Floppy}-Distribution, die ebenfalls auf 386-Systemen läuft
-  \item uClinux: Linux für Systeme ohne \ac{mmu}. Unterstüutzt die ColdFire-Mikroprozessoren Motorola 68K, MCF5206 und MCF5207
+  \item uClinux: Linux für Systeme ohne \ac{mmu}. Unterstützt die ColdFire-Mikroprozessoren Motorola 68K, MCF5206 und MCF5207
   \item uLinux: kleine Linux-Distribution
   \item ThinLinux: eine minimierte Linux-Distribution für dedizierte Kamera-Server, X-10-Controller, MP3-Player und andere eingebettete Anwendungen
 \end{itemize}
@@ -98,7 +98,7 @@ Linux-Systeme, welche meistens auf PC-Plattformen laufen, können durchaus als v
 Dies geschieht vor allem dadurch, dass Linux die Installation und die Verwaltung einfacher gestaltet, indem man sich bei der Entwicklung
 auf die Basics beschränkt.\\
 So ist das herkömmliche Linux, welches auf einem PC ausgeführt wird, so konfiguriert, dass es mit mit einer Festplatte, viel Arbeitsspeicher, sowie Ein- und Ausgabgeräten umgehen kann.
-Dies besitzt und benötigt ein eingebettetes System in der Regel nicht. Ein voll ausgestatter Linux-Kernel bentötigt einige wenige MB Arbeitsspeicher. Betrachtet man dazu noch Dienstprogramme
+Dies besitzt und benötigt ein eingebettetes System in der Regel nicht. Ein voll ausgestatter Linux-Kernel benötigt einige wenige MB Arbeitsspeicher. Betrachtet man dazu noch Dienstprogramme
 und Netzwerkfunktionen, liegt der benötigte
  Arbeitsspeicher ebenfalls bei einigen wenigen MB (16-32 MB). Das führt dazu, dass es alles in allem ein leichtgewichtiges
  Betriebsystem darstellt, welches ideal für eingebettete Systeme ist.\\
@@ -117,7 +117,7 @@ und Netzwerkfunktionen, liegt der benötigte
 Ein wichiger Nachteil beim Ausführen von Linux auf einem eingebetteten System ist es, dass die Linux-Architektur eine Möglichkeit bietet, dass Softwaremodul in
 Echtzeit in den Kernel-Space hinzugefügt werden können. Hierdurch entsteht eine Sicherheitslücke, da der Kernel-Space für das Zeitmanagement, Hardware-Interrupts und
 für das Ausführen von Programmen zuständig ist. Kommt es in dem Kernel-Space zu einem Fehler innerhalb des Codes, kann dieser zu einem Absturz des gesamten
-Betriebssystem führen und stellt somit eine ernste Sicherheitslücke für Echtzeitanwendungen dar.\\
+Betriebssystem führen.\\
 Um diese Sicherheitslücke zu schließen, gibt es Standart-\ac{rtos}, welche grundsätzlich für einen Echtzeit-Einsatz konfiguriert sind und eine höhere Zuverlässigkeit bietet.
 Prozesse erhalten bei Bedarf eine höhere Priorität,
  wenn sie vom Benutzer auf Systemebene gestartet werden. Prozesse erhalten eine ID, damit das Betriebssystem die ausgeführten Programme verfolgen kann.
@@ -231,10 +231,10 @@ Die Verwendung eines Cross-Compilers bringt weitere Vorteile mit sich:
   \item Geschwindigkeit: Zielplattformen sind in der Regel langsamer als die Host-Systeme. Speziell eingebettete Systeme sind für niedrige Kosten und einen geringen Stromverbrauch ausgelegt
                           und nicht für hohe Leistung.
   \item Leistungsfähigkeit: Der Compiler-Vorgang ist enorm ressourcenintensiv. Zielsysteme verfügen normalerweise nicht über die geforderten Mengen an Arbeits- und Festplattenspeicher.
-  \item Verfügbarkeit: Um zum Beispiel Linux erfolgreich auf einer Plattform zu implementieren, welcher zuvor noch nie ausgeführt wurden, wird ein Cross-Compiler benötigt. Dies gilt auch für
+  \item Verfügbarkeit: Um zum Beispiel Linux erfolgreich auf einer Plattform zu implementieren, welches zuvor noch nie ausgeführt wurde, wird ein Cross-Compiler benötigt. Dies gilt auch für
                       Systeme, welche normalerweise nicht als Entwicklungsumgebung genutzt werden, sodass keine aktuellen, ausführungsbereite Programme zur Verfügung stehen.
   \item Flexibilität: Eine voll funktionsfähige Linux-Distribution besteht aus Hunderten von Paketen, aber eine Cross-Compile-Umgebung kann von den meisten Distributionen des Hosts abhängen.
-                      Das Cross-Compiling konzentriert sich auf die Erstellung der zu implementierenden Zielpakete und nicht darauf, dass nur Build-only-Voraussetzungen auf dem Zielsystem funktionieren.
+                      Das Cross-Compiling konzentriert sich auf das Erstellen der zu implementierenden Zielpakete und nicht darauf, dass nur Build-only-Voraussetzungen auf dem Zielsystem funktionieren.
 \end{itemize}
 
 
@@ -395,7 +395,7 @@ Bereich zugreifen wollen.\cite{itwissen}\\
 \textbf{Cache}\\
 Eine der größten Herausforderungen im Computerdesign ist es, Speichersysteme zu schaffen, welche den Prozessoren mit Operanden mit einer Geschwindigkeit versorgt, welche ihn in der in der
 Ausführung nicht ausbremst.
-Moderne Prozessoren stellen höchste Ansprüche an ein Speichersystem, sowohl hinsichtlich der Latenzzeit, sowie hinsichtlich der Bandbreite. Diese beiden Aspekte stellen einen Konflikt dar.
+Moderne Prozessoren stellen höchste Ansprüche an ein Speichersystem, sowohl hinsichtlich der Latenzzeit, als auch hinsichtlich der Bandbreite. Diese beiden Aspekte stellen einen Konflikt dar.
 So führen Methoden zur Steigerung der Bandbreite in der Regel unmittelbar zur Erhöhung der Latenzzeit.
 Ebenfalls wird es immer schwieriger ein Speichersystem zu realisieren, welches mit der steigenden Geschwindigkeit des Prozessors agieren kann.\\
 Eine Lösung für dieses Problem sind die Caches. Ein Cache nimmt die zuletzt benutzten Speicherworte in einen kleinen, schnellen Speicher auf, sodass der erneute Zugriff darauf beschleunigt wird.
@@ -531,12 +531,12 @@ Mächtigkeit des Befehlssatzes, in ihrer Aussagekraft eingeschränkt. Dies gilt 
 internen Implementierung zu erheblichen Unterschieden kommen kann. \\
 Um hier einen aussagekräftigen Vergleich zu erzielen, wurden verschiedene Maßzahlen eingeführt, wie beispielsweise \ac{mips}, der \ac{ipc}-Wert oder ac{mflops}. Diese
  Zahlen bieten zwar eine genaue Auskunft über bestimmte Architekturaspekte, ein Rückschluss auf die wirklich erreichbare Geschwindigkeit beim Ausführen eines Programmes
- unter realen Bedingungen ist nur bedingt möglich. \\
+ unter realen Bedingungen ist jedoch nur bedingt möglich. \\
 So wurde festgelegt, dass die Leistung unter Ausführung fest definierter, als Benchmark bezeichneter Referenzprogramme ermittelt wird.\\
  Als Maß gilt entweder die gemessene
  Laufzeit zwischen Start und Ende des Programms oder die Anzahl der Operationen, die in einer genormten Zeiteinheit ausgeführt werden. Damit diese Ergebnisse aussagekräftig
  und nicht verfälscht sind, müssen die verschiedenen Benchmark-Programme unter reproduzierbaren Bedingungen ausgeführt werden. Dies wird bei heutigen Betriebssystemen zunehmend
-  schwieriger, da Dienstprozesse des Betriebsystems die Messung erheblich stören können.~\cite{benchmark}
+  schwieriger, da Dienstprozesse des Betriebssystems die Messung erheblich stören können.~\cite{benchmark}
 
 \subsection{Dhrystone}\label{kap:dhrystone}
 Der Dhrystone-Benchmark wurde 1984 von Reinhold P. Weicker entwickelt. Die Besonderheit dieses Benchmark ist, dass sie vollständig
@@ -546,16 +546,16 @@ Die ursprüngliche Version basierte noch auf dem Ada-Code, heutzutage wird die L
  um rund 100 Befehle, die aus einfachen Zuweisungen und Fallunterscheidungen, sowie Schleifen, Sprüngen und Funktionsaufrufen bestehen.
   Diese Dhrystone-Befehle werden durchgängig in Form einer Schleife ausgeführt, wobei die Anzahl der Durchgänge vor der Ausführung vom
   Nutzer festgelegt werden kann. Im Endeffekt entspricht die Leistung des Prozessors der Anzahl der in einer Sekunde durchgeführten Schleifendurchläufe.
-  Das Ergebnis der Benchmark wird als \emph{Dhrystones per Second} angegeben. Um diesen Wert nun in die Einheit \ac{dmips} umzurechnen wird der Faktor 1757 benötigt. Dieser Skalierungsfaktor
+  Das Ergebnis der Benchmark wird als \emph{Dhrystones per Second} angegeben. Um diesen Wert nun in die Einheit \ac{dmips} umzurechnen, wird der Faktor 1757 benötigt. Dieser Skalierungsfaktor
   stammt von einer VAX 11/780, auf welcher die Dhrystone-Benchmark ursprünglich ausgeführt wurde und ein Wert von 1757 erreichte und somit als 1-\ac{mips}-Maschine angesehen wurde. Also ergibt sich der
   \ac{dmips}-Wert aus der Division des \emph{Dhrystones per Second} und dem Skalierungsfaktor.~\cite{benchmark}
 
   \subsection{Coremark}\label{kap:coremark}
-  Der CoreMark von \ac{eembc} ist ein Benchmark, der die Leistung von \ac{mcu} und \ac{cpu} misst, die in eingebetteten Systemen verwendet werden.
+  Der CoreMark von \ac{eembc} ist ein Benchmark, welche die Leistung von \ac{mcu} und \ac{cpu} misst, die in eingebetteten Systemen verwendet werden.
   \newpage
    Coremark enthält Implementierungen der folgenden Algorithmen: Listenverarbeitung (Suchen und Sortieren),
     Matrixmanipulation (gemeinsame Matrixoperationen), Zustandsmaschine (prüft, ob ein Eingabestream gültige Zahlen enthält) und \ac{crc} (zyklische Redundanzprüfung).
-    Es kann auf Geräten von 8-Bit-Mikrocontrollern bis zu 64-Bit-Mikroprozessoren ausgeführt werden.
+    Es kann auf Geräten von 8- Bit- Mikrocontrollern bis zu 64- Bit- Mikroprozessoren ausgeführt werden.
   Der \ac{crc}-Algorithmus erfüllt eine Doppelfunktion; Es bietet eine Arbeitslast, die häufig in eingebetteten Anwendungen zu finden ist
   und gewährleistet den korrekten Betrieb der CoreMark-Benchmarks, die im Wesentlichen einen Mechanismus zur Selbstüberprüfung bereitstellt.
    Insbesondere wird zur Überprüfung der korrekten Operation ein 16-Bit-\ac{crc} anhand der Daten ausgeführt, die in Elementen der verknüpften Liste enthalten sind.\\
@@ -566,7 +566,7 @@ Die ursprüngliche Version basierte noch auf dem Ada-Code, heutzutage wird die L
   Wenn die Coremark auf einer \ac{mcu} oder \ac{cpu} ausgeführt wird, ergibt sich ein so genannter Score, welcher einen schnellen Vergleich zwischen verschiedenen Prozessoren ermöglicht.~\cite{coremark}
 
 
-  Grundlegende Eigenschaften:
+  Die Coremark-Benchmark weist dabei folgende Eigenschaften auf:
 \begin{itemize}
   \item Geschrieben in kleinem und leicht verständlichen C-Code
   \item Bietet eine realistische Mischung aus Lese- und Schreiboperationen, sowie Ganzzahl- und Steueroperationen
@@ -709,13 +709,13 @@ Die Anzahl von Gigabyte pro Durchlauf wurden in dieser Arbeit auf dem Wert \emph
 %
 
 \chapter{Messergebnisse}\label{kap:ergebnisse}
-Die Bewertung der Leistungsfähigkeit bestehender Soft-Cores stellt eine große Herausforderung für den Entwicklar dar, um den effizientesten und geeignetsten Soft-Core
+Die Bewertung der Leistungsfähigkeit bestehender Soft-Cores stellt eine große Herausforderung für den Entwickler dar, um den effizientesten und geeignetsten Soft-Core
 für eine bestimmte Anwendung auszuwählen. Im Kapitel~\ref{kap:grundlagen} wurden bereits Soft-Cores, das Board, sowie die einzelnen Benchmarks näher erkläutert. Im folgenden Kapitel
 soll nun ein Überblick über Soft-Core-Prozessoren gegeben werden, welche in eingebetteten System verwendet werden. \\
 In dieser Arbeit wurden verschiedene Open-Source-, kommerzielle, sowie das unveröffentlichte System der Professur für Technische Informatik an der Helmut-Schmidt-Universität verglichen.
-Dabei werden die verschiedenen Soft-Cores vorher nahezu identischen konfiguriert, um eine bessere Vergleichbarkeit herzustellen. Evaluiert wird bei den verwendeten Soft-Cores
+ Evaluiert wird bei den verwendeten Soft-Cores
 die Auswirkung auf die gesamte Ausführungszeit und den \ac{fpga}-Flächenverbrauch. Um einen möglich aussagekräftigen Vergleich zu erzielen, ist es nötig die System nahezu identisch zu
-konfigurieren. Dazu zählt vor allem die Entscheidung, alle Prozessoren als Single-Core zu konfigurieren, da das erstellen der Multi-Core-Prozessoren nicht bei allen Systemen ohne Weiteres
+konfigurieren. Dazu zählt vor allem die Entscheidung, alle Prozessoren als Single-Core zu konfigurieren, da das Erstellen der Multi-Core-Prozessoren nicht bei allen Systemen ohne Weiteres
 realisierbar war. Die übrigen Anforderungen an die Systeme sind in einem der nachfolgenden Kapitel angegeben.\\
 
 \section{Verfügbare Soft-Core Prozessoren im Überblick}\label{kap:überblick}
@@ -767,9 +767,12 @@ Durch diese Konfiguration lassen sich folgende Schlüsselfähigkeiten des System
 \label{fig:microblaze}
 \end{figure}
 
-Hierbei lässt sich erkennen, dass der Prozessor über den \ac{lmb} auf den On-Chip-Speicher zugreifen kann. Ist ein Zugriff auf externen Speicher erforderlich,
-geschieht das über den \ac{plb}, an welchen weitere Peripheriegeräte angebunden sind. An diesen \ac{plb} ist ebenfalls der Timer angeschlossen, welcher das System mit einem Takt von
-100 MHz taktet. Die Leistung des Microblaze kann gesteigert werden, indem das System um weitere Komponenten wie zum Beispiel \ac{fpu} oder \ac{bs} ergänzt wird.\\
+Hierbei lässt sich erkennen, dass der Prozessor über den \ac{lmb} auf den On-Chip-Speicher zugreifen kann.
+Ist ein Zugriff auf externen Speicher erforderlich,
+geschieht das über den \ac{axi}-Bus, an welchen weitere Peripheriegeräte angebunden sind. An diesen \ac{axi}-Bus
+ist ebenfalls der Timer angeschlossen, welcher das System mit einem Takt von
+100 MHz taktet. Die Leistung des Microblaze kann gesteigert werden, indem das System um weitere Komponenten
+ wie zum Beispiel \ac{fpu} oder \ac{bs} ergänzt wird.\\
 Die Leistung des Microblaze, basierend auf der Vivado-Version 2017.4, ist wie folgt angegeben:~\cite{microblaze}\\
 
 \begin{figure}[H]
@@ -863,15 +866,23 @@ Der Prozessor lässt sich durch folgende Eigenschaften näher erläutern:\\
 
 
 \subsection{lowRISC}\label{kap:lowrisc}
-Als viertes System sollte das lowRISC-System die gleichen Benchmarks durchlaufen wie die anderen Systeme. Nachdem die Konfiguration im Rahmen einer vorhergehenden Studienarbeit~\cite{studienarbeit},
+Als viertes System sollte das lowRISC-System die gleichen Benchmarks durchlaufen wie die anderen Systeme.
+Nachdem die Konfiguration im Rahmen einer vorhergehenden Studienarbeit~\cite{studienarbeit},
 erfolgreich auf das Nexys4-DDR-Board angepasst
-und Linux erfolgreich getestet wurde, musste leider im weiteren Verlauf festgestellt werden, dass das System nicht für einen Vergleich dieser Art vorgesehen ist. Es soll langfristig als vollständig
-und offenes \ac{soc} dienen und als Low-Cost-Entwicklungsboard zur Verfügung gestellt werden, um die Open-Source-Community zu unterstützten.\\
-Hierdurch versprechen sich die Entwickler neue Hardware-Sicherheitsfunktionen erkunden und fördern zu können. Des Weiteren soll es aufstrebenden und soliden Unternehmen die Möglichkeit bieten,
-Entwürfe zu erzeugen und diesen Prozess zu vereinfachen. Dazu zählen die Veröffentlichunug von Skripten, Tools, Quellen und Erfahrungen.\\
-Ein wesentliches Problem dieses Design auf dem, in dieser Arbeit verwendeten, Board zu benchmarken, war es, dass es Timingprobleme zwischen der System- und der Realzeit gab, sodass Tests,
-welche über die Zeit gemessen wurden, nicht korrekt waren. Nachdem versucht wurde diese Probleme durch erneute Rekonfiguration zu lösen und dies auch teilweise gelang, waren die erzielten Ergebnisse
-nicht konkurrenzfähig und zeigte erneut, dass sich dieses System in der Entwicklung befindet und aufgrund dessen, dass es sich um ein Open-Source-Projekt handelt, noch einige Optimierungsmöglichkeiten bietet.\\
+und Linux erfolgreich getestet wurde, musste leider im weiteren Verlauf festgestellt werden, dass das System
+ nicht für einen Vergleich dieser Art vorgesehen ist. Es soll langfristig als vollständig
+und offenes \ac{soc} dienen und als Low-Cost-Entwicklungsboard zur Verfügung gestellt werden, um die
+ Open-Source-Community zu unterstützten.\\
+Hierdurch versprechen sich die Entwickler neue Hardware-Sicherheitsfunktionen erkunden und fördern zu können.
+ Des Weiteren soll es aufstrebenden und soliden Unternehmen die Möglichkeit bieten,
+Entwürfe zu erzeugen und diesen Prozess zu vereinfachen. Dazu zählen die Veröffentlichung von Skripten,
+Tools, Quellen und Erfahrungen.\\
+Ein wesentliches Problem dieses Design auf dem, in dieser Arbeit verwendeten, Board zu benchmarken, war es, dass es
+ Timingprobleme zwischen der System- und der Realzeit gab, sodass Tests,
+welche über die Zeit gemessen wurden, nicht korrekt waren. Nachdem versucht wurde diese Probleme durch
+Rekonfiguration zu lösen und dies auch teilweise gelang, waren die erzielten Ergebnisse
+nicht konkurrenzfähig und zeigte erneut, dass sich dieses System in der Entwicklung befindet und aufgrund dessen,
+ dass es sich um ein Open-Source-Projekt handelt, noch einige Optimierungsmöglichkeiten bietet.\\
 
 
 \section{Übersicht der getesteten Konfiguration}\label{kap:getestetekonfiguration}
@@ -974,8 +985,8 @@ Auch der Ressourcen-Verbrauch des LEON3 wurde nach der Synthese aufgenommen und 
 \end{figure}
 
 Danach ergibt sich eine Nutzung von 40\%/18,7\% der \ac{lut}, 1,1\%/0,6\% der \ac{lutram} und 8,2\% beziehungsweise 5,4\% der \ac{ff}.
-Speziell im Bereich der \ac{lut} und der \ac{ff} ist ein deutlicher Anstieg des Vebrauchs zu beobachten, in dem sich die Zahl der Verbrauchten Ressourcen mehr als verdoppeln (\ac{lut}).
-Dieser Unterschied ist dadurch zu erklären, dass es sich um eine IEEE-754-konforme \ac{fpu} handelt, welche die Operanden mmit einfacher und doppelter Genauigkeit unterstüzt. Die Entwickler
+Speziell im Bereich der \ac{lut} und der \ac{ff} ist ein deutlicher Anstieg des Verbrauchs zu beobachten, in dem sich die Zahl der verbrauchten Ressourcen mehr als verdoppeln (\ac{lut}).
+Dieser Unterschied ist dadurch zu erklären, dass es sich um eine IEEE-754-konforme \ac{fpu} handelt, welche die Operanden mit einfacher und doppelter Genauigkeit unterstützt. Die Entwickler
 beschrieben die \ac{fpu} als ein fortschrittliches Design mit hohem Durchsatz und geringer Latenz und bietet ein umfangreiches Paket an Operationen. Diese Leistungsfähigkeit und der Umfang
 führen zu dem starken Unterschied in der Ressourcen-Nutzung.\\
 Die weiteren Parameter, welche in Abbilduung~\ref{fig:ressourcenleon32} dargestellt sind, unterscheiden sich hingegen nicht voneinander.\\
@@ -1005,7 +1016,7 @@ Die Ergebnisse der Hauptkriterien sind in Abbildung~\ref{fig:ressourcenprhs1} da
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.7\textwidth]{Hauptteil/ressourcenprhs1.png}
+\includegraphics[width=0.65\textwidth]{Hauptteil/ressourcenprhs1.png}
 \caption{Ressourcen-Nutzung des \ac{prhs}}
 \label{fig:ressourcenprhs1}
 \end{figure}
@@ -1016,7 +1027,7 @@ Das Dual-Core-System benötigt dementsprechend mehr \ac{lut} (50,6\%) und \ac{ff
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.57\textwidth]{Hauptteil/ressourcenprhs2.png}
+\includegraphics[width=0.65\textwidth]{Hauptteil/ressourcenprhs2.png}
 \caption{Ressourcen-Nutzung des \ac{prhs}}
 \label{fig:ressourcenprhs2}
 \end{figure}
@@ -1045,18 +1056,18 @@ Die Abbildung~\ref{fig:ressourcenresult} stellt den direkten Vergleich der Haupt
 
 Es ist zu sehen, dass das die kommerziellen Systeme in allen getesteten Bereichen weniger Ressourcen benötigen.
 Dies ist damit zu erklären, dass für diese Systeme deutlich mehr finanzielle Mittel bereitstehen und dadurch auch mehr
-erfahrenes Personal an der Entwicklung beteiligt sind.\\
+erfahrenes Personal an der Entwicklung beteiligt ist.\\
 Dabei fällt besonders der LEON3 auf, der, zumindest in den Hauptkriterien gegenüber der Konkurrenz, deutlich weniger Ressourcen
 benötigt, um die Konfiguration, welche für diesen Vergleich vorgegeben war, zu erfüllen.\\
 Jedoch ist im weiteren Verlauf der Tests aufgefallen, dass der LEON3 als Dual-Core deutlich mehr
  der \ac{lut}-Ressourcen (ca. 21.000 Slice \ac{lut} pro Core) benötigt. Das \ac{prhs}-System hingegen benötigt in der Multi-Core-Konfiguration ungefähr 13.000 Slice \ac{lut} mehr pro Core.
-Dies führt, wie bereits in Kapitel~\ref{kap:getestetekonfiguration} erwähnt, zu der Feststellung, dass das LEON3-System auf dem, in dieser Arbeit genutzten, \ac{fpga} nicht realisierbar ist,
-auf Grund der begrenzten Ressourcen.
+Dies führt, wie bereits in Kapitel~\ref{kap:getestetekonfiguration} erwähnt,
+zu der Feststellung, dass das LEON3-System aufgrund der begrenzten Ressourcen auf dem, in dieser Arbeit genutzten, \ac{fpga} nicht realisierbar ist.
 \newpage
  Dadurch scheitert die Konfiguration bereits an der Synthese.\\
  Der Microblaze kommt dem LEON3, bis auf die Anzahl des benötigten \ac{lutram}, sehr nahe und bietet genug Reserven, um das System zu erweitern.\\
 Der Ressourcenverbrauch hängt des Weiteren stark von der Wahl der Befehlssatzarchitektur (engl. \ac{isa}) ab. Alle drei Systeme verwenden intern eine andere \ac{isa}, wie in der
-Tabelle~\ref{tab:features} dargestellt. Die verwendeten \ac{isa} unterscheiden sich dabei maßgeblich in der Art der Implementierung, sowie in dem Umfang.\\
+Tabelle~\ref{tab:features} dargestellt. Die verwendeten \ac{isa} unterscheiden sich dabei maßgeblich in der Art der Implementierung, sowie in ihrem Umfang.\\
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.7\textwidth]{Hauptteil/ressourcenresult1.png}
@@ -1080,7 +1091,7 @@ Die CoreMark-Benchmark, welche in Kapitel~\ref{kap:coremark} näher beschrieben 
 nicht möglich war den LEON3 ohne eine \ac{fpu} zu testen, wurde hier die Anzahl der Prozessoren variiert, sodass die Benchmark sowohl auf einem Single-, als auch auf einem Dual-Core-System
 ausgeführt wurde.\\
 Das \ac{prhs}-System, welches zur Zeit der Erstellung dieser Arbeit noch nicht über eine funktionieren \ac{fpu} verfügt, wurde ebenfalls als Single- und Dual-Core-System getestet und konnte
-darüber hinaus noch als Quad-Core-System getestet werden.\\
+darüber hinaus als Quad-Core-System getestet werden.\\
 Um die Darstellung übersichtlicher zu machen sind die Werte der \emph{Total ticks} an der primären Y-Achsen und die Werte der \emph{Total Time}, beziehungsweise \emph{Iterations/Sec}
 an der sekundären Y-Achsen abzulesen.\\
 
@@ -1132,7 +1143,7 @@ Die nachfolgende Abbildung~\ref{fig:coremarkresult} stellt nun den direkten Verg
 \end{figure}
 
 An dieser Grafik lässt sich die Leistungsfähigkeit der \ac{cpu} leicht ablesen, da im Gegensatz zu den einzelnen Diagrammen, das Coremark-Ergebnis durch die jeweilige Taktfrequenz der
-einzelnen Systeme dividiert wurde. So ist beispielsweise die Anzahl der Iterationen pro Sekunde beim Prozessor des \ac{prhs} (92,21) geringer als die des Microblaze (123,84), jedoch
+einzelnen Systeme dividiert wurde. So ist beispielsweise die Anzahl der Iterationen pro Sekunde beim Prozessor des \ac{prhs} (88,85) geringer als die des Microblaze (123,84), jedoch
 relativiert sich die Zahl dadurch, dass der Prozessor des \ac{prhs} mit 75MHz eine geringere Taktfrequenz besitzt, als der Microblaze (100MHz). \\
 Der LEON3 erreicht mit einem Wert von 121,36 Iterationen pro Sekunde das zweithöchste Ergebnis, schlägt aber auf Grund der niedrigsten Frequenz (70MHz), die anderen Systeme im direkten Vergleich.\\
 Zur besseren Einordnung der Ergebnisse, liefert ein Standard-Desktop-System (IntelCore i7) ein Ergebnis von 9,12 Coremark/MHz.\\
@@ -1155,7 +1166,7 @@ der Läufe aufgetragen, welche zwischen 100.000 und 10.000.000 liegen.\\
 \end{figure}
 
 In diesem Diagramm ist zu erkennen, dass die Zeiten für einen Lauf, in Millisekunden gemessen, leichte Schwankungen aufweisen, in Abhängigkeit der Anzahl der Läufe. Dies gilt ebenfalls für
-die \ac{dmips}-Werte. Der maximale Wert beträgt 33,09 \ac{dmips}, was in etwa 58000 \emph{Dhrystones per second} entspricht.\\
+die \ac{dmips}-Werte. Der maximale Wert beträgt 33,09 \ac{dmips}, was etwa 58000 \emph{Dhrystones per second} entspricht.\\
 
 \textbf{LEON3}
 
@@ -1179,7 +1190,7 @@ einem Delta von 0,2 \ac{dmips} nur minimal voneinander ab.\\
 \end{figure}
 
 Die erreichten Werte des \ac{prhs}-Systems scheinen zwar auf den ersten Blick die niedrigsten zu sein, jedoch relativiert sich die Zahl im abschließenden Vergleich wieder, da die
-Coremark-Ergebnisse nur in Verbindung mit der jeweiligen Taktfrequenz der einzelnen Systeme aussagekräftig sind. Das System erreicht einen maximal Wert von
+Dhrystone-Ergebnisse nur in Verbindung mit der jeweiligen Taktfrequenz der einzelnen Systeme aussagekräftig sind. Das System erreicht einen maximal Wert von
 18,82 \ac{dmips} und benötigt für einen Lauf zwischen 30,2 und 30,4 ms.\\
 
 \newpage
@@ -1193,11 +1204,16 @@ Coremark-Ergebnisse nur in Verbindung mit der jeweiligen Taktfrequenz der einzel
 \label{fig:dhrystoneresult}
 \end{figure}
 
-Die Abbildung~\ref{fig:dhrystoneresult} stellt die aussagekräftigsten Werte grafisch dar. Wie bereits erwähnt, gilt für die absoluten \ac{dmips}-Werte zwar je größer, desto besser, jedoch müssen diese
-Ergebnisse immer im Verhältnis zu der Taktfrequenz der jeweiligen Systeme gestellt werden. So liegen zwischen den maximalen Werten des Microblaze und des \ac{prhs} 14,27 \ac{dmips}, andererseits
-verringert sich der Abstand, wenn man \emph{\ac{dmips}/MHz} betrachtet auf 0,08, da der Microblaze mit 100MHz und das \ac{prhs}-System mit 75MHz getaktet sind.\\
-Der LEON3 erzielt konstante Werte, welche mit 0,64 \emph{\ac{dmips}/MHz} zum Teil mehr als doippelt so groß sind, wie die der anderen Systeme. Jedoch gilt es, genauso wie bei dem Microblaze,
-zu erwähnen, dass die Ergebnisse, welche auf den Websiten der Hersteller publiziert wurden, nicht ansatzweise erreicht wurden, da diese Systeme die grundlegenden Komponenten enthalten
+Die Abbildung~\ref{fig:dhrystoneresult} stellt die aussagekräftigsten Werte grafisch dar. Wie bereits erwähnt,
+ gilt für die absoluten \ac{dmips}-Werte zwar je größer, desto besser, jedoch müssen diese
+Ergebnisse immer im Verhältnis zu der Taktfrequenz der jeweiligen Systeme gestellt werden. So liegen zwischen
+den maximalen Werten des Microblaze und des \ac{prhs} 13,46 \ac{dmips}, andererseits
+verringert sich der Abstand, wenn man \emph{\ac{dmips}/MHz} betrachtet auf 0,07, da der Microblaze mit 100MHz
+und das \ac{prhs}-System mit 75MHz getaktet sind.\\
+Der LEON3 erzielt konstante Werte, welche mit 0,64 \emph{\ac{dmips}/MHz} zum Teil mehr als doippelt so groß sind,
+wie die der anderen Systeme. Jedoch gilt es, genauso wie bei dem Microblaze,
+zu erwähnen, dass die Ergebnisse, welche auf den Websiten der Hersteller publiziert wurden, nicht ansatzweise
+erreicht wurden, da diese Systeme die grundlegenden Komponenten enthalten
 und ohne Optimierung getestet wurden.\\
 
 \section{Ergebnisse der Ramspeed-Benchmark}\label{kap:ramspeedtest}
@@ -1261,7 +1277,7 @@ sind die vom LEON3 erreichten Ergebnisse sehr gut und setzen die Messlatte entsp
 Der Microblaze, sowie der Cache des \ac{prhs}-Systems sind für den Test identisch konfiguriert worden, sodass hier ein direkter Vergleich möglich und aussagekräftig ist.
 Der Microblaze erzielt mit 181,3 MB/s, gemessen bei einer Blockgröße von 2 Kb, eine deutlich höhere Geschwindigkeit als der \ac{prhs} (53,5 MB/s) bei gleichbleibender Blockgröße.
 Der starke Leistungsunterschied ist auf den ersten Blick überraschend, da alle drei Systeme den gleichen Memorycontroller nutzen. So ist dieser nur durch die Verwendung unterschiedlicher
-Bus-Systeme zu erklären. Hierbei nutzt der Microblaze für die Kommunikation zum Cache einen \ac{plb}-Bus, wohingegen das \ac{prhs}-System einen eigenen, für das System entwickelten,
+Bus-Systeme zu erklären. Hierbei nutzt der Microblaze für die Kommunikation zum Cache einen \ac{axi}-Bus, wohingegen das \ac{prhs}-System einen eigenen, für das System entwickelten,
 \ac{prhs}-Bus nutzt.
 
 \chapter{Fazit}\label{kap:fazit}
@@ -1284,7 +1300,7 @@ da bei dem letztgenannten die einzelnen Komponenten optimal aufeinander abgestim
 Die Abbildung~\ref{fig:coremarkresult} fasst die erreichten Ergebnisse der Coremark-Benchmark grafisch zusammen. In Relation zur jeweiligen Taktfrequenz der Systeme
 zeigt sich, dass auch hier der LEON3 mit 1,73 Coremark/MHz den direkten Vergleich für sich entscheiden kann. Mit dem erzielten Wert erreicht der, in dieser Arbeit
 konfigurierte LEON3, nahezu das Ergebnis des Herstellers, welcher den LEON3 mit 1,8 Coremark/MHz bewirbt.\cite{leon} Die Ergebnisse des Microblaze und des \ac{prhs}
-sind mit 1,24 Coremark/MHz beziehungsweise 1,23 Coremark/MHz nahezu identisch. Zwar ist der absolute Wert des Microblaze, wie in Abbildung~\ref{fig:coremarkmb} dargestellt,
+sind mit 1,24 Coremark/MHz beziehungsweise 1,18 Coremark/MHz dicht beeinander. Zwar ist der absolute Wert des Microblaze, wie in Abbildung~\ref{fig:coremarkmb} dargestellt,
 höher, jedoch relativiert sich dieser, wenn man die Taktfrequenz der jeweiligen Systeme betrachtet. \\
 Die Ergebnisse der Coremark-Benchmark, welche größtenteils auf der
 Dhrystone- Benchmark basiert, werden durch genau diese Benchmark nun bestätigt. Der LEON3 erzielt einen
@@ -1292,13 +1308,13 @@ durchschnittlicher Wert von 0,63 \ac{dmips}/MHz und damit das Beste aller drei E
 genau so wie der Microblaze. Dieser erreicht einen Wert von 0,31 \ac{dmips}/MHz bei 100 MHz und somit annähernd halb so viel wie der LEON3. Jedoch gibt Xilinx
 auf der Seite des Microblaze~\cite{microblaze} für den Artix-7 einen Wert von 164 \ac{dmips} an, wobei zu diesem Ergebniss keinerlei Erklärung abgegeben werden, bezüglich
 Konfiguration und Taktfrequenz. Dies würde bei einer Taktfrequenz von 100 MHz einem Wert von 1,64 \ac{dmips}/MHz entsprechen, welcher sich stark von dem gemessen
-Ergebnis unterscheidet. Das \ac{prhs} erreicht einen Wert von 0,25 \ac{dmips}/MHz und bildet damit das schwächste Ergebnis der Benchmark ab, kommt dem Microblaze
-bei einer Differenz von 0,06 \ac{dmips}/MHz aber sehr nah.\\
+Ergebnis unterscheidet. Das \ac{prhs} erreicht einen Wert von 0,26 \ac{dmips}/MHz und bildet damit das schwächste Ergebnis der Benchmark ab, kommt dem Microblaze
+bei einer durchschnittlichen Differenz von 0,05 \ac{dmips}/MHz aber sehr nahe.\\
 Der letzte Vergleich wurde in der Abbildung~\ref{fig:ramspeedresult} grafisch dargestellt. Hierbei sind lediglich der Microblaze und das \ac{prhs} im direkten Vergleich
 zu betrachten, da nur diese beiden System mit einem \emph{4 KB-Direct-Mapped-Cache} konfiguriert wurden, was anhand des Resultats unschwer zu erkennen ist, auf Grund
 des Leistungseinbruches nach dem 4 Kb Block. Der Microblaze erreicht einen Spitzenwert von 181,3 MB/s, welcher mehr als dreimal so groß ist, wie der des \ac{prhs}
 mit 53,5 MB/s. Dieser Leistungsunterschied ist dadurch zu erklären, dass, wie bereits beschrieben die einzelnen Komponenten des Microblaze optimal aufeinander
-abgestimmt sind, dazu zählt vermutlich auch der \ac{plb}-Bus. Das \ac{prhs} hingegen benutzt einen eigenen Bus, des sogenannten \ac{prhs}. Auf Grund dieser Kombination
+abgestimmt sind, dazu zählt vermutlich auch der \ac{axi}-Bus. Das \ac{prhs} hingegen benutzt einen eigenen Bus, des sogenannten \ac{prhs}. Auf Grund dieser Kombination
 kann es zu diesem Leistungsunterschied kommen.
 \newpage
  Der LEON3 fällt, wie bereits erwähnt, auf Grund seines 2-Wege-Assoziativen-Caches aus dem Vergleich raus. Jedoch erzielt
