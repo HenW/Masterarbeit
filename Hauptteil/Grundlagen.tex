@@ -2,7 +2,7 @@
 
 
 \section{Nexys-4-DDR}\label{kap:nexys4}
-Das Nexys4 DDR-Board ist eine Entwicklungsplattform, basierend auf dem Artix7-\ac{fpga}
+Das Nexys-4 DDR-Board ist eine Entwicklungsplattform, basierend auf dem Artix7-\ac{fpga}
 von Xilinx. Es bietet die Möglichkeit mit Hilfe des leistungsstarken \ac{fpga}, des großzügigen, externen Speichers und diversen Anschlussmöglichkeiten
 für Peripherie, sämtliche Designs, vom einfachen, kombinatorischen Schaltkreis, bishin zu leistungsstarken eingebetteten Prozessoren, zu realisieren.
 Des Weiteren ist auf dem Board Peripherie verbaut, wie zum Beispiel Sensoren, die weitere Nutzungsmöglichkeiten bieten.\\
@@ -10,7 +10,7 @@ Das Nexys4 DDR besitzt weiterhin folgende Features:~\cite{digilent}\\
 \begin{itemize}
   \item Artix7-\ac{fpga}
 \begin{itemize}
-  \item 15,850 logische Slices mit jeweils vier \ac{lut}, welche sechs Eingänge besitzen, sowie acht Flip-Flops.
+  \item 15,850 logische Slices mit jeweils vier \acp{lut}, welche sechs Eingänge besitzen, sowie acht Flip-Flops.
   \item Es bietet 4,860 Kbit Fast \ac{bram}
   \item Sechs Taktmanagementabschnitte mit jeweils einem \ac{pll}
   \item 240 \ac{dsp}-Slices
@@ -68,7 +68,7 @@ Die folgende Abbildung zeigt die wichtigsten Daten des verbauten \ac{fpga}:~\cit
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.8\textwidth]{Hauptteil/artix7.png}
+\includegraphics[width=1\textwidth]{Hauptteil/artix7.png}
 \caption{Technische Daten des Artix7. Der verwendete XC7AC100T ist rot markiert.~\cite{artix7}}\label{fig:artix7}
 \end{figure}
 
@@ -77,7 +77,7 @@ Die folgende Abbildung zeigt die wichtigsten Daten des verbauten \ac{fpga}:~\cit
 Computer, welche zur Steuerung genutzt werden, nennt man \emph{eingebettete Systeme} (engl. Embedded Systems).~\cite{ibm} In den späten 1960 Jahren wurden diese Systeme erstmalig zur Steuerung in der Kommunikation verwendet. Aufgrund der Tatsache,
 dass die Industrie sich in den letzten Jahren unter anderem darauf konzentriert hat, die Systeme immer kleiner zu gestalten, kam es dazu, dass eingebettete Systeme weiterentwickelt wurden. Diese bieten mehr Möglichkeiten für extrem kleine Maschinen.
 Durch die steigenden Anforderung an diese Systeme, vor allem im Bezug auf die Netzwerkfähigkeit, wurden diese immer komplexer und benötigen immer mehr Schnittstellen aller Art und einen größeren Speicher als frühere Modelle. Durch diese Anpassungen wurde es
-möglich und nötig Betriebssysteme auf diesen Systemen auszuführen, um die steigenden Ressourcen zu verwalten. Bereits in den 70er Jahren wurden die ersten Betriebssysteme für eingebettete Systeme veröffentlicht, sodass es heutezutage einige
+möglich und nötig Betriebssysteme auf diesen Systemen auszuführen, um die steigenden Ressourcen zu verwalten. Bereits in den 70er Jahren wurden die ersten Betriebssysteme für eingebettete Systeme veröffentlicht, sodass es heutzutage einige
 realisierbare Optionen gibt.\cite{ibm}\\
 
 \textbf{Verschiedene Arten des Betriebssytem für eingebettete Systeme}\\
@@ -91,13 +91,13 @@ Es gibt eine Vielzahl unterschiedlicher Betriebssysteme für eingebettetee Syste
   \item ThinLinux: eine minimierte Linux-Distribution für dedizierte Kamera-Server, X-10-Controller, MP3-Player und andere eingebettete Anwendungen
 \end{itemize}
 
-\subsection{Vor- und Nachteile von Linux für Embedded Systems}\label{kap:vorundnachteilelinux}
+\subsection{Vor- und Nachteile von Linux für eingebettete Systeme}\label{kap:vorundnachteilelinux}
 
 \textbf{Vorteile}\\
 Linux-Systeme, welche meistens auf PC-Plattformen laufen, können durchaus als verlässliches Arbeitspferd für eingebettete Systeme dienen.
 Dies geschieht vor allem dadurch, dass Linux die Installation und die Verwaltung einfacher gestaltet, indem man sich bei der Entwicklung
 auf die Basics beschränkt.\\
-So ist das herkömmliche Linux, welches auf einem PC ausgeführt wird, so konfiguriert, dass es mit mit einer Festplatte, viel Arbeitsspeicher, sowie Ein- und Ausgabgeräten umgehen kann.
+So ist das herkömmliche Linux, welches auf einem PC ausgeführt wird, so konfiguriert, dass es mit einer Festplatte, viel Arbeitsspeicher, sowie Ein- und Ausgabgeräten umgehen kann.
 Dies besitzt und benötigt ein eingebettetes System in der Regel nicht. Ein voll ausgestatter Linux-Kernel benötigt einige wenige MB Arbeitsspeicher. Betrachtet man dazu noch Dienstprogramme
 und Netzwerkfunktionen, liegt der benötigte
  Arbeitsspeicher ebenfalls bei einigen wenigen MB (16-32 MB). Das führt dazu, dass es alles in allem ein leichtgewichtiges
@@ -107,9 +107,9 @@ und Netzwerkfunktionen, liegt der benötigte
   können kompiliert und dann dem System zur Verfügung gestellt werden
  oder parallel zur Laufzeit als ladbare Module dem Kernel hinzugefügt werden. Daraus folgt, dass ein hochmodulares System entsteht, welches auf ein eingebettetes System angepasst ist.
  \newpage
- Um die Ressourcen bestmöglich zu nutzen, erfordert ein Embedded-System, dass auf herkömmliche Programme und Treiber aufgebaut ist, mit denen zum Beispiel gängige Peripheriegeräte und
+ Um die Ressourcen bestmöglich zu nutzen, erfordert es ein Embedded-System, dass auf herkömmlichen Programmen und Treiberns aufgebaut ist, mit denen zum Beispiel gängige Peripheriegeräte und
  Anwendungen genutzt werden können.\\
- Linux unterstützt Multi-Core-Systeme, welche es besonders für Nutzer interessant macht, welche Anwendungen parallel ausführen wollen und so die Verarbeitungsleistung erhöht wird.
+ Linux unterstützt Multi-Core-Systeme, das es besonders für Nutzer interessant macht, welche Anwendungen parallel ausführen wollen um so die Verarbeitungsleistung zu erhöhen.
   Als Beispiel dafür dient die parallele Ausführung eines Linux-System auf einem Prozessor,
   während auf dem anderen Prozessor eine \ac{gui} ausgeführt wird.\cite{ibm}\\
 
@@ -131,7 +131,7 @@ Dazu zählen zum Beispiel:
 \begin{itemize}
   \item Treiber für die Hardware
   \item Anwendungsprozesse zur Bereitstellung der Funktionalität
-  \item Speicher, zum speichern von Daten
+  \item Speicher, zum Speichern von Daten
 \end{itemize}
 
 
@@ -150,7 +150,7 @@ da es weitestgehend rechnerunabhängig läuft. Weitere Eigenschaften die das Bet
 \item  \textbf{Time-Sharing} Das Priorisieren von einzelnen Prozessen erlaubt es, dass mehrere
         Prozesse gleichzeitig ablaufen, indem abwechselnd Platz im Hauptspeicher beziehungsweise in der \ac{cpu}
         zugewiesen wird.
-\item \textbf{Sprachenvielfalt} Neben der Sprache C erlaubt Linux/Unix die Nutzung viele Programmiersprachen
+\item \textbf{Sprachenvielfalt} Neben der Sprache C erlaubt Linux/Unix die Nutzung vieler Programmiersprachen
       wie C++, Java, Python und viele mehr zur Verfügung. Dadurch, dass es sich um ein Open-Source-Projekt handelt,
       wird diese Bibliothek, je nach System, ständig erweitert.
 \item \textbf{Grafische Benutzeroberfläche} Linuxrechner, im speziellen die Anwendungen, nutzen in
@@ -232,7 +232,7 @@ Die Verwendung eines Cross-Compilers bringt weitere Vorteile mit sich:
                           und nicht für hohe Leistung.
   \item Leistungsfähigkeit: Der Compiler-Vorgang ist enorm ressourcenintensiv. Zielsysteme verfügen normalerweise nicht über die geforderten Mengen an Arbeits- und Festplattenspeicher.
   \item Verfügbarkeit: Um zum Beispiel Linux erfolgreich auf einer Plattform zu implementieren, welches zuvor noch nie ausgeführt wurde, wird ein Cross-Compiler benötigt. Dies gilt auch für
-                      Systeme, welche normalerweise nicht als Entwicklungsumgebung genutzt werden, sodass keine aktuellen, ausführungsbereite Programme zur Verfügung stehen.
+                      Systeme, welche normalerweise nicht als Entwicklungsumgebung genutzt werden, sodass keine aktuellen, ausführungsbereiten Programme zur Verfügung stehen.
   \item Flexibilität: Eine voll funktionsfähige Linux-Distribution besteht aus Hunderten von Paketen, aber eine Cross-Compile-Umgebung kann von den meisten Distributionen des Hosts abhängen.
                       Das Cross-Compiling konzentriert sich auf das Erstellen der zu implementierenden Zielpakete und nicht darauf, dass nur Build-only-Voraussetzungen auf dem Zielsystem funktionieren.
 \end{itemize}
@@ -257,7 +257,7 @@ Befehle ab, analysiert diese und führt sie anschließend aus. Um diese Aufgaben
 in Abbildung~\ref{fig:cpu} grafisch dargestellt sind. Diese Komponenten sind über einen Bus miteinander verbunden, dessen Leitungen Adresse, Daten und Steuersignale übertragen. Mit Hilfe von externen Bussen lässt sich die \ac{cpu} mit dem Speicher, sowie Eingabe- und Ausgabegeräten
 verbinden.~\cite{cache}
 \begin{itemize}
-  \item Das Steuerwerk (\ac{cu}) analysiert mit Hilfe des Instruktionsdecoders ein Maschinenenwort und übersetzt diese in eine Reihe von Steuersignalen, die den weiteren
+  \item Das Steuerwerk (\ac{cu}) analysiert mit Hilfe des Instruktionsdecoders ein Maschinenwort und übersetzt dieses in eine Reihe von Steuersignalen, die den weiteren
         Ablauf der Befehlsabarbeitung beeinflussen. Somit übernimmt es die Aufgabe den Kontroll- und Datenfluss zu überwachen und den korrekten Datentransport sicherzustellen.~\cite{benchmark}
   \item Das Rechenwerk (\ac{alu}) führt Operationen aus, die für den jeweiligen Befehl notwendig sind, wie beispielsweise Addition oder Verknüpfungen~\cite{benchmark}
   \item Prozessorregister lassen sich in Universal- und Hilfsregister einteilen. Sie bieten die Möglichkeit, Zwischenergebnisse und Steuerinformationen aufzunehmen,
@@ -272,7 +272,7 @@ verbinden.~\cite{cache}
 
 
 Das wichtigste Register ist der Befehlszähler (engl. Program Counter), welcher auf den nächsten Befehl zeigt, der zur Ausführung aufzurufen ist. Daneben
-ist der Befehlsregister (engl. Instruction Register) ein wichtiger Bestandteil, da er den momentan ausgeführten Befehl aufnimmt.\\
+ist das Befehlsregister (engl. Instruction Register) ein wichtiger Bestandteil, da es den momentan ausgeführten Befehl aufnimmt.\\
 Daraus ergibt sich zur Befehlsausführung eine Schrittfolge, die als Abrufen-Dekodieren-Ausführen-Zyklus (engl. Fetch-Decode-Execute Cycle) bezeichnet wird.~\cite{cache}
 \begin{enumerate}
   \item Den nächsten Befehl aus dem Speicher in das Befehlsregister abrufen
@@ -393,7 +393,7 @@ Bereich zugreifen wollen.\cite{itwissen}\\
 
 
 \textbf{Cache}\\
-Eine der größten Herausforderungen im Computerdesign ist es, Speichersysteme zu schaffen, welche den Prozessoren mit Operanden mit einer Geschwindigkeit versorgt, welche ihn in der in der
+Eine der größten Herausforderungen im Computerdesign ist es, Speichersysteme zu schaffen, welche den Prozessoren mit Operanden in einer Geschwindigkeit versorgen, welche ihn in der in der
 Ausführung nicht ausbremst.
 Moderne Prozessoren stellen höchste Ansprüche an ein Speichersystem, sowohl hinsichtlich der Latenzzeit, als auch hinsichtlich der Bandbreite. Diese beiden Aspekte stellen einen Konflikt dar.
 So führen Methoden zur Steigerung der Bandbreite in der Regel unmittelbar zur Erhöhung der Latenzzeit.
@@ -438,14 +438,14 @@ Grundsätzlich basieren Caches auf dem Prinzip, dass der Hauptspeicher in Blöck
 Diese bestehen aus aufeinander folgenden Bytes in einer Größenordnung von 4 bis 64 Bytes. Bei Speicherzugriffen wird geprüft, ob sich das angeforderte Wort im Cache befindet und direkt
 vom Prozessor verwendet werden kann. Ist dies nicht der Fall, wird bei Bedarf ein Zeileneintrag aus dem Cache entfernt und die benötigte Zeile aus dem Hauptspeicher geladen. \\
 Es gibt zwei grundlegende Arten des Caches. Die einfachste Art Cache zu realisieren, ist die Form des \textbf{direkt abbildenden Caches}. Dabei kann jeder Eintrag, beziehungsweise Zeile, genau
-eine Cache-Zeile aus dem Hauptspeicher aufnehmen. Besitzt der Cache eine Zeilengröße von 32 Bytes, nimmt der Cache 64 KB auf. Daraus lässt sich schlussfolgern, dass eine bestimmtes
+eine Cache-Zeile aus dem Hauptspeicher aufnehmen. Besitzt der Cache eine Zeilengröße von 32 Bytes, nimmt der Cache 64 KB auf. Daraus lässt sich schlussfolgern, dass ein bestimmtes
 Wort an genau einer Stelle im Cache liegen kann. Ist das Wort nicht an dieser Adresse zu finden, ist es auch nicht im Cache enthalten.
 Mit diesen Eigenschaften stellen die direkt abbildenden Caches den am häufigsten verwendeten Cache-Typen dar, weil diese effektiv arbeiten und Kollisionen, bei zum Beispiel identischer LINE,
 selten, beziehungsweise gar nicht vorkommen. \\
 Eine weitere Möglichkeit bietet der \textbf{vollassoziative Cache}. Hierbei existiert ein Satz, welcher alle Blöcke beinhaltet. Damit wird erreicht, dass eine beliebige Adresse in jedem
 Cacheblock gecachet werden kann. Wird nun eine Anfrage an den Cache gestellt ist es zwingend notwendig, alle Cache-Tags zu prüfen. Dies wird parallel ausgeführt, da Caches so schnell wie
 möglich arbeiten müssen. Daraus resultiert ein größere Anforderung an die Hardware. Jedoch bringt diese Art des Caches den Vorteil mit sich, dass, solange es noch einen freien Cacheblock gibt,
-diese Daten aufnehmen kann.\\
+dieser Daten aufnehmen kann.\\
 Als Mittelweg der beiden beschriebenen Arten und um das Problem der Speicherkollisionen zu lösen, werden zwei oder mehr Zeilen pro Cache-Eintrag verwendet. Dieser Typ mit \emph{n}-möglichen Einträgen für jede Adresse,
  wird als \textbf{n-fach mengen-assoziativen Cache} (engl. N-way set-associativ Cache) bezeichnet.Im Vergleich zu dem beschriebenden direkt abbildenden Cache ist der mengen-assoziative Cache
  komplizierter, da sich zwar der korrekte Cache-Ebene aus der Speicheradresse berechnen lässt, hierfür jedoch \emph{n} Einträge geprüft werden müssen. Somit ergibt sich ein Nachteil
@@ -481,7 +481,7 @@ Bei dieser Art der Kommunikation werden serielle Daten zwischen dem Board (\emph
 und dem Empfänger (\emph{Slave}) ausgetauscht. \\
 Dabei spielen die TxD und die RxD-Datenleitungen
 eine wichtige Rolle, da der Datenaustausch über diese Leitungen realisiert wird.\\
-Im Gegensatz, zum Beispiel, zu einer \ac{spi}-Schnittstelle, wird kein Clock-Signal
+Im Gegensatz zu einer \ac{spi}-Schnittstelle, wird kein Clock-Signal
 übertragen um Daten zu validieren. Des Weiteren wird die Verbindung mit einer definierten
 Geschwindigkeit realisiert, der sogenannten \emph{Baudrate}.~\cite{uartpdf} \\
 Die Baudrate bezeichnet dabei die Anzahl der Bits, welche pro Sekunde übertragen werden.
@@ -509,24 +509,10 @@ Die Datenübertragung lässt sich nach~\ref{fig:uart} darstellen.\\
 \end{figure}
 
 
-\textbf{Timer}\\
-Ein weiterer essenzieller Teil zur Ausführung eines Betriebssystems, wie zum Beispiel Linux, ist der Timer. Dieser hilft dem Betriebssystem dabei, das so genannte Scheduling
-durchzuführen. Hierbei wird mit Hilfe von \emph{Timer}-gesteuerten Interrupts dafür gesorgt, dass Nutzerprogramme, welche sich in der Ausführung befinden, unterbrochen werden und
-in den Betriebssystem-Modus geschaltet wird. Nun kann das Betriebssystem die anstehenden Prozesse neu planen.\\
-
-
-
-
-
-
-
-
-
-
 \section{Benchmark}\label{kap:benchmark}
 Geht es um die Leistungsfeststellung eines Systems täuschen oft Zahlen der Hersteller die potentiellen Käufer. Im Falle der \ac{cpu} ist es neben der Anzahl der Prozessorkerne
  fast immer die Taktfrequenz, welche angegeben wird.
-Die Taktfrequenz hat zweifelsohne einen großen Einfluss auf die Geschwindigkeit einer \ac{cpu}, jedoch ist diese Zahl ohne weitere Informationen, wie zum Beispiel die
+Die Taktfrequenz hat zweifelsohne einen großen Einfluss auf die Geschwindigkeit einer \ac{cpu}, jedoch ist diese Zahl ohne weitere Informationen, wie zum Beispiel der
 Mächtigkeit des Befehlssatzes, in ihrer Aussagekraft eingeschränkt. Dies gilt selbst, wenn beide Prozessoren die gleiche Instruktionsstruktur aufweisen, da es bei der
 internen Implementierung zu erheblichen Unterschieden kommen kann. \\
 Um hier einen aussagekräftigen Vergleich zu erzielen, wurden verschiedene Maßzahlen eingeführt, wie beispielsweise \ac{mips}, der \ac{ipc}-Wert oder ac{mflops}. Diese
@@ -616,10 +602,10 @@ Benchmarks für verschiedene Maschinen wie zum Beispiel \emph{i386} oder \emph{a
 C geschrieben. Das Softwarepaket besteht aus zwei Hauptkomponenten:~\cite{ramspeed}
 \begin{itemize}
   \item INTmark und FLOATmark: Diese messen die maximal mögliche Leistung des Caches und des Speichers beim Lesen beziehungsweise Schreiben bestimmter Datenblöcke. Dies geschieht in der Größenordnung ab 1 Kb und
-                               verdoppelt sich jeweils in den nachfolgenden Messungen. Um die beste Performance zu erriechen sind alle Datenströme linear. Somit ermöglicht diese Benchmark die
+                               verdoppelt sich jeweils in den nachfolgenden Messungen. Um die beste Performance zu erreichen, sind alle Datenströme linear. Somit ermöglicht diese Benchmark die
                                tatsächliche Bandbreite eines Systems zu bestimmen.
   \item INTmem und FLOATmem: Hierbei handelt es sich um synthetische Simulationen, welche aus vier Untertests bestehen (Kopieren, Skalieren, Addieren, Triade). Diese verschiedenen Tests werden
-                             genutzt um unterschiedliche Aspekte der Speicherleistung zu messen. Diese Benchmarks sind sehr empfindlich gegenüber Speicher-Latenzzeiten jeglicher Art.
+                             genutzt, um unterschiedliche Aspekte der Speicherleistung zu messen. Diese Benchmarks sind sehr empfindlich gegenüber Speicher-Latenzzeiten jeglicher Art.
 \end{itemize}
 
 Die vier Untertests lassen sich wie folgt näher beschreiben:
@@ -710,11 +696,11 @@ Die Anzahl von Gigabyte pro Durchlauf wurden in dieser Arbeit auf dem Wert \emph
 
 \chapter{Messergebnisse}\label{kap:ergebnisse}
 Die Bewertung der Leistungsfähigkeit bestehender Soft-Cores stellt eine große Herausforderung für den Entwickler dar, um den effizientesten und geeignetsten Soft-Core
-für eine bestimmte Anwendung auszuwählen. Im Kapitel~\ref{kap:grundlagen} wurden bereits Soft-Cores, das Board, sowie die einzelnen Benchmarks näher erkläutert. Im folgenden Kapitel
+für eine bestimmte Anwendung auszuwählen. Im Kapitel~\ref{kap:grundlagen} wurden bereits Soft-Cores, das Board, sowie die einzelnen Benchmarks näher erläutert. Im folgenden Kapitel
 soll nun ein Überblick über Soft-Core-Prozessoren gegeben werden, welche in eingebetteten System verwendet werden. \\
 In dieser Arbeit wurden verschiedene Open-Source-, kommerzielle, sowie das unveröffentlichte System der Professur für Technische Informatik an der Helmut-Schmidt-Universität verglichen.
  Evaluiert wird bei den verwendeten Soft-Cores
-die Auswirkung auf die gesamte Ausführungszeit und den \ac{fpga}-Flächenverbrauch. Um einen möglich aussagekräftigen Vergleich zu erzielen, ist es nötig die System nahezu identisch zu
+die Auswirkung auf die gesamte Ausführungszeit, sowie der \ac{fpga}-Flächenverbrauch. Um einen möglich aussagekräftigen Vergleich zu erzielen, ist es nötig die System nahezu identisch zu
 konfigurieren. Dazu zählt vor allem die Entscheidung, alle Prozessoren als Single-Core zu konfigurieren, da das Erstellen der Multi-Core-Prozessoren nicht bei allen Systemen ohne Weiteres
 realisierbar war. Die übrigen Anforderungen an die Systeme sind in einem der nachfolgenden Kapitel angegeben.\\
 
@@ -752,7 +738,7 @@ Durch diese Konfiguration lassen sich folgende Schlüsselfähigkeiten des System
   \item 32-Bit-Adressbus, erweiterbar auf 64-Bit
   \item Optionale \ac{fpu}
   \item \ac{axi}4-Interface
-  \item Verschiedene Zustandsmodi (Sleep, Hibernate, Suspend Mode/Instrctions)
+  \item Verschiedene Zustandsmodi (Sleep, Hibernate, Suspend Mode/Instructions)
   \item Unterstützt entweder \ac{plb}- oder \ac{axi}-Schnittstellen
   \item Big-Endian / Little-Endian Unterstützung
   \item Optionale \ac{mmu}, sowie separate, konfigurierbare Daten- und Instruktionscaches
@@ -794,7 +780,7 @@ Der LEON3-Prozessor verfügt über folgende Eigenschaften:\cite{leon}\\
 \begin{itemize}
   \item SPARC V8 Befehlssatz mit V8e Erweiterungen
 \item Fortgeschrittene 7-stufige Pipeline
-\item Hardware multiplizieren, teilen und \ac{mac}-Einheiten
+\item Hardware-basiertes multiplizieren, teilen und \ac{mac}-Einheiten
 \item Hochperformante IEEE-754-\ac{fpu} mit vollem Pipelinespektrum
 \item Getrennter Befehls- und Datencache (Harvard-Architektur) mit Snooping
 \item Konfigurierbare Caches: 1 - 4 Wege, 1 - 256 kbytes / Weg. Random,LRR oder \ac{lru} Ersatz
@@ -813,7 +799,7 @@ Der LEON3-Prozessor verfügt über folgende Eigenschaften:\cite{leon}\\
 \end{itemize}
 
 Das Hauptziel dieser Architektur ist es, ein Design zur Verfügung zu stellen, welches offen und herstellerunabhängig ist und gleichzeitig die Anforderungen an Leistung, Softwarekompatibilität,
-in Verbindungen mit niedrigen Systemkosten erfüllen kann. Wie auch schon der Microblaze, bietet der LEON3 eine hohe Anpassungsmöglichkeit und lässt sich um weitere, optionale Funktionen erweitern,
+in Verbindungen mit niedrigen Systemkosten erfüllen kann. Wie auch schon der Microblaze, bietet der LEON3 eine hohe Anpassungsmöglichkeit und lässt sich um optionale Funktionen erweitern,
 Hierzu zählen exemplarisch die \ac{dsu},die  \ac{fpu} und der Interrupt-Controller.\\
 Die Abbildung~\ref{fig:leon} zeigt das \ac{soc}-Design des LEON3, welches in dieser Arbeit verwendet wurde. Es handelt sich um einen LEON3-Single-Core-Prozessor mit einer Frequenz von
 70 MHz. Der LEON3 kann einfach über grafische Schnittstellen (\emph{xconfig}) konfiguriert werden. Als On-Chip-Bus wird in diesem System der \ac{amba}-Bus verwendet.
@@ -926,14 +912,14 @@ da dass Design mehr Ressourcen benötigt, als der \ac{fpga} zur Verfügung stell
 des Caches ein Problem dar, da ein 4 KB-Direct-Mapped-Cache nicht realisierbar ist. Das Konfigurationstool lässt lediglich einen 2-Wege-Assoziativ-Cache zu, welcher eine Gesamtgröße von
 mindestens 8 KB bedingt.\\
 Das \ac{prhs}-System bietet zum jetztigen Zeitpunkt keine \ac{fpu} an, ist jedoch im Vergleich zu den anderen Systemen in der Lage, ein Single-, Dual- und Quad-Core-System zu realisieren,
- welcher erfolgreich geprüft werden konnte.\\
+ welche erfolgreich geprüft werden konnten.\\
  Der Microblaze ist nicht ohne Weiteres als Multi-Core-System zu konfigurieren, sodass sich alle Benchmarks auf ein Single-Core-System beziehen. Bei diesem System war es jedoch möglich,
  die Tests mit, sowie ohne \ac{fpu} durchzuführen.\\
 
 
 \newpage
 \section{Synthese-Ergebnisse}\label{kap:synthese}
-Wie in Kapitel~\ref{kap:fpga} beschrieben, bietet der \ac{fpga}-Baustein einen begrenzte Anzahl an Ressourcen. So stellt der Flächenverbrauch eine der wichtigen Messgrößen zur Auswahl des
+Wie in Kapitel~\ref{kap:fpga} beschrieben, bietet der \ac{fpga}-Baustein eine begrenzte Anzahl an Ressourcen. So stellt der Flächenverbrauch eine der wichtigen Messgrößen zur Auswahl des
 optimalen Systems dar. In diesem Kapitel wird der Flächenverbrauch der verschiedenen Konfigurationen gemessen und dargestellt. Hierbei gibt es je nach System verschiedene Ergebnisse, je nachdem
 ob eine \ac{fpu} konfiguriert wurde oder nicht.\\
 
@@ -987,7 +973,7 @@ Auch der Ressourcen-Verbrauch des LEON3 wurde nach der Synthese aufgenommen und 
 Danach ergibt sich eine Nutzung von 40\%/18,7\% der \ac{lut}, 1,1\%/0,6\% der \ac{lutram} und 8,2\% beziehungsweise 5,4\% der \ac{ff}.
 Speziell im Bereich der \ac{lut} und der \ac{ff} ist ein deutlicher Anstieg des Verbrauchs zu beobachten, in dem sich die Zahl der verbrauchten Ressourcen mehr als verdoppeln (\ac{lut}).
 Dieser Unterschied ist dadurch zu erklären, dass es sich um eine IEEE-754-konforme \ac{fpu} handelt, welche die Operanden mit einfacher und doppelter Genauigkeit unterstützt. Die Entwickler
-beschrieben die \ac{fpu} als ein fortschrittliches Design mit hohem Durchsatz und geringer Latenz und bietet ein umfangreiches Paket an Operationen. Diese Leistungsfähigkeit und der Umfang
+beschreiben die \ac{fpu} als ein fortschrittliches Design mit hohem Durchsatz und geringer Latenz und bietet ein umfangreiches Paket an Operationen. Diese Leistungsfähigkeit und der Umfang
 führen zu dem starken Unterschied in der Ressourcen-Nutzung.\\
 Die weiteren Parameter, welche in Abbilduung~\ref{fig:ressourcenleon32} dargestellt sind, unterscheiden sich hingegen nicht voneinander.\\
 
@@ -1062,7 +1048,7 @@ benötigt, um die Konfiguration, welche für diesen Vergleich vorgegeben war, zu
 Jedoch ist im weiteren Verlauf der Tests aufgefallen, dass der LEON3 als Dual-Core deutlich mehr
  der \ac{lut}-Ressourcen (ca. 21.000 Slice \ac{lut} pro Core) benötigt. Das \ac{prhs}-System hingegen benötigt in der Multi-Core-Konfiguration ungefähr 13.000 Slice \ac{lut} mehr pro Core.
 Dies führt, wie bereits in Kapitel~\ref{kap:getestetekonfiguration} erwähnt,
-zu der Feststellung, dass das LEON3-System aufgrund der begrenzten Ressourcen auf dem, in dieser Arbeit genutzten, \ac{fpga} nicht realisierbar ist.
+zu der Feststellung, dass das LEON3-Quad-Core-System aufgrund der begrenzten Ressourcen auf dem, in dieser Arbeit genutzten, \ac{fpga} nicht realisierbar ist.
 \newpage
  Dadurch scheitert die Konfiguration bereits an der Synthese.\\
  Der Microblaze kommt dem LEON3, bis auf die Anzahl des benötigten \ac{lutram}, sehr nahe und bietet genug Reserven, um das System zu erweitern.\\
@@ -1079,7 +1065,7 @@ Betrachtet man nun in Abbildung~\ref{fig:ressourcenresult1} die restlichen Param
 ~\ref{fig:ressourcenresult}. Auch hier benötigt das universitätsinterne System mehr Ressourcen als der Microblaze und der LEON3.
 Da der LEON3 lediglich mit einem 2-Wege-Assoziativ-Cache konfiguriert werden konnte, erklärt die größere Anzahl an
 benötigten \ac{bram}, da in diesem Bereich der Cache realisiert wird.\\
-Aufällig ist weiterhin der enorme Verbrauch von \ac{pll}, welcher nach Herstellerangaben zur Generierung der \emph{Main Clock}
+Auffällig ist weiterhin der enorme Verbrauch von \ac{pll}, welcher nach Herstellerangaben zur Generierung der \emph{Main Clock}
 benötigt wird.\\
 
 \newpage
@@ -1121,7 +1107,7 @@ Um dennoch einen Vergleich zu haben, da ein Test ohne \ac{fpu} nicht möglich wa
 
 
 \textbf{PRHS}\\
-Das \ac{prhs}-System bietet zur Zeit der Erstellung dieser Arbeit keine \ac{fpu}, sodass für den Vergleich die hardware neben dem Single-Core, als Dual- und Quad-Core konfiguriert wurde.
+Das \ac{prhs}-System bietet zur Zeit der Erstellung dieser Arbeit keine \ac{fpu}, sodass für den Vergleich die Hardware neben dem Single-Core, als Dual- und Quad-Core konfiguriert wurde.
 Wie bereits beschrieben, hat die Anzahl der Kerne keinen Einfluss auf die Leistungsergebnisse bei dieser Benchmark, jedoch lassen sich Testergebnisse auf diese Art und Weise bestätigen.
 \begin{figure}[H]
 \centering
@@ -1210,14 +1196,14 @@ Ergebnisse immer im Verhältnis zu der Taktfrequenz der jeweiligen Systeme geste
 den maximalen Werten des Microblaze und des \ac{prhs} 13,46 \ac{dmips}, andererseits
 verringert sich der Abstand, wenn man \emph{\ac{dmips}/MHz} betrachtet auf 0,07, da der Microblaze mit 100MHz
 und das \ac{prhs}-System mit 75MHz getaktet sind.\\
-Der LEON3 erzielt konstante Werte, welche mit 0,64 \emph{\ac{dmips}/MHz} zum Teil mehr als doippelt so groß sind,
+Der LEON3 erzielt konstante Werte, welche mit 0,64 \emph{\ac{dmips}/MHz} zum Teil mehr als doppelt so groß sind,
 wie die der anderen Systeme. Jedoch gilt es, genauso wie bei dem Microblaze,
-zu erwähnen, dass die Ergebnisse, welche auf den Websiten der Hersteller publiziert wurden, nicht ansatzweise
+zu erwähnen, dass die Ergebnisse, welche auf den Webseiten der Hersteller publiziert wurden, nicht ansatzweise
 erreicht wurden, da diese Systeme die grundlegenden Komponenten enthalten
 und ohne Optimierung getestet wurden.\\
 
 \section{Ergebnisse der Ramspeed-Benchmark}\label{kap:ramspeedtest}
-Der letzte Benchmark-Test ist der RAMspeed-Test, welcher in Kapitel~\ref{kap:ramspeed} näher beschrieben ist. Diese Grafik zeigt neben der
+Der letzte Benchmark-Test ist der RAMspeed-Test, welcher in Kapitel~\ref{kap:ramspeed} näher beschrieben ist. Die einzelnen Grafiken zeigen neben der
 erreichten Geschwindigkeit, in \emph{MB/s}, auch eindeutig die Größe des Caches, da die Geschwindigkeit signifikant einbricht, wenn die Größe des getesteten Blockes die tatsächliche Größe
 des Caches überschreitet.
 \newpage
@@ -1292,10 +1278,10 @@ konfiguriert und bewertet wurde, liegt in der Tabelle der Ressourcennutzung zwis
 nur alle Optionen konfiguriert wurden, die für diese Arbeit wichtig waren, bietet es sicherlich noch Potenzial zur Verbesserung der Werte.
 Des Weiteren ist bei der Konfiguration des LEON3 festzustellen, dass die \ac{fpu} deutlich umfangreicher ist und dadurch mehr Ressourcen benötigt, als die des Microblaze.
 Das \ac{prhs} bietet, wie bereits erwähnt, zur Zeit noch keine funktionierende \ac{fpu}. Diese sollte aber, nach aktuellem Entwicklungsstand, in naher Zukunft zur Verfügung stehen.\\
-Die Taktfrequenzen der drei Systeme unterscheiden sich allesamt voneiander. So besitzt der LEON3 mit 70 MHz zwar die niedrigste Taktrate, bietet jedoch immer noch genug
+Die Taktfrequenzen der drei Systeme unterscheiden sich allesamt voneinander. So besitzt der LEON3 mit 70 MHz zwar die niedrigste Taktrate, bietet jedoch immer noch genug
 Flexibilität die entsprechende Rechenleistung und die Flächenkosten zu vereinen. Das \ac{prhs} taktet sein System mit 75MHz und bietet damit eine stabile Ausführung,
 wobei an dieser Stelle sicherlich noch eine Reserve vorhanden ist, die das System schneller taktet. Die höchste Taktfrequenz im Test bietet der Microblaze mit 100 MHz, bei
-gleichzeitiger stabiler Ausführung und guten Ergebnissen. Anhand dieses Ergebnisses merkt man den Unterschied zwischen einem Open-Source- und einem kommerziellen System,
+gleichzeitiger stabiler Ausführung und guten Ergebnissen. Anhand dieses Ergebnisses lässt sich der Unterschied zwischen einem Open-Source- und einem kommerziellen System erkennen,
 da bei dem letztgenannten die einzelnen Komponenten optimal aufeinander abgestimmt sind.\\
 Die Abbildung~\ref{fig:coremarkresult} fasst die erreichten Ergebnisse der Coremark-Benchmark grafisch zusammen. In Relation zur jeweiligen Taktfrequenz der Systeme
 zeigt sich, dass auch hier der LEON3 mit 1,73 Coremark/MHz den direkten Vergleich für sich entscheiden kann. Mit dem erzielten Wert erreicht der, in dieser Arbeit
@@ -1304,7 +1290,7 @@ sind mit 1,24 Coremark/MHz beziehungsweise 1,18 Coremark/MHz dicht beeinander. Z
 höher, jedoch relativiert sich dieser, wenn man die Taktfrequenz der jeweiligen Systeme betrachtet. \\
 Die Ergebnisse der Coremark-Benchmark, welche größtenteils auf der
 Dhrystone- Benchmark basiert, werden durch genau diese Benchmark nun bestätigt. Der LEON3 erzielt einen
-durchschnittlicher Wert von 0,63 \ac{dmips}/MHz und damit das Beste aller drei Ergebnisse. Den Wert des Herstellers (1,4 \ac{dmips}/MHz) verfehlt er jedoch deutlich,
+durchschnittlichen Wert von 0,63 \ac{dmips}/MHz und damit das Beste aller drei Ergebnisse. Den Wert des Herstellers (1,4 \ac{dmips}/MHz) verfehlt er jedoch deutlich,
 genau so wie der Microblaze. Dieser erreicht einen Wert von 0,31 \ac{dmips}/MHz bei 100 MHz und somit annähernd halb so viel wie der LEON3. Jedoch gibt Xilinx
 auf der Seite des Microblaze~\cite{microblaze} für den Artix-7 einen Wert von 164 \ac{dmips} an, wobei zu diesem Ergebniss keinerlei Erklärung abgegeben werden, bezüglich
 Konfiguration und Taktfrequenz. Dies würde bei einer Taktfrequenz von 100 MHz einem Wert von 1,64 \ac{dmips}/MHz entsprechen, welcher sich stark von dem gemessen
@@ -1314,7 +1300,7 @@ Der letzte Vergleich wurde in der Abbildung~\ref{fig:ramspeedresult} grafisch da
 zu betrachten, da nur diese beiden System mit einem \emph{4 KB-Direct-Mapped-Cache} konfiguriert wurden, was anhand des Resultats unschwer zu erkennen ist, aufgrund
 des Leistungseinbruches nach dem 4 Kb Block. Der Microblaze erreicht einen Spitzenwert von 181,3 MB/s, welcher mehr als dreimal so groß ist, wie der des \ac{prhs}
 mit 53,5 MB/s. Dieser Leistungsunterschied ist dadurch zu erklären, dass, wie bereits beschrieben die einzelnen Komponenten des Microblaze optimal aufeinander
-abgestimmt sind, dazu zählt vermutlich auch der \ac{axi}-Bus. Das \ac{prhs} hingegen benutzt einen eigenen Bus, des sogenannten \ac{prhs}. Aufgrund dieser Kombination
+abgestimmt sind, dazu zählt ebenfalls der \ac{axi}-Bus. Das \ac{prhs} hingegen benutzt einen eigenen Bus, des sogenannten \ac{prhs}-Bus. Aufgrund dieser Kombination
 kann es zu diesem Leistungsunterschied kommen.
 \newpage
  Der LEON3 fällt, wie bereits erwähnt, aufgrund seines 2-Wege-Assoziativen-Caches aus dem Vergleich raus. Jedoch erzielt
@@ -1326,5 +1312,5 @@ und erlaubt ein großes Maß an Einstellungsmöglichkeiten und Features. Das Mic
 Konfiguration bieten und erreicht gute Ergebnisse im direkten Vergleich. Das System ist in jeglicher Konfiguration sehr stabil und leicht zu konfigurieren, bietet
 leider nicht die Möglichkeit ein Multi-Core-System zu realisieren, was für einen direkten Vergleich interessant gewesen wäre. Der \ac{prhs} erreicht dafür, dass er
 lediglich an der Helmut-Schmidt-Universtität entwickelt und gefördert wird, sehr gute Ergebnisse und steht dem kommerziellen Microblaze zumindest im Coremark-Vergleich
-in nichts nach. Auch was den Umfang des Systems betrifft, kann es sich im direkten Vergleich mit beiden Systemen durchaus messen lassen. Des weiteren war die
+in nichts nach. Auch was den Umfang des Systems betrifft, kann es sich im direkten Vergleich mit beiden Systemen durchaus messen lassen. Des Weiteren war die
 Konfigurierbarkeit im Bezug auf Anzahl der Kerne, sowie Größe und Art des Caches einfach zu realisieren.\\
